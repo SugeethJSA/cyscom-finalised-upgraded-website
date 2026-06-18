@@ -1,0 +1,46 @@
+{
+  "acts": {
+    "8": {
+      "name": "ACT 8 - 2025",
+      "wizard": {
+        "wizard_name": "Vatz",
+        "points": 820,
+        "active": true,
+        "created_at": "2026-06-01T12:00:00.000Z",
+        "expires_at": "2026-06-15T12:00:00.000Z"
+      },
+      "cabinet": [
+        { "Name": "Sugeeth JSA", "Rating": 5200, "Contributions": "25" },
+        { "Name": "Joyeeta Dey", "Rating": 5000, "Contributions": "18" }
+      ],
+      "members": [
+        { "Name": "Vatz", "Rating": 820, "Contributions": "14" },
+        { "Name": "Anirudh CV", "Rating": 760, "Contributions": "11" },
+        { "Name": "Saikiran S", "Rating": 450, "Contributions": "8" },
+        { "Name": "Sreenidhi K", "Rating": 310, "Contributions": "6" },
+        { "Name": "Arjun R", "Rating": 280, "Contributions": "5" },
+        { "Name": "Nikhil Prasad", "Rating": 180, "Contributions": "4" },
+        { "Name": "Aditya V", "Rating": 120, "Contributions": "3" },
+        { "Name": "Pranav Shah", "Rating": 85, "Contributions": "2" },
+        { "Name": "Sneha Sen", "Rating": 50, "Contributions": "1" },
+        { "Name": "Rohan Gupta", "Rating": 0, "Contributions": "0" }
+      ]
+    },
+    "7": {
+      "name": "ACT 7 - 2024",
+      "wizard": {
+        "wizard_name": "Anirudh CV",
+        "points": 720,
+        "active": false
+      },
+      "cabinet": [
+        { "Name": "Joyeeta Dey", "Rating": 5050, "Contributions": "22" }
+      ],
+      "members": [
+        { "Name": "Sugeeth JSA", "Rating": 910, "Contributions": "15" },
+        { "Name": "Vatz", "Rating": 650, "Contributions": "12" },
+        { "Name": "Anirudh CV", "Rating": 720, "Contributions": "10" }
+      ]
+    }
+  }
+}

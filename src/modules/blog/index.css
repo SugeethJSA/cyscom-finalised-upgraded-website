@@ -1,0 +1,454 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #000000;
+  font-family: "General Sans", sans-serif;
+  color: #dfdff2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+@layer base {
+  @font-face {
+    font-family: "circular-web";
+    src: url("./fonts/circularweb-book.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "general";
+    src: url("./fonts/general.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "robert-medium";
+    src: url("./fonts/robert-medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "robert-regular";
+    src: url("./fonts/robert-regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "zentry";
+    src: url("./fonts/zentry-regular.woff2") format("woff2");
+    font-display: swap;
+  }
+}
+
+@layer utilities {
+  .border-hsla {
+    @apply border border-white/20;
+  }
+
+  .nav-hover-btn {
+    @apply relative ms-4 md:ms-10 font-general text-xs uppercase text-blue-50 cursor-pointer transition-all duration-300;
+    text-shadow: 0 0 10px transparent;
+  }
+  
+  .nav-hover-btn::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff41, #0066ff, #ff0080);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  
+  .nav-hover-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .nav-hover-btn:hover {
+    color: #3b82f6;
+    text-shadow: 0 0 10px #3b82f6;
+    transform: translateY(-2px);
+  }
+
+  .floating-nav {
+    @apply bg-black/90 rounded-lg border border-blue-500/30 shadow-lg;
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+  }
+
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .special-font b {
+    font-family: "Zentry";
+    font-feature-settings: "ss01" on;
+  }
+
+  .hero-heading {
+    @apply uppercase font-zentry font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-wider;
+    text-shadow: 0 0 20px #000;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
+  }
+
+  .hero-text {
+    text-shadow: 0 0 10px #000;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
+  }
+
+  .animated-title {
+    @apply flex flex-col gap-4 text-4xl md:text-7xl uppercase leading-[.8] text-white px-4 sm:px-32 md:text-[6rem];
+  }
+
+  .animated-word {
+    @apply special-font font-zentry font-black opacity-0;
+    transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+    transform-origin: 50% 50% -150px !important;
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    margin-right: 0.5rem;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.2);
+  }
+
+  .section-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent;
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.5), 0 0 60px rgba(139, 92, 246, 0.3);
+    }
+  }
+
+  @keyframes matrixRain {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .matrix-char {
+    position: absolute;
+    color: #3b82f6;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    animation: matrixRain 4s linear infinite;
+    opacity: 0.15;
+  }
+
+  .cyber-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .cyber-card:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), 0 0 40px rgba(139, 92, 246, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .backdrop-blur-cyber {
+    backdrop-filter: blur(8px) saturate(120%);
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .indicator-line {
+    @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
+  }
+
+  .indicator-line.active {
+    animation: indicator-line 0.5s ease infinite;
+    animation-delay: calc(var(--animation-order) * 0.1s);
+  }
+}
+
+@keyframes indicator-line {
+  0% {
+    height: 4px;
+    transform: translateY(-0px);
+  }
+  50% {
+    height: 16px;
+    transform: translateY(-4px);
+  }
+  100% {
+    height: 4px;
+    transform: translateY(-0px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Global Selection Style */
+::selection {
+  background-color: rgba(37, 99, 235, 0.3) !important;
+  color: #ffffff !important;
+}
+
+::-moz-selection {
+  background-color: rgba(37, 99, 235, 0.3) !important;
+  color: #ffffff !important;
+}
+
+
+/* Typography styles for HTML blog content */
+.blog-html-content {
+  font-family: "Circular-Web", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #dfdff2;
+}
+
+.blog-html-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.blog-html-content h2, .blog-html-content h3, .blog-html-content h4 {
+  font-family: "zentry", "General Sans", sans-serif;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.blog-html-content h2 {
+  font-size: 1.75rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.blog-html-content h3 {
+  font-size: 1.5rem;
+}
+
+.blog-html-content ul, .blog-html-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-position: outside;
+}
+
+.blog-html-content ul {
+  list-style-type: square;
+}
+
+.blog-html-content ol {
+  list-style-type: decimal;
+}
+
+.blog-html-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-html-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.blog-html-content a:hover {
+  color: #60a5fa;
+}
+
+.blog-html-content blockquote {
+  border-left: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.blog-html-content img {
+  border-radius: 8px;
+  margin: 2rem auto;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.blog-html-content code {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #edff66;
+}
+
+.blog-html-content pre {
+  background: #050505;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.blog-html-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #dfdff2;
+}
+
+.blog-html-content iframe {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+}
+
+/* Dark Mode compatibility overrides for Blogger inline styling */
+.blog-html-content span,
+.blog-html-content p,
+.blog-html-content div,
+.blog-html-content li {
+  color: #dfdff2 !important;
+  background-color: transparent !important;
+}
+
+/* Ensure links maintain their distinct blue color */
+.blog-html-content a,
+.blog-html-content a * {
+  color: #3b82f6 !important;
+}
+.blog-html-content a:hover,
+.blog-html-content a:hover * {
+  color: #60a5fa !important;
+}
+
+/* Retain custom styling inside code blocks and blockquotes */
+.blog-html-content pre,
+.blog-html-content code,
+.blog-html-content pre *,
+.blog-html-content code * {
+  background-color: transparent !important;
+}
+
+.blog-html-content pre {
+  background: #050505 !important;
+}
+
+.blog-html-content code {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #edff66 !important;
+}
+
+.blog-html-content pre code {
+  color: #dfdff2 !important;
+}

@@ -1,0 +1,45 @@
+import AnimatedTitle from "./AnimatedTitle";
+import { PhotoCarousel } from "../ui/photo-carousel";
+import EasedImage from "./EasedImage";
+
+const carouselContent = [
+  {
+    title: "Team Moments",
+    description: "United by passion for cybersecurity, diverse talents converging into one powerful community.",
+    content: <EasedImage src="/img/team.webp" alt="CYSCOM Team" />,
+  },
+  {
+    title: "Discover CYSCOM",
+    description: "The Game of Defense begins—your life, now an epic CTF. VIT Chennai's only cybersecurity club.",
+    content: <EasedImage src="/img/mid.webp" alt="CYSCOM Discover" />,
+  },
+  {
+    title: "Community Spirit",
+    description: "Where hackers, defenders, and learners unite. Building the next generation of cybersecurity professionals.",
+    content: <EasedImage src="/img/swordman.webp" alt="CYSCOM Community" />,
+  },
+];
+
+const About = () => {
+
+  return (
+    <div id="about" className="min-h-screen bg-black">
+      <div className="relative mb-8 mt-12 md:mt-36 flex flex-col items-center gap-3 md:gap-5 px-4">
+        <p className="font-general text-xs md:text-sm text-white uppercase">
+          Welcome to CYSCOM
+        </p>
+
+        <AnimatedTitle
+          title="<b>Discover the VIT Chennai'S ONLY CYBERSECURITY CLUB</b>"
+          containerClass="mt-5 !text-white text-center"
+        />
+
+
+      </div>
+
+      <PhotoCarousel content={carouselContent} contentClassName="" gridCols={3} />
+    </div>
+  );
+};
+
+export default About;
