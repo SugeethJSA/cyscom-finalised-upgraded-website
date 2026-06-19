@@ -47,9 +47,9 @@ function App() {
 
   // Critical assets needed for initial render (Hero + Navbar)
   const criticalAssets = [
-    { type: 'video', src: '/videos/main.webm' },
-    { type: 'image', src: '/img/hacked.webp' },
-    { type: 'image', src: '/img/logo.png' },
+    { type: 'video', src: ${import.meta.env.BASE_URL}videos/ },
+    { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+    { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
   ];
 
   const handlePreloaderComplete = useCallback(() => {
@@ -62,18 +62,18 @@ function App() {
     if (!criticalAssetsLoaded) return;
     
     const lazyAssets = [
-      { type: 'image', src: '/img/newsletter.webp' },
-      { type: 'video', src: '/videos/ctf.webm' },
-      { type: 'video', src: '/videos/proj.webm' },
-      { type: 'image', src: '/img/leaderboard2.webp' },
-      { type: 'image', src: '/img/blogs.webp' },
-      { type: 'image', src: '/img/fast.webp' },
-      { type: 'image', src: '/img/mid.webp' },
-      { type: 'image', src: '/img/intrusion.png' },
-      { type: 'image', src: '/img/team018.jpg' },
-      { type: 'image', src: '/img/contact-1.webp' },
-      { type: 'image', src: '/img/contact-2.webp' },
-      { type: 'image', src: '/img/swordman.webp' },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'video', src: ${import.meta.env.BASE_URL}videos/ },
+      { type: 'video', src: ${import.meta.env.BASE_URL}videos/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
     ];
     
     const loadLazyAssets = async () => {

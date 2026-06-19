@@ -6,17 +6,17 @@ const carouselContent = [
   {
     title: "Team Moments",
     description: "United by passion for cybersecurity, diverse talents converging into one powerful community.",
-    content: <EasedImage src="/img/team.webp" alt="CYSCOM Team" />,
+    content: <EasedImage src={`${import.meta.env.BASE_URL}img/team.webp`} alt="CYSCOM Team" />,
   },
   {
     title: "Discover CYSCOM",
     description: "The Game of Defense begins—your life, now an epic CTF. VIT Chennai's only cybersecurity club.",
-    content: <EasedImage src="/img/mid.webp" alt="CYSCOM Discover" />,
+    content: <EasedImage src={`${import.meta.env.BASE_URL}img/mid.webp`} alt="CYSCOM Discover" />,
   },
   {
     title: "Community Spirit",
     description: "Where hackers, defenders, and learners unite. Building the next generation of cybersecurity professionals.",
-    content: <EasedImage src="/img/swordman.webp" alt="CYSCOM Community" />,
+    content: <EasedImage src={`${import.meta.env.BASE_URL}img/swordman.webp`} alt="CYSCOM Community" />,
   },
 ];
 

@@ -75,8 +75,8 @@ const FloatingImage = () => {
               >
                 <img
                   ref={frameRef}
-                  src="/img/fast.webp"
-                  alt="/img/fast.webp"
+                  src={`${import.meta.env.BASE_URL}img/fast.webp`}
+                  alt={`${import.meta.env.BASE_URL}img/fast.webp`}
                   loading="lazy"
                   decoding="async"
                   className="object-contain w-full h-full"

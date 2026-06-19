@@ -124,7 +124,7 @@ const NavBar = () => {
           {/* Logo and Product button */}
             <div className="flex items-center gap-4 md:gap-7">
               <img 
-                src="/img/logo.png" 
+                src={`${import.meta.env.BASE_URL}img/logo.png`} 
                 alt="CYSCOM Logo" 
                 className="w-10 h-10 object-contain cursor-pointer" 
                 onClick={() => {

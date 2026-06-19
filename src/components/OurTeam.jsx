@@ -146,7 +146,7 @@ const OurTeam = () => {
         <div className="team-image-wrapper md:w-1/2 relative order-1 md:order-2 w-full aspect-[4/3] md:aspect-[3/2] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(34,211,238,0.1)] border border-white/10 z-10">
           <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent z-10 mix-blend-overlay pointer-events-none"></div>
           <img
-            src="/img/team018.jpg" 
+            src={`${import.meta.env.BASE_URL}img/team018.jpg`} 
             alt="Team"
             className="team-hero-image w-full h-full object-cover"
           />

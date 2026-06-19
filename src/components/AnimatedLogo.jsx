@@ -64,7 +64,7 @@ const AnimatedLogo = () => {
     <div ref={containerRef} className="z-[100] relative origin-center will-change-transform">
       <img
         ref={imgRef}
-        src="/img/logo.png"
+        src={`${import.meta.env.BASE_URL}img/logo.png`}
         alt="CYSCOM Logo"
         className="w-8 h-8 md:w-10 md:h-10 rounded-full"
         loading="lazy"
