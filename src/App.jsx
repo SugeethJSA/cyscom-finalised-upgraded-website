@@ -47,9 +47,9 @@ function App() {
 
   // Critical assets needed for initial render (Hero + Navbar)
   const criticalAssets = [
-    { type: 'video', src: ${import.meta.env.BASE_URL}videos/ },
-    { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-    { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+    { type: 'video', src: `${import.meta.env.BASE_URL}videos/main.webm` },
+    { type: 'image', src: `${import.meta.env.BASE_URL}img/hacked.webp` },
+    { type: 'image', src: `${import.meta.env.BASE_URL}img/logo.png` },
   ];
 
   const handlePreloaderComplete = useCallback(() => {
@@ -62,18 +62,18 @@ function App() {
     if (!criticalAssetsLoaded) return;
     
     const lazyAssets = [
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'video', src: ${import.meta.env.BASE_URL}videos/ },
-      { type: 'video', src: ${import.meta.env.BASE_URL}videos/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
-      { type: 'image', src: ${import.meta.env.BASE_URL}img/ },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/newsletter.webp` },
+      { type: 'video', src: `${import.meta.env.BASE_URL}videos/ctf.webm` },
+      { type: 'video', src: `${import.meta.env.BASE_URL}videos/proj.webm` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/leaderboard2.webp` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/blogs.webp` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/fast.webp` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/mid.webp` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/intrusion.png` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/team018.jpg` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/contact-1.webp` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/contact-2.webp` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}img/swordman.webp` },
     ];
     
     const loadLazyAssets = async () => {
