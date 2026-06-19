@@ -11,6 +11,7 @@ import {
 // ── PrismJS Syntax Highlighting ──
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
+import imageMap from '../image_map.json';
 
 const DIFFICULTY_COLORS = {
   easy: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20',
@@ -139,9 +140,15 @@ customRenderer.image = function(arg1, arg2, arg3) {
   else { href = arg1; title = arg2; text = arg3; }
   
   if (href && !href.startsWith('http') && !href.startsWith('data:')) {
-    if (window.__CURRENT_EVENT_FOLDER__) {
-      let cleanHref = href.startsWith('/') ? href.slice(1) : href;
-      href = `/writeups/${window.__CURRENT_EVENT_FOLDER__}/${cleanHref}`;
+    let lookup = href.startsWith('/') ? href.slice(1) : href;
+    if (imageMap[lookup]) {
+      href = `/${imageMap[lookup]}`;
+    } else if (lookup.startsWith('writeups/')) {
+      href = `/${lookup}`;
+    } else if (window.__CURRENT_EVENT_FOLDER__) {
+      href = `/writeups/${window.__CURRENT_EVENT_FOLDER__}/${lookup}`;
+    } else {
+      href = `/${lookup}`;
     }
   }
   

@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaCopy, FaArrowLeft } from "react-icons/fa";
 import { BiTimeFive, BiCalendar, BiUser } from "react-icons/bi";
+import imageMap from "../../writeups/image_map.json";
 
 const PostDetail = ({ posts = [] }) => {
   const { id } = useParams();
@@ -77,6 +78,18 @@ const PostDetail = ({ posts = [] }) => {
   };
 
   const readingTime = calculateReadingTime(post.content);
+
+  const processedContent = useMemo(() => {
+    if (!post?.content) return '';
+    return post.content.replace(/<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)>/gi, (match, prefix, src, suffix) => {
+      if (src.startsWith('http') || src.startsWith('data:')) return match;
+      let lookup = src.startsWith('/') ? src.slice(1) : src;
+      if (imageMap[lookup]) {
+        return `<img ${prefix}src="/${imageMap[lookup]}"${suffix}>`;
+      }
+      return match;
+    });
+  }, [post]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -158,7 +171,7 @@ const PostDetail = ({ posts = [] }) => {
         )}
 
         {/* distraction-free article reader */}
-        <article className="blog-html-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <article className="blog-html-content" dangerouslySetInnerHTML={{ __html: processedContent }} />
 
         {/* Share Panel */}
         <div className="mt-16 pt-8 border-t border-blue-950/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
