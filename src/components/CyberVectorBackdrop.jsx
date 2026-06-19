@@ -38,7 +38,7 @@ const CyberVectorBackdrop = () => {
       
       // Slow ambient pulse for the entire background
       gsap.to(containerRef.current, {
-        opacity: 0.8,
+        opacity: 1.0,
         scale: 1.02,
         duration: 5,
         ease: "sine.inOut",
@@ -53,9 +53,9 @@ const CyberVectorBackdrop = () => {
       ref={containerRef}
       className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden"
       style={{
-        filter: "drop-shadow(0 0 20px rgba(10, 107, 255, 0.6))",
+        filter: "drop-shadow(0 0 30px rgba(10, 107, 255, 1)) drop-shadow(0 0 10px rgba(0, 255, 255, 0.8))",
         mixBlendMode: "screen",
-        opacity: 0.5 // Start with a subtle opacity
+        opacity: 0.75 // Start with a brighter opacity
       }}
     >
       <style>{`
