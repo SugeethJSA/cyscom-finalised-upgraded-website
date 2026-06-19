@@ -78,6 +78,40 @@ function App() {
     }
   };
 
+  const [isMember, setIsMember] = useState(false);
+
+  useEffect(() => {
+    try {
+      const userStr = localStorage.getItem('participant_user');
+      if (userStr) {
+        const u = JSON.parse(userStr);
+        if (u.role && u.role !== 'participant') {
+          setIsMember(true);
+        }
+      }
+    } catch(e) {}
+  }, []);
+
+  if (isMember) {
+    return (
+      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 cyber-grid">
+        <div className="max-w-md w-full bg-zinc-950/80 border border-blue-500/30 p-8 rounded-2xl text-center glow-effect backdrop-blur-md">
+          <ShieldCheck size={64} className="text-blue-400 mx-auto mb-6" />
+          <h2 className="text-3xl font-zentry uppercase tracking-wider text-blue-400 mb-4">Access Granted</h2>
+          <p className="text-zinc-400 font-mono text-sm leading-relaxed mb-8">
+            You are already a member of CySCOM! There is no need to apply again.
+          </p>
+          <a 
+            href="/"
+            className="inline-block bg-blue-500/10 text-blue-400 border border-blue-500/30 px-6 py-2 rounded-lg font-bold uppercase tracking-wider text-sm hover:bg-blue-500 hover:text-black transition-colors"
+          >
+            Return Home
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   if (status === 'success') {
     return (
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 cyber-grid">

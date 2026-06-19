@@ -38,50 +38,35 @@ function App() {
       });
   }, []);
 
-  const handlePreloaderComplete = () => {
-    setIsLoading(false);
-  };
-
   const handleExplore = () => {
     exploreSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  // Critical assets for the preloader to track
-  const criticalAssets = [
-    { type: 'image', src: `${import.meta.env.BASE_URL}img/logo.png` }
-  ];
-
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-black text-blue-50">
-      {isLoading ? (
-        <Preloader assets={criticalAssets} onComplete={handlePreloaderComplete} />
-      ) : (
-        <>
-          {/* Router Content Area */}
-          <div className="pt-2 min-h-screen">
-            <Routes>
-              
-              {/* Home Feed Route */}
-              <Route 
-                path="/" 
-                element={
-                  <>
-                    <Hero onExplore={handleExplore} />
-                    <Home posts={posts} exploreSectionRef={exploreSectionRef} />
-                  </>
-                } 
-              />
+      {/* Router Content Area */}
+      <div className="pt-24 min-h-screen">
+        <Routes>
+          
+          {/* Home Feed Route */}
+          <Route 
+            path="/" 
+            element={
+              <>
+                <Hero onExplore={handleExplore} />
+                <Home posts={posts} exploreSectionRef={exploreSectionRef} />
+              </>
+            } 
+          />
 
-              {/* Single Post Reader Route */}
-              <Route 
-                path="post/:id" 
-                element={<PostDetail posts={posts} />} 
-              />
+          {/* Single Post Reader Route */}
+          <Route 
+            path="post/:id" 
+            element={<PostDetail posts={posts} />} 
+          />
 
-            </Routes>
-          </div>
-        </>
-      )}
+        </Routes>
+      </div>
     </main>
   );
 }

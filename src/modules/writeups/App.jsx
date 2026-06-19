@@ -14,24 +14,13 @@ function App() {
     { type: 'image', src: '/img/logo.png' },
   ];
 
-  const handlePreloaderComplete = useCallback(() => {
-    setIsLoading(false);
-    setCriticalAssetsLoaded(true);
-  }, []);
-
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-black">
-      {isLoading ? (
-        <Preloader assets={criticalAssets} onComplete={handlePreloaderComplete} />
-      ) : (
-        <>
-          <Routes>
-            <Route path="/" element={<Writeups />} />
-            <Route path="categories" element={<Writeups />} />
-          </Routes>
-          <ScrollToTop />
-        </>
-      )}
+      <Routes>
+        <Route path="/" element={<Writeups />} />
+        <Route path="categories" element={<Writeups />} />
+      </Routes>
+      <ScrollToTop />
     </main>
   );
 }

@@ -362,12 +362,12 @@ const Verify = () => {
             <div className="flex flex-col gap-3 w-full">
               <Button
                 title="Go to Locker Search"
-                onClick={() => navigate("/locker")}
+                onClick={() => navigate("/opensrc/locker")}
                 containerClass="w-full bg-red-950/20 border border-red-500/30 text-xs font-mono text-red-300 hover:bg-red-900/20 cursor-target"
               />
               <Button
                 title="Return Home"
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/opensrc")}
                 containerClass="w-full bg-black border border-blue-900/20 text-xs font-mono text-blue-200/60 hover:text-white cursor-target"
               />
             </div>

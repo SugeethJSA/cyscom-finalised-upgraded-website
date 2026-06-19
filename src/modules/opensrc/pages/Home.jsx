@@ -44,28 +44,28 @@ const portals = [
   {
     title: "Points Leaderboard",
     desc: "Check active student contributions, rankings, and who crowned the Wizard of the Fortnight.",
-    link: "/leaderboard",
+    link: "leaderboard",
     icon: <FaAward className="text-3xl text-yellow-300" />,
     color: "border-yellow-500/20 hover:border-yellow-500/50 hover:shadow-yellow-500/10"
   },
   {
     title: "Certificates Locker",
     desc: "Retrieve, view, and download your official participation credentials and certificates.",
-    link: "/locker",
+    link: "locker",
     icon: <FaFolderOpen className="text-3xl text-blue-400" />,
     color: "border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/10"
   },
   {
     title: "Hall of Fame",
     desc: "Celebrate Cyscom VIT event winners, shining stars, and hackathon Jedis.",
-    link: "/hall-of-fame",
+    link: "hall-of-fame",
     icon: <FaTrophy className="text-3xl text-pink-400" />,
     color: "border-pink-500/20 hover:border-pink-500/50 hover:shadow-pink-500/10"
   },
   {
     title: "Legacy Members",
     desc: "Discover past committee members, coordinators, and developers of Cyscom VIT.",
-    link: "/legacy",
+    link: "legacy",
     icon: <FaHistory className="text-3xl text-green-400" />,
     color: "border-green-500/20 hover:border-green-500/50 hover:shadow-green-500/10"
   }
@@ -130,7 +130,7 @@ const Home = () => {
           <Button
             title="Explore Leaderboard"
             rightIcon={<TiLocationArrow />}
-            onClick={() => window.location.href = "/leaderboard"}
+            onClick={() => window.location.href = "/opensrc/leaderboard"}
             containerClass="bg-blue-600 border border-blue-500/30 cursor-target shadow-lg shadow-blue-500/20"
           />
           <a

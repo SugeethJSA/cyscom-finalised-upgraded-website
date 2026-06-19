@@ -7,6 +7,7 @@ export function Profile() {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
   const [registrations, setRegistrations] = useState<any[]>([]);
+  const [recruitments, setRecruitments] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ export function Profile() {
         });
         setUser(res.user);
         setRegistrations(res.registrations);
+        setRecruitments(res.recruitments || []);
       } catch (err) {
         localStorage.removeItem("participant_token");
         navigate("/login");
@@ -47,7 +49,7 @@ export function Profile() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 md:p-12">
+    <div className="min-h-screen bg-black text-white p-6 md:p-12 pt-28 md:pt-32">
       <header className="max-w-4xl mx-auto flex items-center justify-between mb-12">
         <Link to="/" className="flex items-center gap-2 text-zinc-400 hover:text-white cursor-target">
           <ArrowLeft size={16} /> Back to Catalog
@@ -112,14 +114,81 @@ export function Profile() {
             )}
           </section>
 
-          {/* Teams Section Placeholder */}
           <section>
             <h3 className="text-lg font-bold font-zentry uppercase tracking-wide flex items-center gap-2 mb-4 border-b border-zinc-800 pb-3">
-              <Users size={18} className="text-violet-400" /> Teams
+              <Users size={18} className="text-violet-400" /> Recruitment Applications
             </h3>
-            <div className="text-center py-10 border border-dashed border-zinc-800 rounded-xl text-zinc-500 text-sm">
-              Team management UI goes here.
-            </div>
+            
+            {recruitments.length === 0 ? (
+              <div className="text-center py-10 border border-dashed border-zinc-800 rounded-xl text-zinc-500">
+                You haven't applied for any recruitments yet.
+              </div>
+            ) : (
+              <div className="flex flex-col gap-4">
+                {recruitments.map(rec => {
+                  const getProgress = (status: string) => {
+                    const s = status?.toLowerCase() || 'pending';
+                    if (s === 'pending') return 1;
+                    if (s === 'review' || s === 'under review') return 2;
+                    if (s === 'accepted' || s === 'rejected') return 3;
+                    return 1;
+                  };
+                  
+                  const step = getProgress(rec.status);
+                  
+                  return (
+                    <div key={rec.id} className="bg-zinc-950 border border-zinc-800 p-5 rounded-xl flex flex-col gap-4">
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                        <div>
+                          <h4 className="font-bold text-lg">CYSCOM Core Recruitments</h4>
+                          <p className="text-sm text-zinc-400 mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                            <span>Primary: <span className="text-white font-medium">{rec.department_primary || 'N/A'}</span></span>
+                            {rec.department_secondary && <span>Secondary: <span className="text-white font-medium">{rec.department_secondary}</span></span>}
+                          </p>
+                        </div>
+                        <div className={`text-xs uppercase tracking-wider font-bold px-3 py-1 rounded-full border w-fit ${
+                          rec.status?.toLowerCase() === 'accepted' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
+                          rec.status?.toLowerCase() === 'rejected' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+                          rec.status?.toLowerCase() === 'review' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
+                          'bg-yellow-500/10 text-yellow-500 border-yellow-500/20'
+                        }`}>
+                          {rec.status || 'Pending'}
+                        </div>
+                      </div>
+                      
+                      {/* Progress Tracker UI */}
+                      <div className="relative pt-4">
+                        <div className="flex justify-between text-xs font-bold uppercase tracking-wider text-zinc-500 relative z-10">
+                          <div className={`flex flex-col items-center gap-2 ${step >= 1 ? 'text-white' : ''}`}>
+                            <div className={`w-4 h-4 rounded-full ${step >= 1 ? 'bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'bg-zinc-800'}`}></div>
+                            <span>Applied</span>
+                          </div>
+                          <div className={`flex flex-col items-center gap-2 ${step >= 2 ? 'text-white' : ''}`}>
+                            <div className={`w-4 h-4 rounded-full ${step >= 2 ? 'bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'bg-zinc-800'}`}></div>
+                            <span>In Review</span>
+                          </div>
+                          <div className={`flex flex-col items-center gap-2 ${step >= 3 ? 'text-white' : ''}`}>
+                            <div className={`w-4 h-4 rounded-full ${
+                              step >= 3 
+                                ? (rec.status?.toLowerCase() === 'accepted' ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]' : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]')
+                                : 'bg-zinc-800'
+                            }`}></div>
+                            <span>Decision</span>
+                          </div>
+                        </div>
+                        {/* Connecting Lines */}
+                        <div className="absolute top-[22px] left-8 right-8 h-[2px] bg-zinc-800 z-0">
+                          <div 
+                            className="h-full bg-blue-500 transition-all duration-1000"
+                            style={{ width: step === 1 ? '0%' : step === 2 ? '50%' : '100%' }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </section>
 
         </div>

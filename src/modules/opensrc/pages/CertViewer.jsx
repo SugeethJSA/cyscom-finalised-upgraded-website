@@ -352,7 +352,7 @@ const CertViewer = () => {
             The verification uplink failed. The cryptographic signature is incorrect, missing, or the credential does not exist in our database.
           </p>
           <button
-            onClick={() => navigate("/locker")}
+            onClick={() => navigate("/opensrc/locker")}
             className="w-full py-2.5 rounded border border-red-500/30 text-xs font-bold tracking-widest uppercase hover:bg-red-950/20 text-red-300 transition-colors cursor-target"
           >
             Return to Secure Locker
@@ -373,7 +373,7 @@ const CertViewer = () => {
       {/* Floating Header Actions */}
       <header className="p-4 md:p-6 flex items-center justify-between z-10 border-b border-blue-900/10 bg-black/40 backdrop-blur-md print:hidden">
         <button
-          onClick={() => navigate("/locker")}
+          onClick={() => navigate("/opensrc/locker")}
           className="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors cursor-target"
         >
           <FaArrowLeft /> BACK TO LOCKER

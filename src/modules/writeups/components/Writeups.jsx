@@ -19,17 +19,24 @@ const DIFFICULTY_COLORS = {
 };
 
 const EVENT_COVERS = {
-  'CyberConverge_2025': '/img/cyberconverge.png',
-  'FinalTrace_2025': '/writeups/FinalTrace_2025/images/2.png',
-  'Cyscom Juice Shop 2025': '/img/juiceshop.png',
-  'Zypher_2023': '/img/zypher-logo.png',
+  'cyberconverge-2025': '/img/cyberconverge.png',
+  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.png',
+  'cyscom-juice-shop-2025': '/img/juiceshop.png',
+  'zypher-2023': '/img/zypher-logo.png',
 };
 
 const EVENT_LOGOS = {
-  'CyberConverge_2025': '/writeups/CyberConverge_2025/images/logo.png',
-  'Cyscom Juice Shop 2025': '/writeups/Cyscom Juice Shop 2025/imagedata/logo.png',
-  'FinalTrace_2025': '/writeups/FinalTrace_2025/images/2.png',
-  'Zypher_2023': '/img/zypher-logo.png',
+  'cyberconverge-2025': '/writeups/CyberConverge_2025/images/logo.png',
+  'cyscom-juice-shop-2025': '/writeups/Cyscom Juice Shop 2025/imagedata/logo.png',
+  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.png',
+  'zypher-2023': '/img/zypher-logo.png',
+};
+
+const EVENT_FOLDERS = {
+  'cyberconverge-2025': 'CyberConverge_2025',
+  'cyscom-juice-shop-2025': 'Cyscom Juice Shop 2025',
+  'finaltrace-2025': 'FinalTrace_2025',
+  'zypher-2023': 'Zypher_2023',
 };
 
 // ── Category mapping & normalization ──
@@ -101,7 +108,6 @@ const CALLOUT_CONFIG = {
   FAILURE:   { icon: '❌', cls: 'callout-failure',   title: 'Failure' },
 };
 
-// ── Custom marked renderer ──
 const customRenderer = new marked.Renderer();
 customRenderer.heading = function(arg1, arg2) {
   let text = '', depth = 2;
@@ -111,6 +117,37 @@ customRenderer.heading = function(arg1, arg2) {
   const id = cleanText.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
   return `<h${depth} id="${id}" class="anchor-heading">${text}</h${depth}>`;
 };
+
+customRenderer.link = function(arg1, arg2, arg3) {
+  let href, title, text;
+  if (typeof arg1 === 'object') { href = arg1.href; title = arg1.title; text = arg1.text; }
+  else { href = arg1; title = arg2; text = arg3; }
+  
+  if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+    if (window.__CURRENT_EVENT_FOLDER__) {
+      let cleanHref = href.startsWith('/') ? href.slice(1) : href;
+      href = `/writeups/${window.__CURRENT_EVENT_FOLDER__}/${cleanHref}`;
+    }
+  }
+  
+  return `<a href="${href}" target="_blank" rel="noopener noreferrer" download class="text-blue-400 hover:text-blue-300 underline underline-offset-2">${text}</a>`;
+};
+
+customRenderer.image = function(arg1, arg2, arg3) {
+  let href, title, text;
+  if (typeof arg1 === 'object') { href = arg1.href; title = arg1.title; text = arg1.text; }
+  else { href = arg1; title = arg2; text = arg3; }
+  
+  if (href && !href.startsWith('http') && !href.startsWith('data:')) {
+    if (window.__CURRENT_EVENT_FOLDER__) {
+      let cleanHref = href.startsWith('/') ? href.slice(1) : href;
+      href = `/writeups/${window.__CURRENT_EVENT_FOLDER__}/${cleanHref}`;
+    }
+  }
+  
+  return `<img src="${href}" alt="${text || ''}" title="${title || ''}" />`;
+};
+
 marked.use({ renderer: customRenderer });
 
 // ── Post-process HTML: convert GitHub-style blockquote alerts into callout cards ──
@@ -556,6 +593,7 @@ const Writeups = () => {
       setLoadingContent(true);
       try {
         let text = selectedChallenge.content_markdown || '';
+        window.__CURRENT_EVENT_FOLDER__ = EVENT_FOLDERS[selectedEvent.id] || selectedEvent.title;
         
         // Strip duplicate top header & metadata
         text = stripDuplicateHeader(text);
@@ -692,8 +730,8 @@ const Writeups = () => {
     return grouped;
   };
 
-  const navToEventsHub = () => { setCurrentView('events'); setSelectedEvent(null); setSelectedChallenge(null); navigate('/'); setSidebarOpen(false); };
-  const navToCategories = () => { setCurrentView('categories'); setSelectedCategory(null); navigate('/categories'); setSidebarOpen(false); };
+  const navToEventsHub = () => { setCurrentView('events'); setSelectedEvent(null); setSelectedChallenge(null); navigate('/writeups'); setSidebarOpen(false); };
+  const navToCategories = () => { setCurrentView('categories'); setSelectedCategory(null); navigate('/writeups/categories'); setSidebarOpen(false); };
 
   if (loading) return (
     <div className="min-h-screen bg-black flex items-center justify-center">
@@ -715,12 +753,12 @@ const Writeups = () => {
   );
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-black text-white flex flex-col lg:flex-row relative">
+    <div className="h-[calc(100vh-96px)] mt-24 w-full overflow-hidden bg-black text-white flex flex-col lg:flex-row relative">
       <div className="fixed inset-0 cyber-grid pointer-events-none opacity-40 z-0" />
 
       {/* Mobile toggle */}
       <button onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 w-10 h-10 rounded-xl bg-black/80 border border-white/8 flex items-center justify-center text-white/50 hover:text-white transition-all"
+        className="lg:hidden fixed top-24 left-4 z-50 w-10 h-10 rounded-xl bg-black/80 border border-white/8 flex items-center justify-center text-white/50 hover:text-white transition-all"
         style={{ backdropFilter: 'blur(12px)' }}>
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
           <path d={sidebarOpen ? "M1 1L15 11M1 11L15 1" : "M0 1H16M0 6H16M0 11H16"} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -730,16 +768,9 @@ const Writeups = () => {
       {/* ════════════════════════════════════════════════════ */}
       {/* SIDEBAR                                             */}
       {/* ════════════════════════════════════════════════════ */}
-      <aside className={`fixed lg:relative z-40 w-[272px] lg:w-[264px] h-[calc(100vh-112px)] top-24 left-4 rounded-2xl glass-sidebar-float p-5 flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${sidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-[120%] lg:translate-x-0 opacity-0 lg:opacity-100'}`}>
+      <aside className={`fixed lg:relative z-40 w-[272px] lg:w-[264px] h-[calc(100vh-112px)] lg:h-[calc(100vh-128px)] top-24 lg:top-0 left-4 lg:left-0 lg:ml-4 lg:my-4 rounded-2xl glass-sidebar-float p-5 flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${sidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-[120%] lg:translate-x-0 opacity-0 lg:opacity-100'}`}>
 
-        {/* Brand */}
-        <div className="mb-5 flex items-center gap-3 cursor-pointer select-none group" onClick={navToEventsHub}>
-          <img src="/img/logo.png" alt="CySCOM" className="w-8 h-8 rounded-full object-cover border border-white/8 group-hover:border-white/20 transition-all" onError={e => e.target.style.display='none'} />
-          <div>
-            <h1 className="text-[13px] font-extrabold tracking-wider text-white">CYSCOM VIT</h1>
-            <p className="text-[8px] text-white/20 font-semibold uppercase tracking-[0.35em]">Writeups Hub</p>
-          </div>
-        </div>
+
 
         {/* Nav links */}
         <div className="space-y-0.5 mb-4">

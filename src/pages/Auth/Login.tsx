@@ -38,7 +38,7 @@ export function Login() {
 
       <Link 
         to="/" 
-        className="absolute top-6 left-6 cursor-target secondary text-xs uppercase tracking-wider font-semibold py-2 px-4 rounded-full flex items-center gap-2 z-10 text-white hover:bg-white/10"
+        className="absolute top-28 md:top-32 left-6 cursor-target secondary text-xs uppercase tracking-wider font-semibold py-2 px-4 rounded-full flex items-center gap-2 z-10 text-white hover:bg-white/10"
       >
         <ArrowLeft size={14} /> Catalog
       </Link>
@@ -89,7 +89,7 @@ export function Login() {
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-bold uppercase text-xs tracking-wider mt-4 shadow-[0_4px_14px_rgba(59,130,246,0.3)] cursor-target disabled:opacity-50"
+            className="w-full text-center bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-bold uppercase text-xs tracking-wider mt-4 shadow-[0_4px_14px_rgba(59,130,246,0.3)] cursor-target disabled:opacity-50"
           >
             {loading ? "Authenticating..." : "Sign In"}
           </button>

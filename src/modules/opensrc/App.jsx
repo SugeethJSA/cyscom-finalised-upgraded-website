@@ -29,30 +29,19 @@ function App() {
     });
   }, []);
 
-  const handlePreloaderComplete = useCallback(() => {
-    setIsLoading(false);
-  }, []);
-
   return (
     <main className="relative min-h-screen w-full bg-black text-blue-50 overflow-x-hidden">
-      {isLoading ? (
-        <Preloader assets={criticalAssets} onComplete={handlePreloaderComplete} />
-      ) : (
-        <>
-          <NavBar />
-          <div className="pt-2 min-h-[calc(100vh-80px)]">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="leaderboard" element={<Leaderboard />} />
-              <Route path="locker" element={<Locker />} />
-              <Route path="hall-of-fame" element={<HallOfFame />} />
-              <Route path="legacy" element={<Legacy />} />
-              <Route path="verify" element={<Verify />} />
-              <Route path="cert-viewer" element={<CertViewer />} />
-            </Routes>
-          </div>
-        </>
-      )}
+      <div className="pt-24 min-h-[calc(100vh-80px)]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="locker" element={<Locker />} />
+          <Route path="hall-of-fame" element={<HallOfFame />} />
+          <Route path="legacy" element={<Legacy />} />
+          <Route path="verify" element={<Verify />} />
+          <Route path="cert-viewer" element={<CertViewer />} />
+        </Routes>
+      </div>
     </main>
   );
 }

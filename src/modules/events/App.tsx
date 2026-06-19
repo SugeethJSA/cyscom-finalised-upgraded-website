@@ -8,9 +8,6 @@ import PublicTransfer from "./pages/PublicTransfer";
 export default function App() {
   return (
     <>
-      {/* Futuristic Snapping Target Cursor */}
-      <TargetCursor targetSelector=".cursor-target" />
-
       <Routes>
         {/* Global Events Hub Landing Page */}
         <Route path="/" element={<EventsHub />} />

@@ -49,33 +49,8 @@ export function EventsHub() {
         backgroundSize: '40px 40px'
       }} />
 
-      {/* Header */}
-      <header className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-violet-500 rounded-xl flex items-center justify-center font-bold text-2xl shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-            C
-          </div>
-          <div>
-            <h1 className="text-2xl font-black font-zentry tracking-wider uppercase text-glow">CySCOM</h1>
-            <p className="text-xs uppercase text-blue-300 font-semibold tracking-widest">Events Suite Hub</p>
-          </div>
-        </div>
-        
-        {/* Profile Button */}
-        <div>
-          {localStorage.getItem("participant_token") ? (
-            <Link to="/profile" className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-800 transition-colors">
-              <User size={16} className="text-blue-400" />
-              <span className="text-xs font-bold uppercase tracking-wider">My Profile</span>
-            </Link>
-          ) : (
-            <Link to="/login" className="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition-colors shadow-[0_0_15px_rgba(59,130,246,0.3)] cursor-target">
-              <User size={16} />
-              <span className="text-xs font-bold uppercase tracking-wider">Sign In</span>
-            </Link>
-          )}
-        </div>
-      </header>
+      {/* Spacer for global navbar */}
+      <div className="pt-24"></div>
 
 
       {/* Hero */}
