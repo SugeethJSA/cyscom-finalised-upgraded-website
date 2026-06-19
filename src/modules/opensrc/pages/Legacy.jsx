@@ -20,9 +20,11 @@ const Legacy = () => {
     const fetchLegacy = async () => {
       try {
         const res = await apiRequest("/api/users/legacy");
-        if (res.legacy && res.legacy.length > 0) {
+        const data = res.legacy || res;
+        const arr = Array.isArray(data) ? data : Object.values(data);
+        if (arr && arr.length > 0) {
           // Map DB response to expected UI format
-          setMembersList(res.legacy.map(u => ({
+          setMembersList(arr.map(u => ({
             name: u.name,
             post: `Legacy Member (Est. ${new Date(u.legacy_date).getFullYear()})`,
             pic: "/img/logo.png"

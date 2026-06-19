@@ -286,7 +286,7 @@ export function PublicRegister() {
 
       {/* Catalog Button */}
       <button 
-        onClick={() => navigate("/")} 
+        onClick={() => navigate("/events")} 
         className="absolute top-6 left-6 cursor-target secondary text-xs uppercase tracking-wider font-semibold py-2 px-4 rounded-full flex items-center gap-2 z-10"
       >
         <ArrowLeft size={14} /> Catalog

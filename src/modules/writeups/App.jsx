@@ -2,7 +2,7 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import ScrollToTop from "./components/ScrollToTop";
-import Preloader from "./components/Preloader";
+
 import Writeups from "./components/Writeups";
 
 function App() {

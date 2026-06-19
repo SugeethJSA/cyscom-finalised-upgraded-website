@@ -53,7 +53,7 @@ const PostDetail = ({ posts = [] }) => {
           </p>
         </div>
         <Link
-          to="/"
+          to="/blog"
           className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-mono uppercase cursor-target transition-all"
         >
           Return to Terminal
@@ -227,7 +227,7 @@ const PostDetail = ({ posts = [] }) => {
                 return (
                   <Link
                     key={rPost.id}
-                    to={`/post/${rPost.id}`}
+                    to={`/blog/post/${rPost.id}`}
                     className="cyber-card group p-4 rounded-lg border border-blue-900/20 bg-[#020205] hover:border-blue-500/50 flex flex-col justify-between h-full cursor-target"
                   >
                     <div className="space-y-2">

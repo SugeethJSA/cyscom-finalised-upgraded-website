@@ -172,13 +172,12 @@ export async function syncFromFirebase() {
   const dbUrl = getDbUrl();
   if (!apiUrl && !dbUrl) return;
 
-  const urlForTemplates = apiUrl ? `${apiUrl}/api/templates` : `${dbUrl}/vitcc/owasp/templates.json`;
-  const urlForCerts = apiUrl ? `${apiUrl}/api/certificates` : `${dbUrl}/vitcc/owasp/certificates.json`;
-  const urlForProjects = apiUrl ? `${apiUrl}/api/projects` : `${dbUrl}/vitcc/owasp/projects.json`;
-  const urlForHof = apiUrl ? `${apiUrl}/api/hall-of-fame` : `${dbUrl}/vitcc/owasp/hall_of_fame.json`;
-  const urlForLegacy = apiUrl ? `${apiUrl}/api/legacy` : `${dbUrl}/vitcc/owasp/legacy.json`;
-  const urlForUsers = apiUrl ? `${apiUrl}/api/users` : `${dbUrl}/vitcc/owasp/admin_users.json`;
-  const urlForLeaderboard = apiUrl ? `${apiUrl}/api/leaderboard` : `${dbUrl}/vitcc/owasp.json`;
+  const urlForTemplates = apiUrl ? `${apiUrl}/templates` : `${dbUrl}/vitcc/owasp/templates.json`;
+  const urlForCerts = apiUrl ? `${apiUrl}/certificates` : `${dbUrl}/vitcc/owasp/certificates.json`;
+  const urlForProjects = apiUrl ? `${apiUrl}/projects` : `${dbUrl}/vitcc/owasp/projects.json`;
+  const urlForHof = apiUrl ? `${apiUrl}/hall-of-fame` : `${dbUrl}/vitcc/owasp/hall_of_fame.json`;
+  const urlForLegacy = apiUrl ? `${apiUrl}/legacy` : `${dbUrl}/vitcc/owasp/legacy.json`;
+  const urlForLeaderboard = apiUrl ? `${apiUrl}/leaderboard` : `${dbUrl}/vitcc/owasp.json`;
 
   try {
     // 1. Sync Certificate Templates
@@ -223,15 +222,6 @@ export async function syncFromFirebase() {
       const legacy = await legacyRes.json();
       if (legacy) {
         localStorage.setItem("cyscom_legacy", JSON.stringify(legacy));
-      }
-    }
-
-    // 6. Sync Admin Users
-    const usersRes = await fetch(urlForUsers);
-    if (usersRes.ok) {
-      const users = await usersRes.json();
-      if (users && Array.isArray(users)) {
-        localStorage.setItem("cyscom_admin_users", JSON.stringify(users));
       }
     }
 

@@ -8,10 +8,7 @@ import HallOfFame from "./pages/HallOfFame";
 import Legacy from "./pages/Legacy";
 import Verify from "./pages/Verify";
 import CertViewer from "./pages/CertViewer";
-import NavBar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Preloader from "./components/Preloader";
-import TargetCursor from "./components/TargetCursor";
+
 import { syncFromFirebase } from "./utils/firebaseSync";
 
 function App() {

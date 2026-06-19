@@ -1,13 +1,11 @@
 import "./index.css";
 import { useState, useRef, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Preloader from "./components/Preloader";
-import NavBar from "./components/Navbar";
-import TargetCursor from "./components/TargetCursor";
+
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
 import PostDetail from "./pages/PostDetail";
-import Footer from "./components/Footer";
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

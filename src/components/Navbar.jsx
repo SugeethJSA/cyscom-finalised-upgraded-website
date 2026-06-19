@@ -48,8 +48,8 @@ const NavBar = () => {
       // Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.remove("floating-nav");
-    } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
+    } else if (currentScrollY > lastScrollY && currentScrollY > window.innerHeight) {
+      // Scrolling down past hero: hide navbar and apply floating-nav
       setIsNavVisible(false);
       navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
@@ -122,10 +122,24 @@ const NavBar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
-          <div className="flex items-center gap-4 md:gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-8 md:w-10 rounded-full" loading="lazy" decoding="async" fetchPriority="low" />
+            <div className="flex items-center gap-4 md:gap-7">
+              <img 
+                src="/img/logo.png" 
+                alt="CYSCOM Logo" 
+                className="w-10 h-10 object-contain cursor-pointer" 
+                onClick={() => {
+                  if (location.pathname !== "/") {
+                    navigate("/");
+                    setTimeout(() => {
+                      window.scrollTo(0, 0);
+                    }, 100);
+                  } else {
+                    window.scrollTo(0, 0);
+                  }
+                }}
+              />
 
-            <div className="hidden md:flex items-center gap-3">
+              <div className="hidden md:flex items-center gap-3">
               <Button
                 id="product-button"
                 title="Recruitments"

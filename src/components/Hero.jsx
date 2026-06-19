@@ -2,20 +2,19 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { TiLocationArrow } from "react-icons/ti";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import Button from "./Button";
 import ParticleBackground from "./ParticleBackground";
+import CyberVectorBackdrop from "./CyberVectorBackdrop";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [isHacked, setIsHacked] = useState(false);
-  const [videoEnded, setVideoEnded] = useState(false);
   const [glitchActive, setGlitchActive] = useState(false);
   const [hackingInProgress, setHackingInProgress] = useState(false);
   const [fullHacked, setFullHacked] = useState(false);
-  const videoRef = useRef(null);
 
   const handleHackClick = () => {
     setIsHacked(true);
@@ -32,9 +31,6 @@ const Hero = () => {
       setFullHacked(true);
     }, 5000);
   };
-
-  // Prevent scrolling while hero is loading (optional, removed for single preloader)
-  // useGSAP(() => { ... }); 
 
   useGSAP(() => {
     gsap.set("#video-frame", {
@@ -118,33 +114,23 @@ const Hero = () => {
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-black"
       >
-        {videoEnded && <ParticleBackground />}
-        
-        <video
-          ref={videoRef}
-          src="/videos/main.webm"
-          preload="auto"
-          autoPlay
-          
-          muted
-          playsInline
-          disableRemotePlayback
-          className="absolute left-0 top-0 size-full object-cover object-center"
-          onEnded={() => setVideoEnded(true)}
-          style={{ display: videoEnded ? 'none' : 'block' }}
-        />
+        {/* Cybersecurity grid overlay */}
+        <div 
+          className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(10, 107, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 107, 255, 0.3) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px',
+            backgroundPosition: 'center center'
+          }}
+        ></div>
+
+        {/* Permanent Cyber Background Elements */}
+        <CyberVectorBackdrop />
+        <ParticleBackground />
 
         <div className="absolute left-0 top-0 z-40 flex size-full flex-col items-center justify-center px-4">
           <div className="flex flex-col items-center justify-center text-center">
             <h1 className="special-font hero-heading relative text-blue-100">
-              {/* <img
-                src="/img/logo.png"
-                alt="CYSCOM Logo"
-                loading="lazy"
-                decoding="async"
-                fetchpriority="low"
-                className="absolute inset-0 size-full object-cover opacity-30"
-              /> */}
               <span className="relative z-10">CYS<b>C</b>OM</span>  
             </h1>
 

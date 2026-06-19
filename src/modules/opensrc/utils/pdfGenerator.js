@@ -67,7 +67,7 @@ export async function downloadVectorPdf({ template, user, certId, signature, log
   }
 
   // Pre-load images to avoid asynchronous delays during PDF build
-  const qrVerifyUrl = `${window.location.origin}/verify?id=${certId}&hash=${signature}`;
+  const qrVerifyUrl = `${window.location.origin}/opensrc/verify?id=${certId}&hash=${signature}`;
   const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrVerifyUrl)}`;
 
   const [logoBase64, qrBase64] = await Promise.all([

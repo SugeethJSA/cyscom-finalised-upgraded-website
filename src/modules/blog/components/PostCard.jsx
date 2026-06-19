@@ -24,7 +24,7 @@ const PostCard = ({ post }) => {
   const fallbackImage = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdVW3RAmEz5mbBdQfUbYzTBfI4775Jcm9gVRFs0VkLV-s7E6pekpoEaJHNfJwjrLP_a2PzcoiH2QDOE3XnMiOzUrM99muxZ2wL06UdARc1pFxVImaA_GhmYRMCfGoaucMFxxDnRXtc0NItEpRh56XqVY4XgHA4PfX8Sbz20FRa2hLGQZRywin8uVvx08M9/w1200-h630-p-k-no-nu/image.png";
 
   return (
-    <Link to={`/post/${id}`} className="group block h-full">
+    <Link to={`/blog/post/${id}`} className="group block h-full">
       <div className="cyber-card flex flex-col h-full rounded-lg overflow-hidden border border-blue-900/30 hover:border-blue-400/50 bg-[#020205] transition-all duration-300">
         
         {/* Thumbnail Image */}

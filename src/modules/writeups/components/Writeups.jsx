@@ -527,7 +527,7 @@ const Writeups = () => {
   }, []);
 
   useEffect(() => {
-    if (location.pathname === '/categories') {
+    if (location.pathname.endsWith('/categories')) {
       setCurrentView('categories');
     } else {
       setCurrentView('events');

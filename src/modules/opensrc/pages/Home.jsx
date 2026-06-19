@@ -75,7 +75,11 @@ const Home = () => {
   const [projectsList] = useState(() => {
     try {
       const cached = localStorage.getItem("cyscom_projects");
-      return cached ? JSON.parse(cached) : DEFAULT_PROJECTS;
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        return Array.isArray(parsed) ? parsed : Object.values(parsed);
+      }
+      return DEFAULT_PROJECTS;
     } catch {
       return DEFAULT_PROJECTS;
     }
@@ -211,7 +215,7 @@ const Home = () => {
 
               {/* Tech Tags */}
               <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((tag, idx) => (
+                {(project.tech || []).map((tag, idx) => (
                   <span
                     key={idx}
                     className="px-2.5 py-0.5 rounded-full border border-blue-500/20 bg-blue-950/30 text-[10px] font-mono text-blue-300"

@@ -224,7 +224,7 @@ const Verify = () => {
   const certId = searchParams.get("id");
   const urlHash = searchParams.get("hash");
 
-  const [verificationResult, setVerificationResult] = useState({ state: "loading", data: null, sig: "" });
+  const [verificationResult, setVerificationResult] = useState({ state: "verifying", data: null, sig: "" });
 
   useEffect(() => {
     if (!certId || !urlHash) {
@@ -234,15 +234,25 @@ const Verify = () => {
 
     const verifyCert = async () => {
       try {
-        const res = await apiRequest(`/api/certificates?cert_id=${certId}`);
-        const certs = res.certificates;
-        if (!certs || certs.length === 0) {
+        const db = await apiRequest(`/api/certificates`);
+        
+        let cert = null;
+        let user = null;
+        
+        // Search through the API returned mapping
+        for (const [userId, userRecord] of Object.entries(db)) {
+          const match = userRecord.details.find(d => d.id.toUpperCase() === certId.toUpperCase());
+          if (match) {
+            cert = match;
+            user = { name: userRecord.name };
+            break;
+          }
+        }
+
+        if (!cert) {
           setVerificationResult({ state: "invalid", data: null, sig: "" });
           return;
         }
-
-        const cert = certs[0];
-        const user = { name: cert.user_name }; // from API join
         
         // Use existing template mapping or fallback to metadata
         const template = getTemplateForCert(cert.id) || {
@@ -285,7 +295,7 @@ const Verify = () => {
     // Asynchronously load real QR code
     const qrImage = new Image();
     qrImage.crossOrigin = "anonymous";
-    const verifyUrl = `${window.location.origin}/verify?id=${cert.id}&hash=${sig}`;
+    const verifyUrl = `${window.location.origin}/opensrc/verify?id=${cert.id}&hash=${sig}`;
     qrImage.onload = () => {
       const ctx = canvas.getContext("2d");
       if (ctx) {
@@ -316,7 +326,7 @@ const Verify = () => {
   };
 
   const handleOpenViewer = () => {
-    window.open(`/cert-viewer?id=${certId}&hash=${urlHash}`, "_blank");
+    window.open(`/opensrc/cert-viewer?id=${certId}&hash=${urlHash}`, "_blank");
   };
 
   return (
@@ -446,7 +456,7 @@ const Verify = () => {
               certId={data.cert.id}
               signature={sig}
               qrUrl={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
-                `${window.location.origin}/verify?id=${data.cert.id}&hash=${sig}`
+                `${window.location.origin}/opensrc/verify?id=${data.cert.id}&hash=${sig}`
               )}`}
             />
 

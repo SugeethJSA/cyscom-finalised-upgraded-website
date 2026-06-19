@@ -1,10 +1,12 @@
 import gsap from "gsap";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import AnimatedTitle from "./AnimatedTitle";
 
 const FloatingImage = () => {
   const frameRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -61,11 +63,15 @@ const FloatingImage = () => {
           <div className="story-img-container">
             <div className="story-img-mask">
               <div
-                className="story-img-content"
+                className="story-img-content cursor-pointer"
                 onMouseLeave={handleMouseLeave}
                 onMouseUp={handleMouseLeave}
                 onMouseEnter={handleMouseLeave}
                 onMouseMove={handleMouseMove}
+                onClick={() => {
+                  navigate("/writeups");
+                  window.scrollTo(0, 0);
+                }}
               >
                 <img
                   ref={frameRef}

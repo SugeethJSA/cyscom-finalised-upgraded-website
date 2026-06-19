@@ -11,7 +11,8 @@ const HallOfFame = () => {
     const fetchHof = async () => {
       try {
         const res = await apiRequest("/api/hall-of-fame?status=approved");
-        setSubmissions(res.hall_of_fame || []);
+        const data = res.hall_of_fame || res;
+        setSubmissions(Array.isArray(data) ? data : Object.values(data));
       } catch (err) {
         console.error(err);
       } finally {

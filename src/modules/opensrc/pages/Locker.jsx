@@ -241,7 +241,7 @@ const Locker = () => {
         // Asynchronously load real QR code
         const qrImage = new Image();
         qrImage.crossOrigin = "anonymous";
-        const verifyUrl = `${window.location.origin}/verify?id=${cert.id}&hash=${signature}`;
+        const verifyUrl = `${window.location.origin}/opensrc/verify?id=${cert.id}&hash=${signature}`;
         qrImage.onload = () => {
           const ctx = canvas.getContext("2d");
           if (ctx) {
@@ -311,7 +311,7 @@ const Locker = () => {
   const handleOpenInNewPage = (certId, name, certType) => {
     const template = getTemplateForCert(certId);
     const signature = generateSignature(certId, name, template.eventTitle, certType, template.date);
-    window.open(`/cert-viewer?id=${certId}&hash=${signature}`, "_blank");
+    window.open(`/opensrc/cert-viewer?id=${certId}&hash=${signature}`, "_blank");
   };
 
   return (
@@ -412,7 +412,7 @@ const Locker = () => {
                           certId={cert.id}
                           signature={signature}
                           qrUrl={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
-                            `${window.location.origin}/verify?id=${cert.id}&hash=${signature}`
+                            `${window.location.origin}/opensrc/verify?id=${cert.id}&hash=${signature}`
                           )}`}
                         />
                         
