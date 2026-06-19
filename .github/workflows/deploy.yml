@@ -41,7 +41,7 @@ jobs:
           # Inject the variables configured in GitHub Repository Settings -> Secrets/Variables
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
           VITE_FIREBASE_DB_URL: ${{ secrets.VITE_FIREBASE_DB_URL }}
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || secrets.VITE_BASE_PATH || '/cyscom-finalised-upgraded-website/' }}
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || secrets.VITE_BASE_PATH || '/' }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
