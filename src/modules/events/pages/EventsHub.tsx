@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { globalApi } from "../api";
-import { Calendar, ShieldAlert, Plus, ShieldCheck, Cpu, User } from "lucide-react";
+import { Calendar, ShieldAlert, Plus, ShieldCheck, Cpu, User, BarChart } from "lucide-react";
+import LiveHeatmap from "../components/LiveHeatmap";
 
 export interface EventData {
   id: string;
@@ -61,6 +62,14 @@ export function EventsHub() {
         <p className="text-zinc-400 text-sm md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
           Manage ticketing, live dashboards, category configurations, scan checkpoints, and email dispatches across multiple CySCOM events inside a single unified system.
         </p>
+      </section>
+
+      {/* Analytics Dashboard */}
+      <section className="relative z-10 max-w-6xl mx-auto mb-16">
+        <h3 className="text-xs font-bold tracking-widest text-zinc-500 uppercase mb-4 flex items-center gap-2">
+          <BarChart size={14} /> Global Analytics Overview
+        </h3>
+        <LiveHeatmap />
       </section>
 
       {/* Events List */}

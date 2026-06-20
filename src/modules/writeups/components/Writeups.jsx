@@ -534,11 +534,14 @@ const Writeups = () => {
   }, []);
 
   useEffect(() => {
-    if (location.pathname.endsWith('/categories')) {
-      setCurrentView('categories');
-    } else {
-      setCurrentView('events');
-    }
+    const timer = setTimeout(() => {
+      if (location.pathname.endsWith('/categories')) {
+        setCurrentView('categories');
+      } else {
+        setCurrentView('events');
+      }
+    }, 0);
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -579,12 +582,30 @@ const Writeups = () => {
 
   useEffect(() => {
     if (selectedEvent) {
-      const cats = {};
-      selectedEvent.challenges.forEach(ch => { cats[ch.categories[0] || 'general'] = true; });
-      setExpandedCategories(cats);
+      const timer = setTimeout(() => {
+        const cats = {};
+        selectedEvent.challenges.forEach(ch => { cats[ch.categories[0] || 'general'] = true; });
+        setExpandedCategories(cats);
+      }, 0);
+      return () => clearTimeout(timer);
     }
   }, [selectedEvent]);
 
+   function parseHeadings(md) {
+    if (!md) return [];
+    return md.split(/\r?\n/).reduce((acc, line) => {
+      if (line.startsWith('## ') || line.startsWith('### ')) {
+        const isH2 = line.startsWith('## ');
+        const raw = isH2 ? line.slice(3) : line.slice(4);
+        const clean = raw.replace(/\{:.*?\}/g,'').replace(/\[(.*?)\]\(.*?\)/g,'$1').replace(/\*\*(.*?)\*\*/g,'$1').replace(/`(.*?)`/g,'$1').trim();
+        const id = clean.toLowerCase().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-');
+        acc.push({ text: clean, id, level: isH2 ? 2 : 3 });
+      }
+      return acc;
+    }, []);
+  }
+
+  // Load challenges when event changes
   useEffect(() => {
     (async () => {
       setShowFlag(false);
@@ -655,20 +676,6 @@ const Writeups = () => {
     }, 120);
     return () => clearTimeout(timer);
   }, [markdownContent, loadingContent]);
-
-  const parseHeadings = (md) => {
-    if (!md) return [];
-    return md.split(/\r?\n/).reduce((acc, line) => {
-      if (line.startsWith('## ') || line.startsWith('### ')) {
-        const isH2 = line.startsWith('## ');
-        const raw = isH2 ? line.slice(3) : line.slice(4);
-        const clean = raw.replace(/\{:.*?\}/g,'').replace(/\[(.*?)\]\(.*?\)/g,'$1').replace(/\*\*(.*?)\*\*/g,'$1').replace(/`(.*?)`/g,'$1').trim();
-        const id = clean.toLowerCase().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-');
-        acc.push({ text: clean, id, level: isH2 ? 2 : 3 });
-      }
-      return acc;
-    }, []);
-  };
 
   const handleEventChange = (ev) => { setSelectedEvent(ev); setSelectedChallenge(null); setSearchQuery(''); setSidebarOpen(false); };
   const toggleCategory = (cat) => setExpandedCategories(p => ({ ...p, [cat]: !p[cat] }));
@@ -885,7 +892,7 @@ const Writeups = () => {
                     return (
                       <div className="max-w-4xl mx-auto w-full py-4">
                         <div className="mb-10">
-                          <p className="text-[10px] text-white/15 font-bold uppercase tracking-[0.4em] mb-2">// Classification</p>
+                          <p className="text-[10px] text-white/15 font-bold uppercase tracking-[0.4em] mb-2">{"// Classification"}</p>
                           <h2 className="text-2xl md:text-3xl font-extrabold mb-2 tracking-tight text-white">Categories</h2>
                           <p className="text-white/25 text-sm max-w-md leading-relaxed">Browse all CTF challenges aggregated by security domains.</p>
                         </div>
@@ -997,7 +1004,7 @@ const Writeups = () => {
                 {currentView === 'events' && !selectedEvent && (
                   <div className="max-w-3xl mx-auto w-full py-4">
                     <div className="mb-10">
-                      <p className="text-[10px] text-white/15 font-bold uppercase tracking-[0.4em] mb-2">// Archives</p>
+                      <p className="text-[10px] text-white/15 font-bold uppercase tracking-[0.4em] mb-2">{"// Archives"}</p>
                       <h2 className="text-2xl md:text-3xl font-extrabold mb-2 tracking-tight text-white">CTF Archives</h2>
                       <p className="text-white/25 text-sm max-w-md leading-relaxed">Select an event to explore writeups, solutions, and flag tokens.</p>
                     </div>
@@ -1119,7 +1126,7 @@ const Writeups = () => {
 
                         {/* Challenges Table */}
                         <div className="mt-8 flex-grow">
-                          <h2 className="text-[10px] text-white/20 font-bold uppercase tracking-[0.2em] mb-4">// Challenges List</h2>
+                          <h2 className="text-[10px] text-white/20 font-bold uppercase tracking-[0.2em] mb-4">{"// Challenges List"}</h2>
                           <div className="overflow-x-auto border border-white/[0.04] rounded-xl bg-white/[0.005]">
                             <table className="w-full border-collapse text-left text-[11px] md:text-xs text-white/40">
                               <thead>
