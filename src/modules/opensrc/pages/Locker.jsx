@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaSearch, FaEye, FaExclamationTriangle, FaFilePdf, FaImage } from "react-icons/fa";
+import { FaSearch, FaEye, FaExclamationTriangle, FaFilePdf, FaImage, FaShareAlt, FaLinkedin, FaTwitter, FaTimes } from "react-icons/fa";
 import { generateSignature } from "../utils/crypto";
 import { getTemplateForCert } from "../utils/certificateTemplates";
 import { findUserByQuery } from "../utils/certificateData";
 import CertificateHtml from "../components/CertificateHtml";
 import { downloadVectorPdf } from "../utils/pdfGenerator";
+import ThreeDBadge from "../components/ThreeDBadge";
 
 // Canvas drawing helper function
 const drawCertificateOnCanvas = (canvas, template, user, certId, signature) => {
@@ -226,6 +227,9 @@ const Locker = () => {
   // Refs for Canvas drawing (used for hidden PNG downloads)
   const canvasRefs = useRef({});
 
+  // Share Modal State
+  const [shareCert, setShareCert] = useState(null);
+
   // Redraw Search Certificates on result load
   useEffect(() => {
     if (!searchResult) return;
@@ -380,17 +384,25 @@ const Locker = () => {
             </div>
           ) : (
             <div className="flex flex-col items-center">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="text-left font-mono">
+              <div className="flex flex-col md:flex-row items-center gap-4 mb-8 w-full justify-between border border-blue-900/30 bg-blue-950/10 p-6 rounded-lg">
+                <div className="text-left font-mono flex-1">
                   <span className="text-[10px] text-blue-400 uppercase tracking-widest font-semibold block">Registry Owner</span>
-                  <span className="text-lg font-bold text-white uppercase">{searchResult.name}</span>
+                  <span className="text-lg md:text-2xl font-bold text-white uppercase">{searchResult.name}</span>
                 </div>
-                <button
-                  onClick={handleReset}
-                  className="px-4 py-2 border border-blue-500/20 bg-blue-950/20 hover:bg-blue-900/20 rounded font-mono text-[10px] uppercase text-blue-400 hover:text-white transition-colors cursor-target"
-                >
-                  Clear Query
-                </button>
+                
+                <div className="flex gap-4">
+                  <ThreeDBadge title="Founding Member" color="#fbbf24" />
+                  {searchResult.details.length >= 3 && <ThreeDBadge title="Top Contributor" color="#10b981" />}
+                </div>
+
+                <div className="flex-1 flex justify-end">
+                  <button
+                    onClick={handleReset}
+                    className="px-4 py-2 border border-blue-500/20 bg-blue-950/20 hover:bg-blue-900/20 rounded font-mono text-[10px] uppercase text-blue-400 hover:text-white transition-colors cursor-target h-fit"
+                  >
+                    Clear Query
+                  </button>
+                </div>
               </div>
 
               {/* Grid Layout of User's Certificates */}
@@ -440,7 +452,7 @@ const Locker = () => {
                       </div>
 
                       {/* Downloads Actions Bar */}
-                      <div className="w-full grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-blue-900/10">
+                      <div className="w-full grid grid-cols-4 gap-2 mt-4 pt-4 border-t border-blue-900/10">
                         <button
                           onClick={() => handleOpenInNewPage(cert.id, searchResult.name, cert.type)}
                           className="py-2.5 rounded border border-blue-500/20 bg-blue-950/20 hover:bg-blue-900/20 text-white font-mono text-[9px] uppercase tracking-wider transition-all flex items-center justify-center gap-1 cursor-target"
@@ -459,6 +471,12 @@ const Locker = () => {
                         >
                           <FaImage /> Get PNG
                         </button>
+                        <button
+                          onClick={() => setShareCert({ cert, name: searchResult.name, template, signature })}
+                          className="py-2.5 rounded border border-green-500/20 bg-green-950/20 hover:bg-green-900/20 text-green-400 hover:text-white font-mono text-[9px] uppercase tracking-wider transition-all flex items-center justify-center gap-1 cursor-target"
+                        >
+                          <FaShareAlt /> Share
+                        </button>
                       </div>
                     </div>
                   );
@@ -467,6 +485,63 @@ const Locker = () => {
             </div>
           )}
         </motion.div>
+      </AnimatePresence>
+
+      {/* Share Modal */}
+      <AnimatePresence>
+        {shareCert && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.95 }}
+              className="w-full max-w-lg bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl"
+            >
+              <button 
+                onClick={() => setShareCert(null)}
+                className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors"
+              >
+                <FaTimes />
+              </button>
+              
+              <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                <FaShareAlt className="text-blue-400" /> Share Achievement
+              </h3>
+              <p className="text-xs text-zinc-400 font-mono mb-6">
+                Your certificate will automatically generate a dynamic OpenGraph image when shared on social platforms.
+              </p>
+
+              <div className="w-full rounded overflow-hidden shadow-lg border border-zinc-800 mb-6 aspect-[1.414/1] pointer-events-none opacity-80">
+                <CertificateHtml
+                  template={shareCert.template}
+                  user={{ name: shareCert.name, role: shareCert.cert.type }}
+                  certId={shareCert.cert.id}
+                  signature={shareCert.signature}
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <button 
+                  onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin + '/opensrc/cert-viewer?id=' + shareCert.cert.id)}`, '_blank')}
+                  className="flex items-center justify-center gap-2 py-3 bg-[#0A66C2] hover:bg-[#004182] text-white rounded font-bold text-sm transition-colors cursor-target"
+                >
+                  <FaLinkedin /> LinkedIn
+                </button>
+                <button 
+                  onClick={() => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.origin + '/opensrc/cert-viewer?id=' + shareCert.cert.id)}&text=I just earned my ${shareCert.cert.type} certificate at CYSCOM VIT!`, '_blank')}
+                  className="flex items-center justify-center gap-2 py-3 bg-black border border-zinc-700 hover:bg-zinc-900 text-white rounded font-bold text-sm transition-colors cursor-target"
+                >
+                  <FaTwitter /> Twitter / X
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </div>
   );

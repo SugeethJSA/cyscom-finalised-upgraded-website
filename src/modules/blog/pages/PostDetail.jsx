@@ -44,6 +44,18 @@ const PostDetail = ({ posts = [] }) => {
       .slice(0, 3);
   }, [posts, post]);
 
+  const processedContent = useMemo(() => {
+    if (!post?.content) return '';
+    return post.content.replace(/<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)>/gi, (match, prefix, src, suffix) => {
+      if (src.startsWith('http') || src.startsWith('data:')) return match;
+      let lookup = src.startsWith('/') ? src.slice(1) : src;
+      if (imageMap[lookup]) {
+        return `<img ${prefix}src="/${imageMap[lookup]}"${suffix}>`;
+      }
+      return match;
+    });
+  }, [post]);
+
   if (!post) {
     return (
       <div className="min-h-[70vh] flex flex-col justify-center items-center text-center p-4">
@@ -78,18 +90,6 @@ const PostDetail = ({ posts = [] }) => {
   };
 
   const readingTime = calculateReadingTime(post.content);
-
-  const processedContent = useMemo(() => {
-    if (!post?.content) return '';
-    return post.content.replace(/<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)>/gi, (match, prefix, src, suffix) => {
-      if (src.startsWith('http') || src.startsWith('data:')) return match;
-      let lookup = src.startsWith('/') ? src.slice(1) : src;
-      if (imageMap[lookup]) {
-        return `<img ${prefix}src="/${imageMap[lookup]}"${suffix}>`;
-      }
-      return match;
-    });
-  }, [post]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);

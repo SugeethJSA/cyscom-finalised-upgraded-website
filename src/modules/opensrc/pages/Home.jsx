@@ -63,6 +63,13 @@ const portals = [
     color: "border-pink-500/20 hover:border-pink-500/50 hover:shadow-pink-500/10"
   },
   {
+    title: "Project Showcase",
+    desc: "Rate and discover projects and writeups built by the community during our events.",
+    link: "showcase",
+    icon: <FaStar className="text-3xl text-purple-400" />,
+    color: "border-purple-500/20 hover:border-purple-500/50 hover:shadow-purple-500/10"
+  },
+  {
     title: "Legacy Members",
     desc: "Discover past committee members, coordinators, and developers of Cyscom VIT.",
     link: "legacy",

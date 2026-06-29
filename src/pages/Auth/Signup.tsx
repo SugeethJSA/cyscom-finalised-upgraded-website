@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { globalApi } from "../../modules/events/api";
-import { Mail, KeyRound, User, ArrowLeft } from "lucide-react";
+import { Mail, KeyRound, User, ArrowLeft, Eye, EyeOff } from "lucide-react";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -10,10 +10,40 @@ export function Signup() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const validatePassword = (pass: string) => {
+    if (pass.length < 8) return "Password must be at least 8 characters long.";
+    if (!/[A-Z]/.test(pass)) return "Password must contain at least one uppercase letter.";
+    if (!/[a-z]/.test(pass)) return "Password must contain at least one lowercase letter.";
+    if (!/[0-9]/.test(pass)) return "Password must contain at least one number.";
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(pass)) return "Password must contain at least one special character.";
+    return null;
+  };
+
+  const validateEmail = (mail: string) => {
+    if (!/^[a-zA-Z0-9.]+@vitstudent\.ac\.in$/.test(mail)) {
+      return "Only @vitstudent.ac.in emails are allowed.";
+    }
+    return null;
+  };
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
+
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setError(emailError);
+      return;
+    }
+
+    const passError = validatePassword(password);
+    if (passError) {
+      setError(passError);
+      return;
+    }
+
     setLoading(true);
     try {
       const res = await globalApi<{ token: string, user: any }>("/auth/participant/register", {
@@ -92,13 +122,24 @@ export function Signup() {
             <div className="relative">
               <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500"><KeyRound size={16} /></span>
               <input 
-                type="password" 
+                type={showPassword ? "text" : "password"}
                 required 
-                className="pl-11 pr-4 py-3 bg-zinc-900 border-zinc-800 w-full text-white outline-none focus:border-blue-500/50 rounded-xl transition-colors"
+                className="pl-11 pr-12 py-3 bg-zinc-900 border-zinc-800 w-full text-white outline-none focus:border-blue-500/50 rounded-xl transition-colors"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                placeholder="••••••••"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-white transition-colors cursor-target flex items-center justify-center"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
             </div>
+            <span className="text-[10px] text-zinc-500/70 mt-1 normal-case tracking-normal font-medium">
+              Must be 8+ chars with uppercase, lowercase, number, and special char.
+            </span>
           </label>
 
           <button 

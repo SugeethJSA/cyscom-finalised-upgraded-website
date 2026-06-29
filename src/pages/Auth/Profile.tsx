@@ -16,12 +16,27 @@ export function Profile() {
       if (!token) return navigate("/login");
 
       try {
-        const res = await globalApi<any>("/auth/participant/me", {
-          headers: { Authorization: `Bearer ${token}` }
-        });
-        setUser(res.user);
-        setRegistrations(res.registrations);
-        setRecruitments(res.recruitments || []);
+        if (token === "mock_jwt_token") {
+          await new Promise(resolve => setTimeout(resolve, 800));
+          const mockUser = JSON.parse(localStorage.getItem("participant_user") || '{"name": "Hacker", "email": "hacker@vitstudent.ac.in", "id": "PAR-1337"}');
+          if (!mockUser.id) mockUser.id = "PAR-1337";
+          
+          setUser(mockUser);
+          setRegistrations([
+            { id: "reg_1", event_name: "Cyber Security Bootcamp", metadata: { verificationStatus: "verified" } },
+            { id: "reg_2", event_name: "Web3 Hackathon", metadata: { verificationStatus: "pending" } }
+          ]);
+          setRecruitments([
+            { id: "rec_1", department_primary: "Technical", department_secondary: "Design", status: "Review" }
+          ]);
+        } else {
+          const res = await globalApi<any>("/auth/participant/me", {
+            headers: { Authorization: `Bearer ${token}` }
+          });
+          setUser(res.user);
+          setRegistrations(res.registrations);
+          setRecruitments(res.recruitments || []);
+        }
       } catch (err) {
         localStorage.removeItem("participant_token");
         navigate("/login");

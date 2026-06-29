@@ -8,6 +8,7 @@ import HallOfFame from "./pages/HallOfFame";
 import Legacy from "./pages/Legacy";
 import Verify from "./pages/Verify";
 import CertViewer from "./pages/CertViewer";
+import ProjectShowcase from "./pages/ProjectShowcase";
 
 import { syncFromFirebase } from "./utils/firebaseSync";
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="legacy" element={<Legacy />} />
           <Route path="verify" element={<Verify />} />
           <Route path="cert-viewer" element={<CertViewer />} />
+          <Route path="showcase" element={<ProjectShowcase />} />
         </Routes>
       </div>
     </main>
