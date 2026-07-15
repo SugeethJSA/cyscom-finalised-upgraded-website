@@ -4,7 +4,7 @@ import { FaCheckCircle, FaExclamationTriangle, FaShieldAlt, FaExternalLinkAlt, F
 import { generateSignature } from "../utils/crypto";
 import { getTemplateForCert } from "../utils/certificateTemplates";
 import { apiRequest } from "../utils/api";
-import Button from "../components/Button";
+import { Button } from "@SugeethJSA/cyscomui";
 import CertificateHtml from "../components/CertificateHtml";
 import { downloadVectorPdf } from "../utils/pdfGenerator";
 

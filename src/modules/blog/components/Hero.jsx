@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Button from "./Button";
+import { Button } from "@SugeethJSA/cyscomui";
 import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = ({ onExplore }) => {

@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
+import { TiLocationArrow } from "react-icons/ti";
 import About from "./components/About";
 import Hero from "./components/Hero";
-import NavBar from "./components/Navbar";
 import Features from "./components/Features";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
@@ -11,8 +11,7 @@ import Sponsors from "./components/PastEvents";
 import ScrollToTop from "./components/ScrollToTop";
 import { StickyScrollRevealDemo } from "./components/sticky_scroll";
 import OurTeam from "./components/OurTeam";
-import Preloader from "./components/Preloader";
-import TargetCursor from "./ui/target";
+import { Navbar as NavBar, Preloader, TargetCursor } from "@SugeethJSA/cyscomui";
 import { Login } from "./pages/Auth/Login";
 import { Signup } from "./pages/Auth/Signup";
 import { Profile } from "./pages/Auth/Profile";
@@ -44,6 +43,63 @@ function MainSite() {
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [criticalAssetsLoaded, setCriticalAssetsLoaded] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigate = (itemLabel) => {
+    if (itemLabel === "Our Team") {
+      navigate("/our-team");
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (itemLabel === "Events") {
+      navigate("/events");
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (itemLabel === "Open Source") {
+      navigate("/opensrc");
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (itemLabel === "Blogs") {
+      navigate("/blog");
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (itemLabel === "Writeups") {
+      navigate("/writeups");
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const targetId = itemLabel === "Home" ? "hero" : itemLabel.toLowerCase().replace(" ", "-");
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    } else {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const navItems = ["Home", "About", "Events", "Open Source", "Our Team", "Blogs", "Writeups"].map(label => ({
+    label,
+    url: `#${label === "Home" ? "hero" : label.toLowerCase().replace(" ", "-")}`,
+    onClick: () => handleNavigate(label)
+  }));
+
+  const actionButtons = [
+    {
+      id: "product-button",
+      label: "Recruitments",
+      icon: <TiLocationArrow />,
+      containerClass: "bg-blue-50 flex items-center justify-center gap-1",
+      onClick: () => navigate("/recruitments")
+    }
+  ];
 
   // Critical assets needed for initial render (Hero + Navbar)
   const criticalAssets = [
@@ -101,7 +157,13 @@ function App() {
       ) : (
         <>
           <TargetCursor targetSelector=".cursor-target, a, button, .nav-hover-btn" />
-          <NavBar />
+          <NavBar 
+            logoSrc="/img/logo.png"
+            navItems={navItems}
+            actionButtons={actionButtons}
+            audioSrc="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+            onLogoClick={() => handleNavigate("Home")}
+          />
           <Routes>
             <Route path="/" element={<MainSite />} />
             <Route path="/our-team" element={<OurTeam />} />

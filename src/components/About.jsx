@@ -1,7 +1,4 @@
-import AnimatedTitle from "./AnimatedTitle";
-import { PhotoCarousel } from "../ui/photo-carousel";
-import EasedImage from "./EasedImage";
-
+import { AnimatedTitle, PhotoCarousel, EasedImage } from "@SugeethJSA/cyscomui";
 const carouselContent = [
   {
     title: "Team Moments",
