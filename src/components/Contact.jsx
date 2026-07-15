@@ -1,4 +1,4 @@
-import { AnimatedTitle, Button } from "@SugeethJSA/cyscomui";
+import { AnimatedTitle, Button } from "@cyscomvit/cyscomui";
 
 const ImageClipBox = ({ src, clipClass }) => (
   <div className={clipClass}>

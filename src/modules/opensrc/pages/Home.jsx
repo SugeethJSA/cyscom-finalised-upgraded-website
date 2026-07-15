@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaGithub, FaStar, FaCodeBranch, FaExternalLinkAlt, FaAward, FaTrophy, FaHistory, FaFolderOpen } from "react-icons/fa";
 import { TiLocationArrow } from "react-icons/ti";
-import { Button } from "@SugeethJSA/cyscomui";
+import { Button } from "@cyscomvit/cyscomui";
 
 const DEFAULT_PROJECTS = [
   {

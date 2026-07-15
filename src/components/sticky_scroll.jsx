@@ -1,5 +1,5 @@
 "use client";
-import { PhotoCarousel, EasedImage } from "@SugeethJSA/cyscomui";
+import { PhotoCarousel, EasedImage } from "@cyscomvit/cyscomui";
 
 const content = [
   {

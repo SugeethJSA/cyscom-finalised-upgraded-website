@@ -11,7 +11,7 @@ import Sponsors from "./components/PastEvents";
 import ScrollToTop from "./components/ScrollToTop";
 import { StickyScrollRevealDemo } from "./components/sticky_scroll";
 import OurTeam from "./components/OurTeam";
-import { Navbar as NavBar, Preloader, TargetCursor } from "@SugeethJSA/cyscomui";
+import { Navbar as NavBar, Preloader, TargetCursor } from "@cyscomvit/cyscomui";
 import { Login } from "./pages/Auth/Login";
 import { Signup } from "./pages/Auth/Signup";
 import { Profile } from "./pages/Auth/Profile";

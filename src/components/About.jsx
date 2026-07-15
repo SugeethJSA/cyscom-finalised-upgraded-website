@@ -1,4 +1,4 @@
-import { AnimatedTitle, PhotoCarousel, EasedImage } from "@SugeethJSA/cyscomui";
+import { AnimatedTitle, PhotoCarousel, EasedImage } from "@cyscomvit/cyscomui";
 const carouselContent = [
   {
     title: "Team Moments",

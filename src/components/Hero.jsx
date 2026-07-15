@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { TiLocationArrow } from "react-icons/ti";
 import { useState } from "react";
 
-import { Button, ParticleBackground, CyberVectorBackdrop, AnimatedTitle } from "@SugeethJSA/cyscomui";
+import { Button, ParticleBackground, CyberVectorBackdrop, AnimatedTitle } from "@cyscomvit/cyscomui";
 
 gsap.registerPlugin(ScrollTrigger);
 

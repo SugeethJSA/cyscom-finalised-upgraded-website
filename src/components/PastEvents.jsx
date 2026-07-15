@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { AnimatedTitle } from "@SugeethJSA/cyscomui";
+import { AnimatedTitle } from "@cyscomvit/cyscomui";
 
 gsap.registerPlugin(ScrollTrigger);
 

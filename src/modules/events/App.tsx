@@ -1,6 +1,6 @@
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
-import { TargetCursor } from "@SugeethJSA/cyscomui";
+import { TargetCursor } from "@cyscomvit/cyscomui";
 import EventsHub from "./pages/EventsHub";
 import PublicRegister from "./pages/PublicRegister";
 import PublicTransfer from "./pages/PublicTransfer";

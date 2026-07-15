@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { AnimatedTitle, Button } from "@SugeethJSA/cyscomui";
+import { AnimatedTitle, Button } from "@cyscomvit/cyscomui";
 const FloatingImage = () => {
   const frameRef = useRef(null);
   const navigate = useNavigate();

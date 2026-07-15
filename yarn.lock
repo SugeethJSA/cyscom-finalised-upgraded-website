@@ -811,6 +811,16 @@
     "@babel/helper-string-parser" "^7.29.7"
     "@babel/helper-validator-identifier" "^7.29.7"
 
+"@cyscomvit/cyscomui@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/@cyscomvit/cyscomui/-/cyscomui-0.1.0.tgz"
+  integrity sha512-vwJmWvE4h/SfegK2SyRGibhtERtevqKBOnklg7WZ6k5t1YGmH8hFHbB2PRuNAYwtQqLZLoH/lKJdookE+GIbBA==
+  dependencies:
+    "@gsap/react" "^2.1.2"
+    clsx "^2.1.1"
+    react-use "^17.6.1"
+    tailwind-merge "^2.2.1"
+
 "@dimforge/rapier3d-compat@~0.12.0":
   version "0.12.0"
   resolved "https://registry.npmjs.org/@dimforge/rapier3d-compat/-/rapier3d-compat-0.12.0.tgz"
@@ -1116,15 +1126,6 @@
   version "0.3.0"
   resolved "https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz"
   integrity sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==
-
-"@SugeethJSA/cyscomui@file:../cyscomui":
-  version "0.1.0"
-  resolved "file:../cyscomui"
-  dependencies:
-    "@gsap/react" "^2.1.2"
-    clsx "^2.1.1"
-    react-use "^17.6.1"
-    tailwind-merge "^2.2.1"
 
 "@tailwindcss/node@4.3.2":
   version "4.3.2"
@@ -4504,6 +4505,11 @@ tailwind-api-utils@^1.0.3:
     enhanced-resolve "^5.18.1"
     jiti "^2.4.2"
     local-pkg "^1.1.1"
+
+tailwind-merge@^2.2.1:
+  version "2.6.1"
+  resolved "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.1.tgz"
+  integrity sha512-Oo6tHdpZsGpkKG88HJ8RR1rg/RdnEkQEfMoEk2x1XRI3F1AxeU+ijRXpiVUF4UbLfcxxRGw6TbUINKYdWVsQTQ==
 
 tailwind-merge@^3.6.0:
   version "3.6.0"
