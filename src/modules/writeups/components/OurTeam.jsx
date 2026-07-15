@@ -12,7 +12,7 @@ const OurTeam = () => {
       name: 'Sugeeth J S',
       role: 'Founder & Lead Developer',
       bio: 'Passionate about cybersecurity and web development',
-      social: { github: 'https://github.com/sugeethjs', twitter: 'https://twitter.com/sugeethjs', linkedin: 'https://linkedin.com/in/sugeethjs' }
+      social: { github: 'https://github.com/sugeethjsa', twitter: 'https://twitter.com/sugeethjsa', linkedin: 'https://linkedin.com/in/sugeethjs' }
     },
     {
       name: 'Alex Chen',
