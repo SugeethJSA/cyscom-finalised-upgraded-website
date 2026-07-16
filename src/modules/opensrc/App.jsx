@@ -4,8 +4,6 @@ import { useState, useCallback, useEffect } from "react";
 import Home from "./pages/Home";
 import Leaderboard from "./pages/Leaderboard";
 import Locker from "./pages/Locker";
-import HallOfFame from "./pages/HallOfFame";
-import Legacy from "./pages/Legacy";
 import Verify from "./pages/Verify";
 import CertViewer from "./pages/CertViewer";
 import ProjectShowcase from "./pages/ProjectShowcase";
