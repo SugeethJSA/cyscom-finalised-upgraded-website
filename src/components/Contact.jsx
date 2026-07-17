@@ -2,7 +2,7 @@ import { AnimatedTitle, Button } from "@cyscomvit/cyscomui";
 
 const ImageClipBox = ({ src, clipClass }) => (
   <div className={clipClass}>
-    <img src={src} loading="lazy" decoding="async" alt="" />
+        <img src={src} loading="lazy" decoding="async" alt="" className="w-full h-full object-cover" />
   </div>
 );
 
