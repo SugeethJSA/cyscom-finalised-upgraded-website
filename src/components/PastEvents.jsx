@@ -72,6 +72,9 @@ const SponsorCard = ({ name, description, image, website }) => {
               objectFit: "contain",
             }}
             onLoad={() => setImgLoaded(true)}
+            onError={(e) => {
+              setImgLoaded(true);
+            }}
             className="relative z-10 p-4"
           />
 
@@ -142,34 +145,26 @@ const Sponsors = () => {
   }, { scope: sectionRef });
 
   const sponsors = [
-    {
-      name: "Tech Giants",
-      description:
-        "Leading the way in innovation and technology. Industry leaders who have supported our mission to foster a community of developers and creators.",
-      image: "/img/logo.png",
-      website: null,
-    },
-    {
-      name: "Innovation Labs",
-      description:
-        "Pioneering the future of software development. Partnered with us to push the boundaries of what is possible in cybersecurity education.",
-      image: "/img/logo.png",
-      website: null,
-    },
-    {
-      name: "Creative Studios",
-      description:
-        "Empowering designers and artists worldwide. Their collaboration enabled us to bring unique and visually stunning experiences to our events.",
-      image: "/img/logo.png",
-      website: null,
-    },
-    {
-      name: "Global Networks",
-      description:
-        "Connecting people and ideas across the globe. Their support helps us reach a wider, diverse and inclusive cybersecurity community.",
-      image: "/img/logo.png",
-      website: null,
-    },
+    { name: "AECC", description: "", image: "/img/sponsors/aecc.jpg", website: null },
+    { name: "Tezos", description: "", image: "/img/sponsors/tezos.png", website: null },
+    { name: "Polygon", description: "", image: "/img/sponsors/polygon.png", website: null },
+    { name: "Code Asylumns", description: "", image: "/img/sponsors/code-asylumns.jpg", website: null },
+    { name: "IDP", description: "", image: "/img/sponsors/idp.jpg", website: null },
+    { name: "Manya", description: "", image: "/img/sponsors/Manya.jpg", website: null },
+    { name: "Geeks for Geeks", description: "", image: "/img/sponsors/geeksforgeeks.png", website: null },
+    { name: "Tamil Nadu Police", description: "", image: "/img/sponsors/tamil-nadu-police.png", website: null },
+    { name: "Wanderlooms", description: "", image: "/img/logo.png", website: null },
+    { name: "Youth Incorporated", description: "", image: "/img/logo.png", website: null },
+    { name: "Schola", description: "", image: "/img/logo.png", website: null },
+    { name: "Olive Consulting", description: "", image: "/img/logo.png", website: null },
+    { name: "GCCP", description: "", image: "/img/logo.png", website: null },
+    { name: "Devfolio", description: "", image: "/img/logo.png", website: null },
+    { name: "Portis", description: "", image: "/img/logo.png", website: null },
+    { name: "Wolfram Language", description: "", image: "/img/logo.png", website: null },
+    { name: "Give My Certificate", description: "", image: "/img/logo.png", website: null },
+    { name: "Tetra Flip", description: "", image: "/img/logo.png", website: null },
+    { name: "Altered Sec", description: "", image: "/img/logo.png", website: null },
+    { name: "Okta", description: "", image: "/img/logo.png", website: null }
   ];
 
   return (

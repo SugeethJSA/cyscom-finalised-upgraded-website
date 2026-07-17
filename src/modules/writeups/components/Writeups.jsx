@@ -898,12 +898,13 @@ const Writeups = () => {
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                          {Object.entries(groupedCats).map(([catName, list]) => {
+                          {Object.entries(groupedCats).map(([catName, list], index) => {
                             const meta = CATEGORY_META[catName] || defaultCategoryMeta;
+                            const boxClass = `box${(index % 20) + 1}`;
                             return (
-                              <motion.div key={catName} whileHover={{ y: -3, scale: 1.01 }} transition={{ duration: 0.2 }}
+                              <div key={catName}
                                 onClick={() => setSelectedCategory(catName)}
-                                className={`group p-5 rounded-2xl border cursor-pointer bg-gradient-to-br ${meta.color} flex flex-col justify-between h-36 backdrop-blur-md`}>
+                                className={`group p-5 cursor-pointer flex flex-col justify-between h-36 ${boxClass}`}>
                                 <div className="flex items-center justify-between">
                                   <span className="text-3xl filter drop-shadow">{meta.icon}</span>
                                   <span className="text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/8 px-2.5 py-1 rounded-full text-white/60 group-hover:text-white group-hover:bg-white/10 transition-all">
@@ -914,7 +915,7 @@ const Writeups = () => {
                                   <h3 className="text-sm font-bold text-white tracking-wide group-hover:translate-x-0.5 transition-transform">{catName}</h3>
                                   <p className="text-[10px] text-white/40 mt-1 leading-relaxed line-clamp-1">Explore {catName.toLowerCase()} solutions</p>
                                 </div>
-                              </motion.div>
+                              </div>
                             );
                           })}
                         </div>
