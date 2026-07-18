@@ -32,8 +32,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="leaderboard" element={<Leaderboard />} />
           <Route path="locker" element={<Locker />} />
-          <Route path="hall-of-fame" element={<HallOfFame />} />
-          <Route path="legacy" element={<Legacy />} />
           <Route path="verify" element={<Verify />} />
           <Route path="cert-viewer" element={<CertViewer />} />
           <Route path="showcase" element={<ProjectShowcase />} />

@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import About from "./components/About";
 import Hero from "./components/Hero";
@@ -10,18 +10,20 @@ import Footer from "./components/Footer";
 import Sponsors from "./components/PastEvents";
 import ScrollToTop from "./components/ScrollToTop";
 import { StickyScrollRevealDemo } from "./components/sticky_scroll";
-import OurTeam from "./components/OurTeam";
-import { Navbar as NavBar, Preloader, TargetCursor } from "@cyscomvit/cyscomui";
-import { Login } from "./pages/Auth/Login";
-import { Signup } from "./pages/Auth/Signup";
-import { Profile } from "./pages/Auth/Profile";
+import { Navbar as NavBar, Preloader } from "@cyscomvit/cyscomui";
+import TargetCursor from "./components/TargetCursor";
+
+const OurTeam = lazy(() => import("./components/OurTeam"));
+const Login = lazy(() => import("./pages/Auth/Login").then(module => ({ default: module.Login })));
+const Signup = lazy(() => import("./pages/Auth/Signup").then(module => ({ default: module.Signup })));
+const Profile = lazy(() => import("./pages/Auth/Profile").then(module => ({ default: module.Profile })));
 
 // Modules
-import EventsApp from "./modules/events/App";
-import OpenSrcApp from "./modules/opensrc/App";
-import RecruitmentsApp from "./modules/recruitments/App";
-import BlogApp from "./modules/blog/App";
-import WriteupsApp from "./modules/writeups/App";
+const EventsApp = lazy(() => import("./modules/events/App"));
+const OpenSrcApp = lazy(() => import("./modules/opensrc/App"));
+const RecruitmentsApp = lazy(() => import("./modules/recruitments/App"));
+const BlogApp = lazy(() => import("./modules/blog/App"));
+const WriteupsApp = lazy(() => import("./modules/writeups/App"));
 
 function MainSite() {
   return (
@@ -39,6 +41,16 @@ function MainSite() {
     </>
   );
 }
+
+const LoadingFallback = () => (
+  <div className="flex h-screen w-screen items-center justify-center bg-black">
+    <div className="three-body">
+      <div className="three-body__dot"></div>
+      <div className="three-body__dot"></div>
+      <div className="three-body__dot"></div>
+    </div>
+  </div>
+);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -103,7 +115,6 @@ function App() {
 
   // Critical assets needed for initial render (Hero + Navbar)
   const criticalAssets = [
-    { type: 'video', src: `${import.meta.env.BASE_URL}videos/main.webm` },
     { type: 'image', src: `${import.meta.env.BASE_URL}img/hacked.webp` },
     { type: 'image', src: `${import.meta.env.BASE_URL}img/logo.png` },
   ];
@@ -164,20 +175,22 @@ function App() {
             audioSrc="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
             onLogoClick={() => handleNavigate("Home")}
           />
-          <Routes>
-            <Route path="/" element={<MainSite />} />
-            <Route path="/our-team" element={<OurTeam />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/profile" element={<Profile />} />
-            
-            {/* Module Routes */}
-            <Route path="/events/*" element={<EventsApp />} />
-            <Route path="/opensrc/*" element={<OpenSrcApp />} />
-            <Route path="/recruitments/*" element={<RecruitmentsApp />} />
-            <Route path="/blog/*" element={<BlogApp />} />
-            <Route path="/writeups/*" element={<WriteupsApp />} />
-          </Routes>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<MainSite />} />
+              <Route path="/our-team" element={<OurTeam />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/profile" element={<Profile />} />
+              
+              {/* Module Routes */}
+              <Route path="/events/*" element={<EventsApp />} />
+              <Route path="/opensrc/*" element={<OpenSrcApp />} />
+              <Route path="/recruitments/*" element={<RecruitmentsApp />} />
+              <Route path="/blog/*" element={<BlogApp />} />
+              <Route path="/writeups/*" element={<WriteupsApp />} />
+            </Routes>
+          </Suspense>
           <ScrollToTop />
         </>
       )}

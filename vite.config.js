@@ -53,4 +53,29 @@ export default defineConfig({
   ],
   // eslint-disable-next-line no-undef
   base: process.env.VITE_BASE_PATH || '/',
+  build: {
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+              name: 'react-vendor',
+              test: /node_modules[\\/](?:react|react-dom|react-router-dom)/,
+              priority: 40,
+            },
+            {
+              name: 'gsap-vendor',
+              test: /node_modules[\\/](?:gsap|@gsap)/,
+              priority: 30,
+            },
+            {
+              name: 'motion-vendor',
+              test: /node_modules[\\/](?:framer-motion|motion)/,
+              priority: 20,
+            }
+          ]
+        }
+      }
+    }
+  }
 })

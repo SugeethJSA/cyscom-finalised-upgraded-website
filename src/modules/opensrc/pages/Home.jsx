@@ -54,13 +54,6 @@ const portals = [
     link: "locker",
     icon: <FaFolderOpen className="text-3xl text-blue-400" />,
     color: "border-blue-500/20 hover:border-blue-500/50 hover:shadow-blue-500/10"
-  },
-  {
-    title: "Hall of Fame",
-    desc: "Celebrate Cyscom VIT event winners, shining stars, and hackathon Jedis.",
-    link: "hall-of-fame",
-    icon: <FaTrophy className="text-3xl text-pink-400" />,
-    color: "border-pink-500/20 hover:border-pink-500/50 hover:shadow-pink-500/10"
   }
 ];
 

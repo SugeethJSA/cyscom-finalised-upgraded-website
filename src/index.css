@@ -647,6 +647,31 @@ img, video {
   background: #2563eb;
 }
 
+/* Custom Cursor CSS Spin */
+.cursor-spin-wrapper {
+  animation: cursor-spin 6s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.is-locked .cursor-spin-wrapper {
+  animation: none !important;
+  transform: rotate(0deg) !important;
+}
+
+@keyframes cursor-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 
 
