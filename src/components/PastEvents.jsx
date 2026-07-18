@@ -68,14 +68,14 @@ const SponsorCard = ({ name, description, image, website }) => {
               opacity: imgLoaded ? 1 : 0,
               transition: "opacity 0.7s ease-in",
               maxHeight: "100%",
-              maxWidth: "80%",
+                          maxWidth: "100%",
               objectFit: "contain",
             }}
             onLoad={() => setImgLoaded(true)}
             onError={(e) => {
               setImgLoaded(true);
             }}
-            className="relative z-10 p-4"
+                        className="relative z-10 p-4 w-full h-full object-contain"
           />
 
           {/* Placeholder while loading */}
