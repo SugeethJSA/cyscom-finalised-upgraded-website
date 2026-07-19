@@ -1,4 +1,4 @@
-import "./index.css";
+
 import { useState, useEffect } from 'react';
 import { ArrowRight, Send, CheckCircle, ShieldCheck } from 'lucide-react';
 

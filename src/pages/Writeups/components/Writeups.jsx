@@ -7,7 +7,6 @@ import {
   FaCalendarAlt, FaChevronRight, FaFolder, FaFolderOpen,
   FaArrowLeft, FaArrowRight, FaBookOpen, FaUsers, FaExternalLinkAlt
 } from 'react-icons/fa';
-import '../index.css';
 
 // ΓöÇΓöÇ PrismJS Syntax Highlighting ΓöÇΓöÇ
 import Prism from 'prismjs';
@@ -512,7 +511,7 @@ const Writeups = () => {
   const [loadingContent, setLoadingContent] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showFlag, setShowFlag] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [expandedCategories, setExpandedCategories] = useState({});
   const [revealedFlags, setRevealedFlags] = useState({});
   const [currentView, setCurrentView] = useState('events');
@@ -777,7 +776,7 @@ const Writeups = () => {
 
       {/* Mobile toggle */}
       <button onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="lg:hidden fixed top-24 left-4 z-50 w-10 h-10 rounded-xl bg-black/80 border border-white/8 flex items-center justify-center text-white/50 hover:text-white transition-all"
+        className="lg:hidden fixed top-24 left-4 z-30 w-10 h-10 rounded-xl bg-black/80 border border-white/8 flex items-center justify-center text-white/50 hover:text-white transition-all"
         style={{ backdropFilter: 'blur(12px)' }}>
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
           <path d={sidebarOpen ? "M1 1L15 11M1 11L15 1" : "M0 1H16M0 6H16M0 11H16"} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -787,7 +786,7 @@ const Writeups = () => {
       {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
       {/* SIDEBAR                                             */}
       {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      <aside className={`fixed lg:relative z-40 w-[272px] lg:w-[264px] h-[calc(100vh-112px)] lg:h-[calc(100vh-128px)] top-24 lg:top-0 left-4 lg:left-0 lg:ml-4 lg:my-4 rounded-2xl glass-sidebar-float p-5 flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${sidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-[120%] lg:translate-x-0 opacity-0 lg:opacity-100'}`}>
+      <aside className={`fixed lg:relative z-20 w-[272px] lg:w-[264px] h-[calc(100vh-112px)] lg:h-[calc(100vh-128px)] top-24 lg:top-0 left-4 lg:left-0 lg:ml-4 lg:my-4 rounded-2xl glass-sidebar-float p-5 flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${sidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-[120%] lg:translate-x-0 opacity-0 lg:opacity-100'}`}>
 
 
 
@@ -869,7 +868,7 @@ const Writeups = () => {
         <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
       </aside>
 
-      {sidebarOpen && <div className="fixed inset-0 bg-black/70 z-30 lg:hidden" onClick={() => setSidebarOpen(false)} />}
+      {sidebarOpen && <div className="fixed inset-0 bg-black/70 z-10 lg:hidden" onClick={() => setSidebarOpen(false)} />}
 
       {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
       {/* MAIN CONTENT                                        */}

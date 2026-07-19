@@ -351,7 +351,7 @@ const Leaderboard = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 select-none relative z-10">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 pt-24 pb-10 select-none relative z-10">
       
       {/* Background Grids */}
       <div className="absolute inset-0 pointer-events-none cyber-grid opacity-10" />
@@ -526,7 +526,7 @@ const Leaderboard = () => {
                       </td>
                       <td className="py-4 px-6 text-blue-50">{member.Name}</td>
                       <td className="py-4 px-6 text-right font-semibold text-blue-300/80">
-                        {member.Contributions} Contributions
+                        {member.Contributions}
                       </td>
                     </tr>
                   ))

@@ -40,15 +40,6 @@ const DEFAULT_PROJECTS = [
   }
 ];
 
-const portals = [
-  {
-    title: "Points Leaderboard",
-    desc: "Check active student contributions, rankings, and who crowned the Wizard of the Fortnight.",
-    link: "leaderboard",
-    icon: <FaAward className="text-3xl text-yellow-300" />,
-    color: "border-yellow-500/20 hover:border-yellow-500/50 hover:shadow-yellow-500/10"
-  }
-];
 
 const Home = () => {
   const [projectsList] = useState(() => {
@@ -127,31 +118,6 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Portals Gateway Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 relative z-10">
-        <h2 className="text-xl md:text-2xl font-zentry uppercase tracking-widest text-center text-white mb-10">
-          Project <span className="text-blue-400">Portals</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {portals.map((portal, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Link
-                to={portal.link}
-                className={`flex flex-col h-full p-6 rounded-lg cyber-card border ${portal.color} transition-all duration-300 cursor-target`}
-              >
-                <div className="mb-4">{portal.icon}</div>
-                <h3 className="text-lg font-bold text-white font-general uppercase tracking-wide mb-2">{portal.title}</h3>
-                <p className="text-xs text-blue-200/60 leading-relaxed font-mono mt-auto">{portal.desc}</p>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Projects Showcase Section */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 relative z-10">

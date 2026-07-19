@@ -42,7 +42,7 @@ const content = [
     title: "LocalHost",
     description:
       "Local Host was a hands-on cybersecurity workshop conducted on 13 February 2026, focused on real-world web security threats and defense techniques. The session covered key topics including SQL Injection, XSS, CSRF, Supply Chain attacks, CSP, and Authentication & Authorization practices. Through live demonstrations and practical exercises, participants explored common vulnerabilities and learned secure coding, input validation, and attack prevention techniques, strengthening their cybersecurity and problem solving skills.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/vmedithon.webp`} alt="VMedithon event" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/localhost.webp`} alt="VMedithon event" className="w-full h-full object-cover" />,
   },
 ];
 

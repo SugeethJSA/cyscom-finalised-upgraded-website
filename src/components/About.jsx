@@ -1,14 +1,14 @@
 import { AnimatedTitle, PhotoCarousel, EasedImage } from "@cyscomvit/cyscomui";
 const carouselContent = [
   {
-    title: "Team Moments",
-    description: "United by passion for cybersecurity, diverse talents converging into one powerful community.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/team.webp`} alt="CYSCOM Team" className="w-full h-full object-cover" />,
+    title: "Discover CYSCOM",
+    description: "CYSCOM VIT Chennai was founded in 2023 by a group of passionate cybersecurity enthusiasts who recognized the need for a dedicated platform where students could learn, share knowledge, and grow together in the field of cybersecurity. What started as a small study group has now evolved into a thriving community of over 200+ members, dedicated to empowering students with practical cybersecurity skills and knowledge. Our journey has been marked by continuous learning, innovation, and a commitment to excellence in cybersecurity education. We've organized numerous workshops, competitions, and knowledge-sharing sessions that have helped students build strong foundations in the field. Today, CYSCOM stands as one of the premier cybersecurity communities in VIT Chennai, known for our comprehensive CTF writeups, practical training programs, and vibrant community engagement.",
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/mid.webp`} alt="CYSCOM Discover" className="w-full h-full object-cover" />,
   },
   {
-    title: "Discover CYSCOM",
-    description: "The Game of Defense begins—your life, now an epic CTF. VIT Chennai's only cybersecurity club.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/mid.webp`} alt="CYSCOM Discover" className="w-full h-full object-cover" />,
+    title: "Team Moments",
+    description: "United by passion for cybersecurity, diverse talents converging into one powerful community. ",
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/team.webp`} alt="CYSCOM Team" className="w-full h-full object-cover" />,
   },
   {
     title: "Community Spirit",
