@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { globalApi } from "../../modules/events/api";
+import { globalApi } from "../../pages/Events/api";
 import { Mail, KeyRound, User, ArrowLeft, Eye, EyeOff } from "lucide-react";
 
 export function Signup() {

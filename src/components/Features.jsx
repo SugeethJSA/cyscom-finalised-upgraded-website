@@ -134,7 +134,7 @@ const Features = () => (
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-3 md:px-5 py-12 md:py-40">
         <p className="font-circular-web text-lg md:text-xl text-blue-50 text-glow animate-fade-in-up">
-          Into the SECURITY Layer
+          Into the Security Layer, together...
         </p>
         <p className="max-w-2xl font-circular-web text-sm md:text-lg text-blue-50/70 opacity-90 mt-6 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           Immerse yourself in a rich and ever-expanding universe where vulnerabilities await to be cracked, converging into an interconnected overlay experience on your world.

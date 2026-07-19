@@ -6,58 +6,52 @@ const TargetCursor = ({ targetSelector = '.cursor-target, a, button, .nav-hover-
   const dotRef = useRef(null);
 
   useEffect(() => {
-    // Disable custom cursor on touch/mobile devices for performance
-    if (window.innerWidth < 768) return;
+    // Disable custom cursor on touch/mobile devices or low-end devices for performance
+    const isTouchDevice = window.matchMedia("(any-pointer: coarse)").matches;
+    const isLowEndDevice = navigator.hardwareConcurrency <= 4 || (navigator.deviceMemory && navigator.deviceMemory <= 4);
+    
+    if (window.innerWidth < 768 || isTouchDevice || isLowEndDevice) return;
 
     const cursor = cursorRef.current;
     if (!cursor) return;
 
     const originalCursor = document.body.style.cursor;
     document.body.style.cursor = 'none';
-
-    // Track mouse position
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
     
-    // Smooth trailing position (lerped)
-    let currentX = mouseX;
-    let currentY = mouseY;
-    
-    const handleMouseMove = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    // Use GSAP quickTo for highly optimized performance instead of a manual rAF loop
+    const xTo = gsap.quickTo(cursor, "x", { duration: 0.15, ease: "power3.out" });
+    const yTo = gsap.quickTo(cursor, "y", { duration: 0.15, ease: "power3.out" });
 
     let activeTarget = null;
     let targetRect = null;
+    
+    const handleMouseMove = (e) => {
+      if (!activeTarget) {
+        xTo(e.clientX);
+        yTo(e.clientY);
+      }
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     const handleMouseOver = (e) => {
       const target = e.target.closest(targetSelector);
       if (target && target !== activeTarget) {
         activeTarget = target;
-        // Cache the bounding rect once on enter.
-        // This is the core fix to prevent layout thrashing!
+        // Cache the bounding rect once on enter
         targetRect = target.getBoundingClientRect();
         
         const corners = cursor.querySelectorAll('.target-cursor-corner');
         const pad = 4;
         
         gsap.killTweensOf(corners);
-        gsap.killTweensOf(cursor);
         
         const targetCenterX = targetRect.left + targetRect.width / 2;
         const targetCenterY = targetRect.top + targetRect.height / 2;
         
-        // Snap cursor center to target center
-        gsap.to(cursor, {
-          x: targetCenterX,
-          y: targetCenterY,
-          duration: 0.2,
-          overwrite: 'auto',
-          ease: 'power2.out'
-        });
+        // Snap cursor center to target center using quickTo
+        xTo(targetCenterX);
+        yTo(targetCenterY);
         
         // Expand corners around target bounding box
         const halfW = targetRect.width / 2 + pad;
@@ -91,31 +85,15 @@ const TargetCursor = ({ targetSelector = '.cursor-target, a, button, .nav-hover-
         gsap.to(blc, { x: -size * 1.5, y: size * 0.5, duration: 0.3, ease: 'power3.out' });
         
         cursor.classList.remove('is-locked');
+        
+        // Snap back to current mouse position
+        xTo(e.clientX);
+        yTo(e.clientY);
       }
     };
 
     window.addEventListener('mouseover', handleMouseOver, { passive: true });
     window.addEventListener('mouseout', handleMouseOut, { passive: true });
-
-    // Smooth position updates using LERP in requestAnimationFrame loop
-    let rAF;
-    const updatePosition = () => {
-      if (!activeTarget) {
-        currentX += (mouseX - currentX) * 0.15;
-        currentY += (mouseY - currentY) * 0.15;
-        
-        gsap.set(cursor, {
-          x: currentX,
-          y: currentY
-        });
-      } else {
-        // Maintain centering on locked target
-        currentX = mouseX;
-        currentY = mouseY;
-      }
-      rAF = requestAnimationFrame(updatePosition);
-    };
-    rAF = requestAnimationFrame(updatePosition);
 
     const handleMouseDown = () => {
       gsap.to(dotRef.current, { scale: 0.6, duration: 0.2 });
@@ -136,7 +114,6 @@ const TargetCursor = ({ targetSelector = '.cursor-target, a, button, .nav-hover-
       window.removeEventListener('mouseout', handleMouseOut);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
-      cancelAnimationFrame(rAF);
       document.body.style.cursor = originalCursor;
     };
   }, [targetSelector]);

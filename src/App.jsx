@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
+import { useProjects } from "./pages/Projects/useProjects";
 import { TiLocationArrow } from "react-icons/ti";
 import About from "./components/About";
 import Hero from "./components/Hero";
@@ -18,12 +19,18 @@ const Login = lazy(() => import("./pages/Auth/Login").then(module => ({ default:
 const Signup = lazy(() => import("./pages/Auth/Signup").then(module => ({ default: module.Signup })));
 const Profile = lazy(() => import("./pages/Auth/Profile").then(module => ({ default: module.Profile })));
 
-// Modules
-const EventsApp = lazy(() => import("./modules/events/App"));
-const OpenSrcApp = lazy(() => import("./modules/opensrc/App"));
-const RecruitmentsApp = lazy(() => import("./modules/recruitments/App"));
-const BlogApp = lazy(() => import("./modules/blog/App"));
-const WriteupsApp = lazy(() => import("./modules/writeups/App"));
+// Flat Pages
+const EventsHub = lazy(() => import("./pages/Events/EventsHub"));
+const PublicRegister = lazy(() => import("./pages/Events/PublicRegister"));
+const PublicTransfer = lazy(() => import("./pages/Events/PublicTransfer"));
+const ProjectsHome = lazy(() => import("./pages/Projects/Home"));
+const Leaderboard = lazy(() => import("./pages/Projects/Leaderboard"));
+const ProjectShowcase = lazy(() => import("./pages/Projects/ProjectShowcase"));
+const Recruitments = lazy(() => import("./pages/Recruitments/Recruitments"));
+const Writeups = lazy(() => import("./pages/Writeups/components/Writeups"));
+
+const BlogHome = lazy(() => import("./pages/Blog/BlogHome"));
+const BlogPostDetail = lazy(() => import("./pages/Blog/BlogPostDetail"));
 
 function MainSite() {
   return (
@@ -53,6 +60,7 @@ const LoadingFallback = () => (
 );
 
 function App() {
+  useProjects();
   const [isLoading, setIsLoading] = useState(true);
   const [criticalAssetsLoaded, setCriticalAssetsLoaded] = useState(false);
   const navigate = useNavigate();
@@ -69,8 +77,8 @@ function App() {
       window.scrollTo(0, 0);
       return;
     }
-    if (itemLabel === "Open Source") {
-      navigate("/opensrc");
+    if (itemLabel === "Projects") {
+      navigate("/projects");
       window.scrollTo(0, 0);
       return;
     }
@@ -97,7 +105,7 @@ function App() {
     }
   };
 
-  const navItems = ["Home", "About", "Events", "Open Source", "Our Team", "Blogs", "Writeups"].map(label => ({
+  const navItems = ["Home", "About", "Events", "Projects", "Our Team", "Blogs", "Writeups"].map(label => ({
     label,
     url: `#${label === "Home" ? "hero" : label.toLowerCase().replace(" ", "-")}`,
     onClick: () => handleNavigate(label)
@@ -183,12 +191,23 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/profile" element={<Profile />} />
               
-              {/* Module Routes */}
-              <Route path="/events/*" element={<EventsApp />} />
-              <Route path="/opensrc/*" element={<OpenSrcApp />} />
-              <Route path="/recruitments/*" element={<RecruitmentsApp />} />
-              <Route path="/blog/*" element={<BlogApp />} />
-              <Route path="/writeups/*" element={<WriteupsApp />} />
+              {/* Flat Page Routes */}
+              {/* Events */}
+              <Route path="/events" element={<EventsHub />} />
+              <Route path="/events/:slug/register" element={<PublicRegister />} />
+              <Route path="/events/:slug/transfer" element={<PublicTransfer />} />
+              
+              {/* Projects */}
+              <Route path="/projects" element={<ProjectsHome />} />
+              <Route path="/projects/leaderboard" element={<Leaderboard />} />
+              <Route path="/projects/showcase" element={<ProjectShowcase />} />
+              
+              {/* Recruitments & Writeups */}
+              <Route path="/recruitments/*" element={<Recruitments />} />
+              <Route path="/writeups/*" element={<Writeups />} />
+              
+              <Route path="/blog" element={<BlogHome />} />
+              <Route path="/blog/post/:id" element={<BlogPostDetail />} />
             </Routes>
           </Suspense>
           <ScrollToTop />

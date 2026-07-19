@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { globalApi } from "../../modules/events/api";
+import { globalApi } from "../../pages/Events/api";
 import { Copy, LogOut, ArrowLeft, Ticket, Users, CheckCircle2 } from "lucide-react";
 
 export function Profile() {
