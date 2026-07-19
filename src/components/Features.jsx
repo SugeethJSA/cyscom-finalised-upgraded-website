@@ -119,7 +119,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
           >
             {isExpanded ? 'Hide details' : 'Show details'}
           </button>
-          <div className={`transition-all duration-300 text-blue-100/80 text-sm leading-relaxed ${isExpanded ? 'max-h-48 mt-2 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className={`transition-all duration-500 text-blue-100/80 text-sm leading-relaxed ${isExpanded ? 'max-h-[500px] mt-2 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
             {description}
           </div>
         </div>
@@ -144,7 +144,7 @@ const Features = () => (
         href="/blog"
         className="block size-full"
       >
-      <BentoTilt className="border-hsla relative mb-4 md:mb-7 h-64 md:h-96 lg:h-[65vh] w-full overflow-hidden rounded-md">
+      <BentoTilt className="border-hsla relative mb-4 md:mb-7 min-h-[16rem] h-auto md:h-96 lg:h-[65vh] w-full overflow-hidden rounded-md">
         <BentoCard
           src={`${import.meta.env.BASE_URL}img/newsletter.webp`}
           title={
@@ -160,7 +160,7 @@ const Features = () => (
       </a>
    
       <div className="grid h-auto md:h-[135vh] w-full grid-cols-2 grid-rows-auto md:grid-rows-3 gap-3 md:gap-7">
-        <BentoTilt className="bento-tilt_1 row-span-1 col-span-2 md:col-span-1 md:row-span-2 h-48 md:h-auto">
+        <BentoTilt className="bento-tilt_1 row-span-1 col-span-2 md:col-span-1 md:row-span-2 min-h-48 h-auto md:h-auto">
           <a
             href="/writeups"
             className="block size-full"
@@ -181,7 +181,7 @@ And the next one? Already on the way..."
         </BentoTilt>
         
 
-        <BentoTilt className="bento-tilt_1 row-span-1 col-span-1 md:col-span-1 h-48 md:h-auto">
+        <BentoTilt className="bento-tilt_1 row-span-1 col-span-1 md:col-span-1 min-h-48 h-auto md:h-auto">
           <a
             href="https://github.com/cyscomvit"
             target="_blank"
@@ -204,7 +204,7 @@ And the next one? Already on the way..."
           </a>
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 col-span-1 md:col-span-1 h-48 md:h-auto">
+        <BentoTilt className="bento-tilt_1 col-span-1 md:col-span-1 min-h-48 h-auto md:h-auto">
           <a
             href="/opensrc"
             className="block size-full"
@@ -233,7 +233,7 @@ And the next one? Already on the way..."
           </div>
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2 col-span-1 h-48 md:h-auto">
+        <BentoTilt className="bento-tilt_2 col-span-1 min-h-48 h-auto md:h-auto">
           <a
             href="/blog"
             className="block size-full"

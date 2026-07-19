@@ -12,13 +12,13 @@ const content = [
     title: "Cyberconverge",
     description:
       "This event brought together students, professionals, and cybersecurity experts for a hands-on learning experience. It featured technical workshops, expert keynotes, and strong networking opportunities focused on real-world cyber threats and defense techniques. Sessions were conducted by SOC analysts, penetration testers, and bug bounty hunters, offering valuable insights into careers, ethical hacking, and modern security practices. ",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/finaltrace1.jpg`} alt="Final Trace highlights" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/cyber-converge1.jpg`} alt="Cyber Converge highlights" className="w-full h-full object-cover" />,
   },
   {
     title: "V-Medithon",
     description:
       "The hackathon, ‘V-Medithon,’ hosted by the School of Computer Science and Engineering (SCOPE) at VIT Chennai, in collaboration with another club and Yenepoya Medical University, took place on the 29th and 30th of September 2024 at the MG Auditorium. Participants utilized cutting-edge technologies such as AI, blockchain, IoT, and cybersecurity to develop innovative solutions aimed at transforming healthcare delivery. The event sparked remarkable enthusiasm, resulting in groundbreaking ideas and projects that demonstrated the immense potential of technology to enhance patient care and health outcomes.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/finaltrace2.jpg`} alt="Final Trace gallery" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/vmedithon.jpg`} alt="V-Medithon event" className="w-full h-full object-cover" />,
   },
   {
     title: "Code n Conquer",

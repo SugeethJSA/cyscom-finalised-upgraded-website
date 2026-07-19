@@ -13,22 +13,22 @@ const Contact = () => {
       <div className="relative rounded-xl bg-gradient-to-br from-blue-900/50 via-purple-900/50 to-black backdrop-blur-cyber py-12 md:py-32 text-blue-50 sm:overflow-hidden">
         <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
-            src={`${import.meta.env.BASE_URL}img/contact-1.webp`}
+            src={`${import.meta.env.BASE_URL}img/contact/nihara.jpg`}
             clipClass="contact-clip-path-1"
           />
           <ImageClipBox
-            src={`${import.meta.env.BASE_URL}img/contact-2.webp`}
+            src={`${import.meta.env.BASE_URL}img/contact/shruti.jpg`}
             clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
           />
         </div>
 
         <div className="absolute -top-20 md:-top-40 left-10 md:left-20 w-40 md:w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
           <ImageClipBox
-            src={`${import.meta.env.BASE_URL}img/swordman-partial.webp`}
+            src={`${import.meta.env.BASE_URL}img/contact/nihara.jpg`}
             clipClass="absolute md:scale-125"
           />
           <ImageClipBox
-            src={`${import.meta.env.BASE_URL}img/swordman.webp`}
+            src={`${import.meta.env.BASE_URL}img/contact/team.jpg`}
             clipClass="sword-man-clip-path md:scale-125"
           />
         </div>

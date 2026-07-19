@@ -50,96 +50,6 @@ const DEFAULT_PROJECTS = [
   }
 ];
 
-const DEFAULT_EVENTS = [
-  {
-    eventName: "Star Wars Hackathon 2024",
-    category: "Hackathons",
-    altHeading: "Jedi Quest Coding Challenge",
-    winners: [
-      { rank: "1st Place 🥇", team: "Dark Side Devs", members: ["Anirudh CV", "Aditya V"] },
-      { rank: "2nd Place 🥈", team: "Rebel Coder Alliance", members: ["Pranav Shah", "Sneha Sen"] },
-      { rank: "3rd Place 🥉", team: "Padawan Solvers", members: ["Nikhil Prasad"] }
-    ],
-    jediUrl: "#jedis",
-    jediList: ["Vatz", "Saikiran S"]
-  },
-  {
-    eventName: "Star Wars Ideathon 2024",
-    category: "Ideathons",
-    altHeading: "Interstellar Solution Pitching",
-    winners: [
-      { rank: "1st Place 🥇", team: "Millennium Falconers", members: ["Sreenidhi K", "Arjun R"] },
-      { rank: "2nd Place 🥈", team: "Galactic Strategists", members: ["Rohan Gupta"] }
-    ],
-    jediUrl: "#jedis",
-    jediList: ["Sugeeth JSA", "Joyeeta Dey"]
-  },
-  {
-    eventName: "ValoOWASP 2025",
-    category: "Security/CTF",
-    altHeading: "Tactical Cybersecurity Duel",
-    winners: [
-      { rank: "Winner 🥇", team: "Spike Planted", members: ["Vatz", "Anirudh CV"] },
-      { rank: "Runner Up 🥈", team: "Radiant Duelists", members: ["Saikiran S"] }
-    ]
-  },
-  {
-    eventName: "Decrypt the Shell Quiz 2025",
-    category: "Quizzes",
-    altHeading: "Speed Trivia Cyber Battles",
-    winners: [
-      { rank: "1st Place 🥇", team: "Individual", members: ["Aditya V"] },
-      { rank: "2nd Place 🥈", team: "Individual", members: ["Arjun R"] },
-      { rank: "3rd Place 🥉", team: "Individual", members: ["Sneha Sen"] }
-    ]
-  }
-];
-
-const DEFAULT_LEGACY = [
-  {
-    name: "Sugeeth JSA",
-    post: "Cabinet Head & Lead Developer",
-    github: "https://github.com/SugeethJSA",
-    linkedin: "https://www.linkedin.com/in/sugeethjsa",
-    pic: "/img/logo.png"
-  },
-  {
-    name: "Joyeeta Dey",
-    post: "Cabinet Coordinator & Event Planner",
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/",
-    pic: "/img/logo.png"
-  },
-  {
-    name: "Vatz",
-    post: "Core Developer & CTF Host",
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/",
-    pic: "/img/logo.png"
-  },
-  {
-    name: "Anirudh CV",
-    post: "Technical Coordinator & Content Writer",
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/",
-    pic: "/img/logo.png"
-  },
-  {
-    name: "Saikiran S",
-    post: "UI/UX & Social Media Designer",
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/",
-    pic: "/img/logo.png"
-  },
-  {
-    name: "Sreenidhi K",
-    post: "Event Coordinator & Researcher",
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/",
-    pic: "/img/logo.png"
-  }
-];
-
 const DEFAULT_ADMIN_USERS = [
   {
     username: "admin",
@@ -158,12 +68,6 @@ export async function syncFromFirebase() {
   if (!localStorage.getItem("cyscom_projects")) {
     localStorage.setItem("cyscom_projects", JSON.stringify(DEFAULT_PROJECTS));
   }
-  if (!localStorage.getItem("cyscom_hall_of_fame")) {
-    localStorage.setItem("cyscom_hall_of_fame", JSON.stringify(DEFAULT_EVENTS));
-  }
-  if (!localStorage.getItem("cyscom_legacy")) {
-    localStorage.setItem("cyscom_legacy", JSON.stringify(DEFAULT_LEGACY));
-  }
   if (!localStorage.getItem("cyscom_admin_users")) {
     localStorage.setItem("cyscom_admin_users", JSON.stringify(DEFAULT_ADMIN_USERS));
   }
@@ -173,10 +77,7 @@ export async function syncFromFirebase() {
   if (!apiUrl && !dbUrl) return;
 
   const urlForTemplates = apiUrl ? `${apiUrl}/templates` : `${dbUrl}/vitcc/owasp/templates.json`;
-  const urlForCerts = apiUrl ? `${apiUrl}/certificates` : `${dbUrl}/vitcc/owasp/certificates.json`;
   const urlForProjects = apiUrl ? `${apiUrl}/projects` : `${dbUrl}/vitcc/owasp/projects.json`;
-  const urlForHof = apiUrl ? `${apiUrl}/hall-of-fame` : `${dbUrl}/vitcc/owasp/hall_of_fame.json`;
-  const urlForLegacy = apiUrl ? `${apiUrl}/legacy` : `${dbUrl}/vitcc/owasp/legacy.json`;
   const urlForLeaderboard = apiUrl ? `${apiUrl}/leaderboard` : `${dbUrl}/vitcc/owasp.json`;
 
   try {
@@ -189,14 +90,6 @@ export async function syncFromFirebase() {
       }
     }
 
-    // 2. Sync Certificates Registry
-    const certsRes = await fetch(urlForCerts);
-    if (certsRes.ok) {
-      const certs = await certsRes.json();
-      if (certs) {
-        localStorage.setItem("cyscom_certificates", JSON.stringify(certs));
-      }
-    }
 
     // 3. Sync Projects
     const projectsRes = await fetch(urlForProjects);
@@ -204,24 +97,6 @@ export async function syncFromFirebase() {
       const projects = await projectsRes.json();
       if (projects) {
         localStorage.setItem("cyscom_projects", JSON.stringify(projects));
-      }
-    }
-
-    // 4. Sync Hall of Fame
-    const hofRes = await fetch(urlForHof);
-    if (hofRes.ok) {
-      const hof = await hofRes.json();
-      if (hof) {
-        localStorage.setItem("cyscom_hall_of_fame", JSON.stringify(hof));
-      }
-    }
-
-    // 5. Sync Legacy
-    const legacyRes = await fetch(urlForLegacy);
-    if (legacyRes.ok) {
-      const legacy = await legacyRes.json();
-      if (legacy) {
-        localStorage.setItem("cyscom_legacy", JSON.stringify(legacy));
       }
     }
 
@@ -324,27 +199,6 @@ export async function pushTemplatesToFirebase(templates) {
 }
 
 /**
- * Pushes updated certificates registry database to Firebase Realtime Database or API Gateway
- */
-export async function pushCertificatesToFirebase(certs) {
-  const apiUrl = getApiUrl();
-  const dbUrl = getDbUrl();
-  if (!apiUrl && !dbUrl) return;
-
-  const url = apiUrl ? `${apiUrl}/api/certificates` : `${dbUrl}/vitcc/owasp/certificates.json`;
-
-  try {
-    await fetch(url, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(certs)
-    });
-  } catch (err) {
-    console.error("Failed to push certificates registry:", err);
-  }
-}
-
-/**
  * Pushes updated Projects database to Firebase Realtime Database or API Gateway
  */
 export async function pushProjectsToFirebase(projects) {
@@ -362,48 +216,6 @@ export async function pushProjectsToFirebase(projects) {
     });
   } catch (err) {
     console.error("Failed to push projects catalog:", err);
-  }
-}
-
-/**
- * Pushes updated Hall of Fame events database to Firebase Realtime Database or API Gateway
- */
-export async function pushHallOfFameToFirebase(events) {
-  const apiUrl = getApiUrl();
-  const dbUrl = getDbUrl();
-  if (!apiUrl && !dbUrl) return;
-
-  const url = apiUrl ? `${apiUrl}/api/hall-of-fame` : `${dbUrl}/vitcc/owasp/hall_of_fame.json`;
-
-  try {
-    await fetch(url, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(events)
-    });
-  } catch (err) {
-    console.error("Failed to push Hall of Fame:", err);
-  }
-}
-
-/**
- * Pushes updated Legacy members database to Firebase Realtime Database or API Gateway
- */
-export async function pushLegacyToFirebase(members) {
-  const apiUrl = getApiUrl();
-  const dbUrl = getDbUrl();
-  if (!apiUrl && !dbUrl) return;
-
-  const url = apiUrl ? `${apiUrl}/api/legacy` : `${dbUrl}/vitcc/owasp/legacy.json`;
-
-  try {
-    await fetch(url, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(members)
-    });
-  } catch (err) {
-    console.error("Failed to push legacy members registry:", err);
   }
 }
 
