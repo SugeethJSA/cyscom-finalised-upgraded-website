@@ -24,25 +24,25 @@ const content = [
     title: "Code n Conquer",
     description:
       "Held in collaboration with another club, this two-day event focused on advanced web development and cybersecurity, providing participants with a comprehensive learning experience. The event featured a series of hands-on projects and interactive challenges, designed to enhance practical skills and foster collaboration among attendees. Participants had the opportunity to engage in real-world scenarios, gain insights from industry experts, and apply their knowledge in a competitive and stimulating environment.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/cyber-converge.webp`} alt="Cyber Converge event" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/codenconquer.webp`} alt="Code n Conquer event" className="w-full h-full object-cover" />,
   },
   {
     title: "Zypher",
     description:
       "Zypher, which unfolded on November 6th, 2023, delivered an extraordinary voyage into the realm of cybersecurity and code-breaking, transcending the conventional Capture The Flag (CTF) competition. This exceptional event provided a platform to put participants' digital detective skills to the test. They engaged in piecing together intricate clues, decrypting enigmatic codes, and revealing the concealed truths within the expansive domain of cyberspace. Zypher offered a dynamic and intellectually stimulating challenge, where individuals explored the depths of cybersecurity with a sense of intrigue and excitement.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/cyber-converge1.webp`} alt="Cyber Converge highlights" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/zypher.webp`} alt="Zypher event" className="w-full h-full object-cover" />,
   },
   {
     title: "Echoes of the Source",
     description:
       "Echoes of the Source, conducted on August 6th, 2025, was an engaging mentorship and career guidance session that connected students with CYSCOM alumni from diverse professional domains. The event provided participants with valuable insights into academics, internships, placements, higher studies, and career opportunities in cybersecurity and technology. Alumni shared their personal experiences, industry knowledge, and practical guidance on building technical skills, participating in CTFs, and preparing for future roles in the tech industry. The session created an interactive learning environment that inspired students to explore opportunities confidently while strengthening connections across the CYSCOM community.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/vmedithon.webp`} alt="VMedithon event" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/echoesofsource.webp`} alt="Echos of Source event" className="w-full h-full object-cover" />,
   },
   {
     title: "LocalHost",
     description:
       "Local Host was a hands-on cybersecurity workshop conducted on 13 February 2026, focused on real-world web security threats and defense techniques. The session covered key topics including SQL Injection, XSS, CSRF, Supply Chain attacks, CSP, and Authentication & Authorization practices. Through live demonstrations and practical exercises, participants explored common vulnerabilities and learned secure coding, input validation, and attack prevention techniques, strengthening their cybersecurity and problem solving skills.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/localhost.webp`} alt="VMedithon event" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/events/localhost.webp`} alt="Localhost event" className="w-full h-full object-cover" />,
   },
 ];
 

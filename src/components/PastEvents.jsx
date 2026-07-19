@@ -218,12 +218,6 @@ const Sponsors = () => {
     website: null
   },
   {
-    name: "Portis",
-    description: "A blockchain wallet that simplifies access to decentralized applications through an easy-to-use, password-based experience.",
-    image: "/img/logo.webp",
-    website: null
-  },
-  {
     name: "Wolfram Language",
     description: "A symbolic programming language powering computational mathematics, data science, AI, and scientific computing.",
     image: "/img/sponsors/wolfram.webp",
