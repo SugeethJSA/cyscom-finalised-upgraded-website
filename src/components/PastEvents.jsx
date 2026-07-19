@@ -7,7 +7,6 @@ import { AnimatedTitle } from "@cyscomvit/cyscomui";
 gsap.registerPlugin(ScrollTrigger);
 
 const SponsorCard = ({ name, description, image, website }) => {
-  const [transformStyle, setTransformStyle] = useState("");
   const [isHovered, setIsHovered] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
   const cardRef = useRef(null);
@@ -20,12 +19,11 @@ const SponsorCard = ({ name, description, image, website }) => {
     const relativeY = (event.clientY - top) / height;
     const tiltX = (relativeY - 0.5) * 8;
     const tiltY = (relativeX - 0.5) * -8;
-    const newTransform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
-    setTransformStyle(newTransform);
+    cardRef.current.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
   };
 
   const handleMouseLeave = () => {
-    setTransformStyle("");
+    if (cardRef.current) cardRef.current.style.transform = "";
     setIsHovered(false);
   };
 
@@ -47,7 +45,6 @@ const SponsorCard = ({ name, description, image, website }) => {
       onMouseLeave={handleMouseLeave}
       data-sponsor-card
       style={{
-        transform: transformStyle,
         transitionProperty: "transform, border-color",
         transitionDuration: "0.3s",
         transitionTimingFunction: "ease-out",
@@ -127,20 +124,23 @@ const Sponsors = () => {
   useGSAP(() => {
     const cards = gsap.utils.toArray("[data-sponsor-card]");
     cards.forEach((card, index) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom-=50",
-          end: "top center",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 40,
-        rotateX: -10,
-        duration: 0.6,
-        ease: "power2.out",
-        delay: (index % 4) * 0.15,
-      });
+      gsap.fromTo(card, 
+        { opacity: 0, y: 40, rotateX: -10 },
+        {
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom-=50",
+            end: "top center",
+            toggleActions: "play none none none",
+          },
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          delay: (index % 4) * 0.15,
+        }
+      );
     });
   }, { scope: sectionRef });
 

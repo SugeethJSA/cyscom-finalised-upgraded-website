@@ -7,8 +7,9 @@ import {
   FaCalendarAlt, FaChevronRight, FaFolder, FaFolderOpen,
   FaArrowLeft, FaArrowRight, FaBookOpen, FaUsers, FaExternalLinkAlt
 } from 'react-icons/fa';
+import '../index.css';
 
-// ── PrismJS Syntax Highlighting ──
+// ΓöÇΓöÇ PrismJS Syntax Highlighting ΓöÇΓöÇ
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import imageMap from '../image_map.json';
@@ -20,17 +21,17 @@ const DIFFICULTY_COLORS = {
 };
 
 const EVENT_COVERS = {
-  'cyberconverge-2025': '/img/cyberconverge.webp',
-  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.webp',
-  'cyscom-juice-shop-2025': '/img/juiceshop.webp',
-  'zypher-2023': '/img/zypher-logo.webp',
+  'cyberconverge-2025': '/img/cyberconverge.png',
+  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.png',
+  'cyscom-juice-shop-2025': '/img/juiceshop.png',
+  'zypher-2023': '/img/zypher-logo.png',
 };
 
 const EVENT_LOGOS = {
-  'cyberconverge-2025': '/writeups/CyberConverge_2025/images/logo.webp',
-  'cyscom-juice-shop-2025': '/writeups/Cyscom Juice Shop 2025/imagedata/logo.webp',
-  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.webp',
-  'zypher-2023': '/img/zypher-logo.webp',
+  'cyberconverge-2025': '/writeups/CyberConverge_2025/images/logo.png',
+  'cyscom-juice-shop-2025': '/writeups/Cyscom Juice Shop 2025/imagedata/logo.png',
+  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.png',
+  'zypher-2023': '/img/zypher-logo.png',
 };
 
 const EVENT_FOLDERS = {
@@ -40,7 +41,7 @@ const EVENT_FOLDERS = {
   'zypher-2023': 'Zypher_2023',
 };
 
-// ── Category mapping & normalization ──
+// ΓöÇΓöÇ Category mapping & normalization ΓöÇΓöÇ
 const NORM_MAP = {
   'web': 'Web',
   'pwn': 'Pwn',
@@ -74,39 +75,39 @@ const normalizeCategory = (cat) => {
 };
 
 const CATEGORY_META = {
-  'Web': { icon: '🌐', color: 'from-blue-600/10 to-indigo-600/10 border-blue-500/20 text-blue-400 hover:border-blue-500/30' },
-  'Pwn': { icon: '🎯', color: 'from-red-600/10 to-orange-600/10 border-red-500/20 text-red-400 hover:border-red-500/30' },
-  'Cryptography': { icon: '🔐', color: 'from-purple-600/10 to-pink-600/10 border-purple-500/20 text-purple-400 hover:border-purple-500/30' },
-  'Forensics': { icon: '🔍', color: 'from-emerald-600/10 to-teal-600/10 border-emerald-500/20 text-emerald-400 hover:border-emerald-500/30' },
-  'OSINT': { icon: '🌍', color: 'from-cyan-600/10 to-sky-600/10 border-cyan-500/20 text-cyan-400 hover:border-cyan-500/30' },
-  'Reverse Engineering': { icon: '👾', color: 'from-rose-600/10 to-pink-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
-  'Steganography': { icon: '🖼️', color: 'from-amber-600/10 to-yellow-600/10 border-amber-500/20 text-amber-400 hover:border-amber-500/30' },
-  'Misc': { icon: '📦', color: 'from-slate-600/10 to-zinc-600/10 border-slate-500/20 text-slate-400 hover:border-slate-500/30' },
-  'General': { icon: '⚙️', color: 'from-neutral-600/10 to-stone-600/10 border-neutral-500/20 text-neutral-400 hover:border-neutral-500/30' },
-  'Linux': { icon: '🐧', color: 'from-orange-600/10 to-yellow-600/10 border-orange-500/20 text-orange-400 hover:border-orange-500/30' },
-  'Network': { icon: '📡', color: 'from-sky-600/10 to-blue-600/10 border-sky-500/20 text-sky-400 hover:border-sky-500/30' },
-  'Boot2root': { icon: '👑', color: 'from-rose-600/10 to-red-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
-  'Musical Cipher': { icon: '🎵', color: 'from-violet-600/10 to-fuchsia-600/10 border-violet-500/20 text-violet-400 hover:border-violet-500/30' },
-  'Text': { icon: '📝', color: 'from-yellow-600/10 to-amber-600/10 border-yellow-500/20 text-yellow-400 hover:border-yellow-500/30' },
-  'ARG': { icon: '🎮', color: 'from-lime-600/10 to-emerald-600/10 border-lime-500/20 text-lime-400 hover:border-lime-500/30' },
+  'Web': { icon: '≡ƒîÉ', color: 'from-blue-600/10 to-indigo-600/10 border-blue-500/20 text-blue-400 hover:border-blue-500/30' },
+  'Pwn': { icon: '≡ƒÄ»', color: 'from-red-600/10 to-orange-600/10 border-red-500/20 text-red-400 hover:border-red-500/30' },
+  'Cryptography': { icon: '≡ƒöÉ', color: 'from-purple-600/10 to-pink-600/10 border-purple-500/20 text-purple-400 hover:border-purple-500/30' },
+  'Forensics': { icon: '≡ƒöì', color: 'from-emerald-600/10 to-teal-600/10 border-emerald-500/20 text-emerald-400 hover:border-emerald-500/30' },
+  'OSINT': { icon: '≡ƒîì', color: 'from-cyan-600/10 to-sky-600/10 border-cyan-500/20 text-cyan-400 hover:border-cyan-500/30' },
+  'Reverse Engineering': { icon: '≡ƒæ╛', color: 'from-rose-600/10 to-pink-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
+  'Steganography': { icon: '≡ƒû╝∩╕Å', color: 'from-amber-600/10 to-yellow-600/10 border-amber-500/20 text-amber-400 hover:border-amber-500/30' },
+  'Misc': { icon: '≡ƒôª', color: 'from-slate-600/10 to-zinc-600/10 border-slate-500/20 text-slate-400 hover:border-slate-500/30' },
+  'General': { icon: 'ΓÜÖ∩╕Å', color: 'from-neutral-600/10 to-stone-600/10 border-neutral-500/20 text-neutral-400 hover:border-neutral-500/30' },
+  'Linux': { icon: '≡ƒÉº', color: 'from-orange-600/10 to-yellow-600/10 border-orange-500/20 text-orange-400 hover:border-orange-500/30' },
+  'Network': { icon: '≡ƒôí', color: 'from-sky-600/10 to-blue-600/10 border-sky-500/20 text-sky-400 hover:border-sky-500/30' },
+  'Boot2root': { icon: '≡ƒææ', color: 'from-rose-600/10 to-red-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
+  'Musical Cipher': { icon: '≡ƒÄ╡', color: 'from-violet-600/10 to-fuchsia-600/10 border-violet-500/20 text-violet-400 hover:border-violet-500/30' },
+  'Text': { icon: '≡ƒô¥', color: 'from-yellow-600/10 to-amber-600/10 border-yellow-500/20 text-yellow-400 hover:border-yellow-500/30' },
+  'ARG': { icon: '≡ƒÄ«', color: 'from-lime-600/10 to-emerald-600/10 border-lime-500/20 text-lime-400 hover:border-lime-500/30' },
 };
 
-const defaultCategoryMeta = { icon: '🔧', color: 'from-gray-600/10 to-gray-700/10 border-gray-500/20 text-gray-400 hover:border-gray-500/30' };
+const defaultCategoryMeta = { icon: '≡ƒöº', color: 'from-gray-600/10 to-gray-700/10 border-gray-500/20 text-gray-400 hover:border-gray-500/30' };
 
 
-// ── Callout icons & config ──
+// ΓöÇΓöÇ Callout icons & config ΓöÇΓöÇ
 const CALLOUT_CONFIG = {
-  NOTE:      { icon: 'ℹ️', cls: 'callout-note',      title: 'Note' },
-  INFO:      { icon: 'ℹ️', cls: 'callout-info',      title: 'Info' },
-  TIP:       { icon: '💡', cls: 'callout-tip',       title: 'Tip' },
-  HINT:      { icon: '💡', cls: 'callout-hint',      title: 'Hint' },
-  SUCCESS:   { icon: '✅', cls: 'callout-success',   title: 'Success' },
-  IMPORTANT: { icon: '📌', cls: 'callout-important', title: 'Important' },
-  WARNING:   { icon: '⚠️', cls: 'callout-warning',   title: 'Warning' },
-  ALERT:     { icon: '⚠️', cls: 'callout-alert',     title: 'Alert' },
-  CAUTION:   { icon: '🛑', cls: 'callout-caution',   title: 'Caution' },
-  ERROR:     { icon: '❌', cls: 'callout-error',     title: 'Error' },
-  FAILURE:   { icon: '❌', cls: 'callout-failure',   title: 'Failure' },
+  NOTE:      { icon: 'Γä╣∩╕Å', cls: 'callout-note',      title: 'Note' },
+  INFO:      { icon: 'Γä╣∩╕Å', cls: 'callout-info',      title: 'Info' },
+  TIP:       { icon: '≡ƒÆí', cls: 'callout-tip',       title: 'Tip' },
+  HINT:      { icon: '≡ƒÆí', cls: 'callout-hint',      title: 'Hint' },
+  SUCCESS:   { icon: 'Γ£à', cls: 'callout-success',   title: 'Success' },
+  IMPORTANT: { icon: '≡ƒôî', cls: 'callout-important', title: 'Important' },
+  WARNING:   { icon: 'ΓÜá∩╕Å', cls: 'callout-warning',   title: 'Warning' },
+  ALERT:     { icon: 'ΓÜá∩╕Å', cls: 'callout-alert',     title: 'Alert' },
+  CAUTION:   { icon: '≡ƒ¢æ', cls: 'callout-caution',   title: 'Caution' },
+  ERROR:     { icon: 'Γ¥î', cls: 'callout-error',     title: 'Error' },
+  FAILURE:   { icon: 'Γ¥î', cls: 'callout-failure',   title: 'Failure' },
 };
 
 const customRenderer = new marked.Renderer();
@@ -140,6 +141,7 @@ customRenderer.image = function(arg1, arg2, arg3) {
   else { href = arg1; title = arg2; text = arg3; }
   
   if (href && !href.startsWith('http') && !href.startsWith('data:')) {
+    href = href.replace(/\.(png|jpe?g)$/i, '.webp');
     let lookup = href.startsWith('/') ? href.slice(1) : href;
     if (imageMap[lookup]) {
       href = `/${imageMap[lookup]}`;
@@ -157,7 +159,7 @@ customRenderer.image = function(arg1, arg2, arg3) {
 
 marked.use({ renderer: customRenderer });
 
-// ── Post-process HTML: convert GitHub-style blockquote alerts into callout cards ──
+// ΓöÇΓöÇ Post-process HTML: convert GitHub-style blockquote alerts into callout cards ΓöÇΓöÇ
 function processCallouts(html) {
   // Match blockquotes containing [!TYPE] pattern
   return html.replace(
@@ -176,7 +178,7 @@ function processCallouts(html) {
   );
 }
 
-// ── Post-process HTML: add language labels to fenced code blocks ──
+// ΓöÇΓöÇ Post-process HTML: add language labels to fenced code blocks ΓöÇΓöÇ
 function processCodeBlocks(html) {
   // marked wraps fenced code as <pre><code class="language-xxx">
   return html.replace(
@@ -185,7 +187,7 @@ function processCodeBlocks(html) {
   );
 }
 
-// ── Post-process HTML: convert Tools Used lists into interactive cards with icons ──
+// ΓöÇΓöÇ Post-process HTML: convert Tools Used lists into interactive cards with icons ΓöÇΓöÇ
 function processTools(html) {
   if (typeof window === 'undefined') return html;
   try {
@@ -223,54 +225,54 @@ function processTools(html) {
     }
 
     const toolIcons = {
-      pwntools: '🛠️',
-      gdb: '🐞',
-      pwndbg: '🐞',
-      ghidra: '🐉',
-      ropper: '🧬',
-      checksec: '🛡️',
-      steghide: '🥷',
-      zbarimg: '🔍',
-      zsteg: '🍯',
-      cyberchef: '🧪',
-      exiftool: '📸',
-      nmap: '🛰️',
-      wireshark: '🦈',
-      burpsuite: '🥪',
-      burp: '🥪',
-      gimp: '🎨',
-      stegsolve: '🖼️',
-      python: '🐍',
-      pillow: '🧸',
-      sqlmap: '💉',
-      john: '☠️',
-      hashcat: '🔥',
-      hydra: '🐉',
-      gobuster: '🚪',
-      dirbuster: '🚪',
-      dirsearch: '🚪',
-      metasploit: '💥',
-      radare2: '🎯',
-      binary: '👾',
-      reversing: '👾',
-      steganography: '🖼️',
-      osint: '🌍',
-      google: '🔍',
-      lens: '📷',
-      earth: '🌍',
-      edchart: '📊',
-      dcode: '🔢',
-      jwt: '🪙',
-      netcat: '🔌',
-      nc: '🔌',
-      curl: '🌐',
-      wget: '🌐',
-      decrypt: '🔓',
-      cracker: '🔓',
-      base64: '📦',
-      md5: '🔑',
-      sha256: '🔑',
-      openssl: '🔒',
+      pwntools: '≡ƒ¢á∩╕Å',
+      gdb: '≡ƒÉ₧',
+      pwndbg: '≡ƒÉ₧',
+      ghidra: '≡ƒÉë',
+      ropper: '≡ƒº¼',
+      checksec: '≡ƒ¢í∩╕Å',
+      steghide: '≡ƒÑ╖',
+      zbarimg: '≡ƒöì',
+      zsteg: '≡ƒì»',
+      cyberchef: '≡ƒº¬',
+      exiftool: '≡ƒô╕',
+      nmap: '≡ƒ¢░∩╕Å',
+      wireshark: '≡ƒªê',
+      burpsuite: '≡ƒÑ¬',
+      burp: '≡ƒÑ¬',
+      gimp: '≡ƒÄ¿',
+      stegsolve: '≡ƒû╝∩╕Å',
+      python: '≡ƒÉì',
+      pillow: '≡ƒº╕',
+      sqlmap: '≡ƒÆë',
+      john: 'Γÿá∩╕Å',
+      hashcat: '≡ƒöÑ',
+      hydra: '≡ƒÉë',
+      gobuster: '≡ƒÜ¬',
+      dirbuster: '≡ƒÜ¬',
+      dirsearch: '≡ƒÜ¬',
+      metasploit: '≡ƒÆÑ',
+      radare2: '≡ƒÄ»',
+      binary: '≡ƒæ╛',
+      reversing: '≡ƒæ╛',
+      steganography: '≡ƒû╝∩╕Å',
+      osint: '≡ƒîì',
+      google: '≡ƒöì',
+      lens: '≡ƒô╖',
+      earth: '≡ƒîì',
+      edchart: '≡ƒôè',
+      dcode: '≡ƒöó',
+      jwt: '≡ƒ¬Ö',
+      netcat: '≡ƒöî',
+      nc: '≡ƒöî',
+      curl: '≡ƒîÉ',
+      wget: '≡ƒîÉ',
+      decrypt: '≡ƒöô',
+      cracker: '≡ƒöô',
+      base64: '≡ƒôª',
+      md5: '≡ƒöæ',
+      sha256: '≡ƒöæ',
+      openssl: '≡ƒöÆ',
     };
 
     function getIcon(name) {
@@ -278,7 +280,7 @@ function processTools(html) {
       for (const [key, icon] of Object.entries(toolIcons)) {
         if (cleanName.includes(key)) return icon;
       }
-      return '🔧';
+      return '≡ƒöº';
     }
 
     function createCardsContainer(toolItems) {
@@ -375,7 +377,7 @@ function processTools(html) {
   }
 }
 
-// ── Post-process HTML: wrap Step headings and contents into beautiful GitHub-style steps vertical timeline ──
+// ΓöÇΓöÇ Post-process HTML: wrap Step headings and contents into beautiful GitHub-style steps vertical timeline ΓöÇΓöÇ
 function processSteps(html) {
   if (typeof window === 'undefined') return html;
   try {
@@ -438,7 +440,7 @@ function processSteps(html) {
   }
 }
 
-// ── Helper to strip literal flag section from markdown body ──
+// ΓöÇΓöÇ Helper to strip literal flag section from markdown body ΓöÇΓöÇ
 function stripFlagFromMarkdown(md, flag) {
   if (!md || !flag) return md;
   try {
@@ -451,7 +453,7 @@ function stripFlagFromMarkdown(md, flag) {
   }
 }
 
-// ── Helper to mask literal flag values inside the HTML content ──
+// ΓöÇΓöÇ Helper to mask literal flag values inside the HTML content ΓöÇΓöÇ
 function maskFlagInHtml(html, flag, showFlag) {
   if (!html || !flag) return html;
   try {
@@ -461,7 +463,7 @@ function maskFlagInHtml(html, flag, showFlag) {
       if (showFlag) {
         return `<span class="flag-revealed">${flag}</span>`;
       } else {
-        return `<span class="flag-masked">••••••••••••</span>`;
+        return `<span class="flag-masked">ΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇó</span>`;
       }
     });
   } catch (e) {
@@ -470,7 +472,7 @@ function maskFlagInHtml(html, flag, showFlag) {
   }
 }
 
-// ── Helper to strip the duplicate header and metadata block at the top ──
+// ΓöÇΓöÇ Helper to strip the duplicate header and metadata block at the top ΓöÇΓöÇ
 function stripDuplicateHeader(md) {
   if (!md) return '';
   let clean = md.trim();
@@ -661,14 +663,14 @@ const Writeups = () => {
         pre.classList.add('group');
         const btn = document.createElement('button');
         btn.className = 'copy-code-btn absolute top-2.5 right-2.5 p-1.5 bg-white/5 border border-white/8 hover:bg-white/10 hover:border-white/15 text-white/30 hover:text-white/70 rounded-md transition-all opacity-0 group-hover:opacity-100 flex items-center gap-1 text-[11px] font-semibold';
-        btn.innerHTML = '📋 Copy';
+        btn.innerHTML = '≡ƒôï Copy';
         btn.addEventListener('click', async () => {
           const codeEl = pre.querySelector('code');
           if (codeEl) {
             await navigator.clipboard.writeText(codeEl.innerText.trim());
-            btn.innerHTML = '✓ Copied!';
+            btn.innerHTML = 'Γ£ô Copied!';
             btn.classList.add('text-emerald-400', 'border-emerald-500/30');
-            setTimeout(() => { btn.innerHTML = '📋 Copy'; btn.classList.remove('text-emerald-400', 'border-emerald-500/30'); }, 2000);
+            setTimeout(() => { btn.innerHTML = '≡ƒôï Copy'; btn.classList.remove('text-emerald-400', 'border-emerald-500/30'); }, 2000);
           }
         });
         pre.appendChild(btn);
@@ -767,8 +769,10 @@ const Writeups = () => {
   );
 
   return (
-    <main className="relative min-h-screen w-screen overflow-x-hidden bg-black">
-      <div className="h-[calc(100vh-96px)] mt-24 w-full overflow-hidden bg-black text-white flex flex-col lg:flex-row relative">
+    <div 
+      className="h-[calc(100vh-96px)] mt-24 w-full overflow-hidden bg-black text-white flex flex-col lg:flex-row relative"
+      style={{ fontFamily: 'Inter, "General Sans", sans-serif' }}
+    >
       <div className="fixed inset-0 cyber-grid pointer-events-none opacity-40 z-0" />
 
       {/* Mobile toggle */}
@@ -780,9 +784,9 @@ const Writeups = () => {
         </svg>
       </button>
 
-      {/* ════════════════════════════════════════════════════ */}
+      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
       {/* SIDEBAR                                             */}
-      {/* ════════════════════════════════════════════════════ */}
+      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
       <aside className={`fixed lg:relative z-40 w-[272px] lg:w-[264px] h-[calc(100vh-112px)] lg:h-[calc(100vh-128px)] top-24 lg:top-0 left-4 lg:left-0 lg:ml-4 lg:my-4 rounded-2xl glass-sidebar-float p-5 flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${sidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-[120%] lg:translate-x-0 opacity-0 lg:opacity-100'}`}>
 
 
@@ -807,7 +811,7 @@ const Writeups = () => {
             <div className="mb-2.5 px-1 flex items-center gap-2">
               {EVENT_LOGOS[selectedEvent.id] && <img src={EVENT_LOGOS[selectedEvent.id]} alt="" className="w-4 h-4 rounded object-contain" onError={e=>e.target.style.display='none'} />}
               <span className="text-[11px] font-bold text-white/70 tracking-wide line-clamp-1 flex-grow">{selectedEvent.title}</span>
-              <button onClick={() => setSelectedEvent(null)} className="text-[9px] font-bold text-white/15 hover:text-white/40 transition-colors">✕</button>
+              <button onClick={() => setSelectedEvent(null)} className="text-[9px] font-bold text-white/15 hover:text-white/40 transition-colors">Γ£ò</button>
             </div>
 
             <div className="relative mb-2.5">
@@ -857,7 +861,7 @@ const Writeups = () => {
             {selectedChallenge && (
               <button onClick={() => setSelectedChallenge(null)}
                 className="mt-2.5 w-full text-center py-1.5 bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] text-[10px] font-semibold tracking-wider uppercase text-white/25 hover:text-white/50 rounded-xl transition-all">
-                ← Overview
+                ΓåÉ Overview
               </button>
             )}
           </div>
@@ -867,9 +871,9 @@ const Writeups = () => {
 
       {sidebarOpen && <div className="fixed inset-0 bg-black/70 z-30 lg:hidden" onClick={() => setSidebarOpen(false)} />}
 
-      {/* ════════════════════════════════════════════════════ */}
+      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
       {/* MAIN CONTENT                                        */}
-      {/* ════════════════════════════════════════════════════ */}
+      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
       <div className="flex-grow h-full flex flex-col lg:flex-row min-w-0 relative z-10 lg:ml-4 lg:mr-4 lg:my-4">
         <main ref={contentContainerRef}
           className="flex-grow h-full overflow-y-auto p-6 md:p-10 lg:px-16 lg:py-10 min-w-0 flex flex-col lg:rounded-2xl lg:border lg:border-white/[0.03] lg:bg-white/[0.008]">
@@ -886,7 +890,7 @@ const Writeups = () => {
                 initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-10}} transition={{duration:0.2}}
                 className="flex-grow flex flex-col">
 
-                {/* ── CATEGORIES ── */}
+                {/* ΓöÇΓöÇ CATEGORIES ΓöÇΓöÇ */}
                 {currentView === 'categories' && (() => {
                   const groupedCats = getGroupedCategories();
                   if (!selectedCategory) {
@@ -937,7 +941,7 @@ const Writeups = () => {
 
                         <div className="mb-8">
                           <h2 className="text-xl md:text-2xl font-extrabold mb-1 tracking-tight text-white flex items-center gap-2">
-                            <span>{CATEGORY_META[selectedCategory]?.icon || '🔧'}</span>
+                            <span>{CATEGORY_META[selectedCategory]?.icon || '≡ƒöº'}</span>
                             <span>{selectedCategory} Challenges</span>
                           </h2>
                           <p className="text-white/30 text-xs">{list.length} challenges found across all archives.</p>
@@ -1002,7 +1006,7 @@ const Writeups = () => {
                   }
                 })()}
 
-                {/* ── EVENTS GALLERY ── */}
+                {/* ΓöÇΓöÇ EVENTS GALLERY ΓöÇΓöÇ */}
                 {currentView === 'events' && !selectedEvent && (
                   <div className="max-w-3xl mx-auto w-full py-4">
                     <div className="mb-10">
@@ -1035,7 +1039,7 @@ const Writeups = () => {
                               </div>
                               <div className="flex items-center gap-3 text-[10px] text-white/20 font-semibold">
                                 <span className="flex items-center gap-1"><FaCalendarAlt className="text-[8px]" /> {ev.date || 'Archive'}</span>
-                                <span>•</span>
+                                <span>ΓÇó</span>
                                 <span>{ev.challenges?.length || 0} challenges</span>
                               </div>
                               {ev.description && <p className="text-white/20 text-xs mt-1 line-clamp-1 hidden md:block">{ev.description}</p>}
@@ -1050,7 +1054,7 @@ const Writeups = () => {
                   </div>
                 )}
 
-                {/* ── EVENT DETAIL / CHALLENGE ── */}
+                {/* ΓöÇΓöÇ EVENT DETAIL / CHALLENGE ΓöÇΓöÇ */}
                 {currentView === 'events' && selectedEvent && (
                   <div className="max-w-3xl mx-auto w-full">
                     {/* Breadcrumbs */}
@@ -1069,7 +1073,7 @@ const Writeups = () => {
                     </div>
 
                     {selectedChallenge ? (
-                      /* ── Challenge header ── */
+                      /* ΓöÇΓöÇ Challenge header ΓöÇΓöÇ */
                       <div className="border-b border-white/[0.05] pb-6 mb-8">
                         <h1 className="text-xl md:text-2xl font-extrabold text-white tracking-tight mb-3 leading-tight">{selectedChallenge.title}</h1>
                         <div className="flex flex-wrap gap-1.5">
@@ -1088,7 +1092,7 @@ const Writeups = () => {
                               <div>
                                 <p className="text-[8px] text-white/15 uppercase tracking-[0.3em] font-bold">Flag</p>
                                 <div className="font-mono text-xs tracking-wider mt-0.5 select-all">
-                                  {showFlag ? <span className="text-emerald-400 font-semibold">{selectedChallenge.flag}</span> : <span className="text-white/8 select-none">•••••••••••••••••••••</span>}
+                                  {showFlag ? <span className="text-emerald-400 font-semibold">{selectedChallenge.flag}</span> : <span className="text-white/8 select-none">ΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇó</span>}
                                 </div>
                               </div>
                             </div>
@@ -1100,7 +1104,7 @@ const Writeups = () => {
                         )}
                       </div>
                     ) : (
-                      /* ── Event overview ── */
+                      /* ΓöÇΓöÇ Event overview ΓöÇΓöÇ */
                       <div className="mb-8 flex flex-col flex-grow">
                         {EVENT_COVERS[selectedEvent.id] && (
                           <div className="event-cover rounded-2xl overflow-hidden mb-5 h-44 md:h-56 flex-shrink-0">
@@ -1114,7 +1118,7 @@ const Writeups = () => {
                           <div className="flex-grow animate-fade-in">
                             <div className="flex items-center gap-2 text-white/20 text-[10px] mb-1.5 font-semibold">
                               <FaCalendarAlt className="text-[9px]" /> <span>{selectedEvent.date || 'Archives'}</span>
-                              <span className="text-white/8">•</span>
+                              <span className="text-white/8">ΓÇó</span>
                               <span>{selectedEvent.challenges?.length || 0} challenges</span>
                             </div>
                             <h1 className="text-xl md:text-2xl font-extrabold text-white tracking-tight">{selectedEvent.title}</h1>
@@ -1168,7 +1172,7 @@ const Writeups = () => {
                                               {isRevealed ? (
                                                 <span className="text-emerald-400 font-semibold select-all">{ch.flag}</span>
                                               ) : (
-                                                <span className="text-white/10 select-none">••••••••••••</span>
+                                                <span className="text-white/10 select-none">ΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇó</span>
                                               )}
                                             </span>
                                             <button 
@@ -1222,9 +1226,9 @@ const Writeups = () => {
           )}
         </main>
 
-        {/* ════════════════════════════════════════════════════ */}
+        {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
         {/* TOC                                                 */}
-        {/* ════════════════════════════════════════════════════ */}
+        {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
         {headings.length > 0 && selectedChallenge && currentView === 'events' && (
           <aside className="w-full lg:w-48 h-full overflow-y-auto p-4 flex-shrink-0 hidden lg:block custom-scrollbar select-none lg:rounded-2xl glass-toc lg:ml-3">
             <h3 className="text-[8px] font-extrabold uppercase tracking-[0.35em] text-white/12 mb-3">On this page</h3>
@@ -1245,7 +1249,6 @@ const Writeups = () => {
         )}
       </div>
     </div>
-    </main>
   );
 };
 

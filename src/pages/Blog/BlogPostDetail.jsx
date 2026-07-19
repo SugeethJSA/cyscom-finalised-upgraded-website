@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useBlogs } from "./useBlogs";
-import "./blog.css";
 import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaCopy, FaArrowLeft } from "react-icons/fa";
 import { BiTimeFive, BiCalendar, BiUser } from "react-icons/bi";
 import imageMap from "../../pages/Writeups/image_map.json";

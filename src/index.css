@@ -418,6 +418,21 @@ img, video {
     background: rgba(0, 0, 0, 0.85);
     border: 1px solid rgba(59, 130, 246, 0.2);
   }
+
+  .cyber-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .cyber-card:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), 0 0 40px rgba(139, 92, 246, 0.1);
+    transform: translateY(-4px);
+  }
 }
 
 .indicator-line {
@@ -669,6 +684,156 @@ img, video {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* Typography styles for HTML blog content */
+.blog-html-content {
+  font-family: "Circular-Web", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #dfdff2;
+}
+
+.blog-html-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.blog-html-content h2, .blog-html-content h3, .blog-html-content h4 {
+  font-family: "zentry", "General Sans", sans-serif;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.blog-html-content h2 {
+  font-size: 1.75rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.blog-html-content h3 {
+  font-size: 1.5rem;
+}
+
+.blog-html-content ul, .blog-html-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-position: outside;
+}
+
+.blog-html-content ul {
+  list-style-type: square;
+}
+
+.blog-html-content ol {
+  list-style-type: decimal;
+}
+
+.blog-html-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-html-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.blog-html-content a:hover {
+  color: #60a5fa;
+}
+
+.blog-html-content blockquote {
+  border-left: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.blog-html-content img {
+  border-radius: 8px;
+  margin: 2rem auto;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.blog-html-content code {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #edff66;
+}
+
+.blog-html-content pre {
+  background: #050505;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.blog-html-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #dfdff2;
+}
+
+.blog-html-content iframe {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+}
+
+/* Dark Mode compatibility overrides for Blogger inline styling */
+.blog-html-content span,
+.blog-html-content p,
+.blog-html-content div,
+.blog-html-content li {
+  color: #dfdff2 !important;
+  background-color: transparent !important;
+}
+
+/* Ensure links maintain their distinct blue color */
+.blog-html-content a,
+.blog-html-content a * {
+  color: #3b82f6 !important;
+}
+.blog-html-content a:hover,
+.blog-html-content a:hover * {
+  color: #60a5fa !important;
+}
+
+/* Retain custom styling inside code blocks and blockquotes */
+.blog-html-content pre,
+.blog-html-content code,
+.blog-html-content pre *,
+.blog-html-content code * {
+  background-color: transparent !important;
+}
+
+.blog-html-content pre {
+  background: #050505 !important;
+}
+
+.blog-html-content code {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #edff66 !important;
+}
+
+.blog-html-content pre code {
+  color: #dfdff2 !important;
 }
 
 

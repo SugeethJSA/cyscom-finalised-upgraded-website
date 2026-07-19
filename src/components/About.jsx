@@ -3,7 +3,7 @@ const carouselContent = [
   {
     title: "Team Moments",
     description: "United by passion for cybersecurity, diverse talents converging into one powerful community.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/team.jpeg`} alt="CYSCOM Team" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/team.webp`} alt="CYSCOM Team" className="w-full h-full object-cover" />,
   },
   {
     title: "Discover CYSCOM",
@@ -13,7 +13,7 @@ const carouselContent = [
   {
     title: "Community Spirit",
     description: "Where hackers, defenders, and learners unite. Building the next generation of cybersecurity professionals.",
-          content: <EasedImage src={`${import.meta.env.BASE_URL}img/community.jpeg`} alt="CYSCOM Community" className="w-full h-full object-cover" />,
+          content: <EasedImage src={`${import.meta.env.BASE_URL}img/community.webp`} alt="CYSCOM Community" className="w-full h-full object-cover" />,
   },
 ];
 
