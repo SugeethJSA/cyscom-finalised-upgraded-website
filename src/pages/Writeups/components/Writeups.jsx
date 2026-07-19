@@ -78,39 +78,38 @@ const normalizeCategory = (cat) => {
 };
 
 const CATEGORY_META = {
-  'Web': { icon: '≡ƒîÉ', color: 'from-blue-600/10 to-indigo-600/10 border-blue-500/20 text-blue-400 hover:border-blue-500/30' },
-  'Pwn': { icon: '≡ƒÄ»', color: 'from-red-600/10 to-orange-600/10 border-red-500/20 text-red-400 hover:border-red-500/30' },
-  'Cryptography': { icon: '≡ƒöÉ', color: 'from-purple-600/10 to-pink-600/10 border-purple-500/20 text-purple-400 hover:border-purple-500/30' },
-  'Forensics': { icon: '≡ƒöì', color: 'from-emerald-600/10 to-teal-600/10 border-emerald-500/20 text-emerald-400 hover:border-emerald-500/30' },
-  'OSINT': { icon: '≡ƒîì', color: 'from-cyan-600/10 to-sky-600/10 border-cyan-500/20 text-cyan-400 hover:border-cyan-500/30' },
-  'Reverse Engineering': { icon: '≡ƒæ╛', color: 'from-rose-600/10 to-pink-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
-  'Steganography': { icon: '≡ƒû╝∩╕Å', color: 'from-amber-600/10 to-yellow-600/10 border-amber-500/20 text-amber-400 hover:border-amber-500/30' },
-  'Misc': { icon: '≡ƒôª', color: 'from-slate-600/10 to-zinc-600/10 border-slate-500/20 text-slate-400 hover:border-slate-500/30' },
-  'General': { icon: 'ΓÜÖ∩╕Å', color: 'from-neutral-600/10 to-stone-600/10 border-neutral-500/20 text-neutral-400 hover:border-neutral-500/30' },
-  'Linux': { icon: '≡ƒÉº', color: 'from-orange-600/10 to-yellow-600/10 border-orange-500/20 text-orange-400 hover:border-orange-500/30' },
-  'Network': { icon: '≡ƒôí', color: 'from-sky-600/10 to-blue-600/10 border-sky-500/20 text-sky-400 hover:border-sky-500/30' },
-  'Boot2root': { icon: '≡ƒææ', color: 'from-rose-600/10 to-red-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
-  'Musical Cipher': { icon: '≡ƒÄ╡', color: 'from-violet-600/10 to-fuchsia-600/10 border-violet-500/20 text-violet-400 hover:border-violet-500/30' },
-  'Text': { icon: '≡ƒô¥', color: 'from-yellow-600/10 to-amber-600/10 border-yellow-500/20 text-yellow-400 hover:border-yellow-500/30' },
-  'ARG': { icon: '≡ƒÄ«', color: 'from-lime-600/10 to-emerald-600/10 border-lime-500/20 text-lime-400 hover:border-lime-500/30' },
+  'Web': { icon: '🌐', color: 'from-blue-600/10 to-indigo-600/10 border-blue-500/20 text-blue-400 hover:border-blue-500/30' },
+  'Pwn': { icon: '💥', color: 'from-red-600/10 to-orange-600/10 border-red-500/20 text-red-400 hover:border-red-500/30' },
+  'Cryptography': { icon: '🔐', color: 'from-purple-600/10 to-pink-600/10 border-purple-500/20 text-purple-400 hover:border-purple-500/30' },
+  'Forensics': { icon: '🔍', color: 'from-emerald-600/10 to-teal-600/10 border-emerald-500/20 text-emerald-400 hover:border-emerald-500/30' },
+  'OSINT': { icon: '🕵️', color: 'from-cyan-600/10 to-sky-600/10 border-cyan-500/20 text-cyan-400 hover:border-cyan-500/30' },
+  'Reverse Engineering': { icon: '🔄', color: 'from-rose-600/10 to-pink-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
+  'Steganography': { icon: '🖼️', color: 'from-amber-600/10 to-yellow-600/10 border-amber-500/20 text-amber-400 hover:border-amber-500/30' },
+  'Misc': { icon: '🧩', color: 'from-slate-600/10 to-zinc-600/10 border-slate-500/20 text-slate-400 hover:border-slate-500/30' },
+  'General': { icon: '🧠', color: 'from-neutral-600/10 to-stone-600/10 border-neutral-500/20 text-neutral-400 hover:border-neutral-500/30' },
+  'Linux': { icon: '🐧', color: 'from-orange-600/10 to-yellow-600/10 border-orange-500/20 text-orange-400 hover:border-orange-500/30' },
+  'Network': { icon: '📡', color: 'from-sky-600/10 to-blue-600/10 border-sky-500/20 text-sky-400 hover:border-sky-500/30' },
+  'Boot2root': { icon: '🚩', color: 'from-rose-600/10 to-red-600/10 border-rose-500/20 text-rose-400 hover:border-rose-500/30' },
+  'Musical Cipher': { icon: '🎵', color: 'from-violet-600/10 to-fuchsia-600/10 border-violet-500/20 text-violet-400 hover:border-violet-500/30' },
+  'Text': { icon: '📝', color: 'from-yellow-600/10 to-amber-600/10 border-yellow-500/20 text-yellow-400 hover:border-yellow-500/30' },
+  'ARG': { icon: '🗺️', color: 'from-lime-600/10 to-emerald-600/10 border-lime-500/20 text-lime-400 hover:border-lime-500/30' },
 };
 
-const defaultCategoryMeta = { icon: '≡ƒöº', color: 'from-gray-600/10 to-gray-700/10 border-gray-500/20 text-gray-400 hover:border-gray-500/30' };
+const defaultCategoryMeta = { icon: '📦', color: 'from-gray-600/10 to-gray-700/10 border-gray-500/20 text-gray-400 hover:border-gray-500/30' };
 
-
-// ΓöÇΓöÇ Callout icons & config ΓöÇΓöÇ
+// ── Callout icons & config ──
 const CALLOUT_CONFIG = {
-  NOTE:      { icon: 'Γä╣∩╕Å', cls: 'callout-note',      title: 'Note' },
-  INFO:      { icon: 'Γä╣∩╕Å', cls: 'callout-info',      title: 'Info' },
-  TIP:       { icon: '≡ƒÆí', cls: 'callout-tip',       title: 'Tip' },
-  HINT:      { icon: '≡ƒÆí', cls: 'callout-hint',      title: 'Hint' },
-  SUCCESS:   { icon: 'Γ£à', cls: 'callout-success',   title: 'Success' },
-  IMPORTANT: { icon: '≡ƒôî', cls: 'callout-important', title: 'Important' },
-  WARNING:   { icon: 'ΓÜá∩╕Å', cls: 'callout-warning',   title: 'Warning' },
-  ALERT:     { icon: 'ΓÜá∩╕Å', cls: 'callout-alert',     title: 'Alert' },
-  CAUTION:   { icon: '≡ƒ¢æ', cls: 'callout-caution',   title: 'Caution' },
-  ERROR:     { icon: 'Γ¥î', cls: 'callout-error',     title: 'Error' },
-  FAILURE:   { icon: 'Γ¥î', cls: 'callout-failure',   title: 'Failure' },
+  NOTE:      { icon: 'ℹ️', cls: 'callout-note',      title: 'Note' },
+  INFO:      { icon: 'ℹ️', cls: 'callout-info',      title: 'Info' },
+  TIP:       { icon: '💡', cls: 'callout-tip',       title: 'Tip' },
+  HINT:      { icon: '💡', cls: 'callout-hint',      title: 'Hint' },
+  SUCCESS:   { icon: '✅', cls: 'callout-success',   title: 'Success' },
+  IMPORTANT: { icon: '❗', cls: 'callout-important', title: 'Important' },
+  WARNING:   { icon: '⚠️', cls: 'callout-warning',   title: 'Warning' },
+  ALERT:     { icon: '⚠️', cls: 'callout-alert',     title: 'Alert' },
+  CAUTION:   { icon: '🚧', cls: 'callout-caution',   title: 'Caution' },
+  ERROR:     { icon: '❌', cls: 'callout-error',     title: 'Error' },
+  FAILURE:   { icon: '❌', cls: 'callout-failure',   title: 'Failure' },
 };
 
 const customRenderer = new marked.Renderer();
@@ -935,7 +934,7 @@ const Writeups = () => {
 
                         <div className="mb-8">
                           <h2 className="text-xl md:text-2xl font-extrabold mb-1 tracking-tight text-white flex items-center gap-2">
-                            <span>{CATEGORY_META[selectedCategory]?.icon || '≡ƒöº'}</span>
+                            <span>{CATEGORY_META[selectedCategory]?.icon || '📦'}</span>
                             <span>{selectedCategory} Challenges</span>
                           </h2>
                           <p className="text-white/30 text-xs">{list.length} challenges found across all archives.</p>
