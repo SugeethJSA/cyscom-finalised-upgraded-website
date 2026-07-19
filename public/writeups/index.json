@@ -3,7 +3,7 @@
     "id": "FinalTrace_2025",
     "title": "FinalTrace 2025",
     "date": "2025-10-31",
-    "cover": "2.png",
+    "cover": "2.webp",
     "description": "TechnoVIT's Flagship CTF event",
     "challenges": [
       {
@@ -547,7 +547,7 @@
     "id": "CyberConverge_2025",
     "title": "CyberConverge 2025",
     "date": "2025-08-28",
-    "cover": "logo.png",
+    "cover": "logo.webp",
     "description": "The Premier Cybersecurity Event Where Innovation meets security",
     "challenges": [
       {
@@ -844,7 +844,7 @@
     "id": "Cyscom Juice Shop 2025",
     "title": "Cyscom Juice Shop 2025",
     "date": "2025-01-01",
-    "cover": "juiceshop.png",
+    "cover": "juiceshop.webp",
     "description": "A comprehensive walkthrough of vulnerabilities in the CYSCOM JUICE SHOP, featuring challenges from simple input-based flaws to complex logic and design-level vulnerabilities.",
     "challenges": [
       {
@@ -1104,7 +1104,7 @@
     "id": "Zypher_2023",
     "title": "Zypher 2023",
     "date": "2023-11-06",
-    "cover": "zypher-logo.png",
+    "cover": "zypher-logo.webp",
     "description": "Gripping CTFs with a thrilling plot",
     "challenges": [
       {

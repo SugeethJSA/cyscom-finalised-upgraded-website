@@ -51,6 +51,9 @@ export default defineConfig({
       }
     })
   ],
+  resolve: {
+    dedupe: ['react', 'react-dom', 'framer-motion', 'motion']
+  },
   // eslint-disable-next-line no-undef
   base: process.env.VITE_BASE_PATH || '/',
   build: {
