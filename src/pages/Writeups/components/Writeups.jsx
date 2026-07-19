@@ -20,17 +20,17 @@ const DIFFICULTY_COLORS = {
 };
 
 const EVENT_COVERS = {
-  'cyberconverge-2025': '/img/cyberconverge.png',
-  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.png',
-  'cyscom-juice-shop-2025': '/img/juiceshop.png',
-  'zypher-2023': '/img/zypher-logo.png',
+  'cyberconverge-2025': '/img/cyberconverge.webp',
+  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.webp',
+  'cyscom-juice-shop-2025': '/img/juiceshop.webp',
+  'zypher-2023': '/img/zypher-logo.webp',
 };
 
 const EVENT_LOGOS = {
-  'cyberconverge-2025': '/writeups/CyberConverge_2025/images/logo.png',
-  'cyscom-juice-shop-2025': '/writeups/Cyscom Juice Shop 2025/imagedata/logo.png',
-  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.png',
-  'zypher-2023': '/img/zypher-logo.png',
+  'cyberconverge-2025': '/writeups/CyberConverge_2025/images/logo.webp',
+  'cyscom-juice-shop-2025': '/writeups/Cyscom Juice Shop 2025/imagedata/logo.webp',
+  'finaltrace-2025': '/writeups/FinalTrace_2025/images/2.webp',
+  'zypher-2023': '/img/zypher-logo.webp',
 };
 
 const EVENT_FOLDERS = {

@@ -6,29 +6,29 @@ import Footer from "./Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 const boardMembers = [
-  { name: "Vijval Shah", role: "Chapter Leader", img: "/img/leads/chapter-lead.jpg", quote: "In a world of UDP, be TCP." },
-  { name: "Bharghav", role: "Chapter Manager", img: "/img/leads/chapter-manager.jpg", quote: "I don't play the odds, I play the man" },
-  { name: "Harsh Singh", role: "General Secretary (Tech)", img: "/img/leads/gen_sec_tech.jpg", quote: "Antivirus can't fix dumb decisions" },
-  { name: "Joshitha G", role: "General Secretary (Management)", img: "/img/leads/gen_sec_management.jpg", quote: "Professional overthinker" },
-  { name: "Goutham", role: "Treasurer", img: "/img/leads/treasurer.jpg", quote: "Encryption is free, but security has a price." },
+  { name: "Vijval Shah", role: "Chapter Leader", img: "/img/leads/chapter-lead.webp", quote: "In a world of UDP, be TCP." },
+  { name: "Bharghav", role: "Chapter Manager", img: "/img/leads/chapter-manager.webp", quote: "I don't play the odds, I play the man" },
+  { name: "Harsh Singh", role: "General Secretary (Tech)", img: "/img/leads/gen_sec_tech.webp", quote: "Antivirus can't fix dumb decisions" },
+  { name: "Joshitha G", role: "General Secretary (Management)", img: "/img/leads/gen_sec_management.webp", quote: "Professional overthinker" },
+  { name: "Goutham", role: "Treasurer", img: "/img/leads/treasurer.webp", quote: "Encryption is free, but security has a price." },
 ];
 
 const cabinetMembers = [
-  { name: "Aakansh Gupta", department: "Technical Lead", img: "/img/leads/technical-lead-1.jpg", quote: "There's no place like 127.0.0.1" },
-  { name: "Om Mishra", department: "Technical Lead", img: "/img/leads/technical-lead-2.jpg", quote: "Control what you can, Endure what you must." },
-  { name: "Mohnish", department: "Dev Lead", img: "/img/leads/dev-lead-1.jpg", quote: "Just enjoy the work better than yesterday" },
-  { name: "Krish Patel", department: "Dev Lead", img: "/img/leads/dev-lead-2.jpg", quote: "Powered by coffee and code" },
-  { name: "Akshitha M", department: "Design Lead", img: "/img/leads/design-lead-1.jpg", quote: "Having no regrets is all that she really wants " },
-  { name: "Advika", department: "Design Lead", img: "/img/leads/design-lead-2.jpg", quote: "The horrors persist but so do I" },
-  { name: "Sreenidhi K", department: "Content Lead", img: "/img/leads/content-lead-1.jpg", quote: "Can I interest you in a sarcastic comment?" },
-  { name: "M. Shruthi", department: "Content Lead", img: "/img/leads/content-lead-2.jpg", quote: "Wit beyond measure is man's greatest treasure." },
-  { name: "Nihara", department: "Event Management Lead", img: "/img/leads/management-lead-1.jpg", quote: "I bring the chaos to the table" },
-  { name: "Ramakrishnan P H", department: "Event Management Lead", img: "/img/leads/management-lead-2.jpg", quote: "trying to make it make sense..." },
-  { name: "Kanika Rathore", department: "Social Media Lead", img: "/img/leads/social-media-lead-1.jpg", quote: "If I look calm, just know the semester is screaming internally." },
-  { name: "Shagun Gupta", department: "Social Media Lead", img: "/img/leads/social-media-lead-2.jpg", quote: "Be whoever you want as long as you are outrageous !" },
+  { name: "Aakansh Gupta", department: "Technical Lead", img: "/img/leads/technical-lead-1.webp", quote: "There's no place like 127.0.0.1" },
+  { name: "Om Mishra", department: "Technical Lead", img: "/img/leads/technical-lead-2.webp", quote: "Control what you can, Endure what you must." },
+  { name: "Mohnish", department: "Dev Lead", img: "/img/leads/dev-lead-1.webp", quote: "Just enjoy the work better than yesterday" },
+  { name: "Krish Patel", department: "Dev Lead", img: "/img/leads/dev-lead-2.webp", quote: "Powered by coffee and code" },
+  { name: "Akshitha M", department: "Design Lead", img: "/img/leads/design-lead-1.webp", quote: "Having no regrets is all that she really wants " },
+  { name: "Advika", department: "Design Lead", img: "/img/leads/design-lead-2.webp", quote: "The horrors persist but so do I" },
+  { name: "Sreenidhi K", department: "Content Lead", img: "/img/leads/content-lead-1.webp", quote: "Can I interest you in a sarcastic comment?" },
+  { name: "M. Shruthi", department: "Content Lead", img: "/img/leads/content-lead-2.webp", quote: "Wit beyond measure is man's greatest treasure." },
+  { name: "Nihara", department: "Event Management Lead", img: "/img/leads/management-lead-1.webp", quote: "I bring the chaos to the table" },
+  { name: "Ramakrishnan P H", department: "Event Management Lead", img: "/img/leads/management-lead-2.webp", quote: "trying to make it make sense..." },
+  { name: "Kanika Rathore", department: "Social Media Lead", img: "/img/leads/social-media-lead-1.webp", quote: "If I look calm, just know the semester is screaming internally." },
+  { name: "Shagun Gupta", department: "Social Media Lead", img: "/img/leads/social-media-lead-2.webp", quote: "Be whoever you want as long as you are outrageous !" },
 ];
 
-const cabinetGroupPhoto = "/img/team018.jpg";
+const cabinetGroupPhoto = "/img/team018.webp";
 
 const getInitials = (name) => {
   return name

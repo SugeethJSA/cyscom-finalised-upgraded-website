@@ -24,7 +24,7 @@ async function getBase64ImageFromUrl(url) {
  * Dynamic Vector PDF Generator using jsPDF.
  * Renders vector paths, texts, and embedded logos/QRs in full color.
  */
-export async function downloadVectorPdf({ template, user, certId, signature, logoUrl = "/img/logo.png" }) {
+export async function downloadVectorPdf({ template, user, certId, signature, logoUrl = "/img/logo.webp" }) {
   // Theme styling configurations (RGB color arrays)
   let bg = [5, 5, 8];             // #050508
   let primary = [59, 130, 246];    // #3b82f6

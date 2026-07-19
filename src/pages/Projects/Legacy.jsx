@@ -8,7 +8,7 @@ const DEFAULT_LEGACY = [
     post: "Cabinet Head & Lead Developer",
     github: "https://github.com/SugeethJSA",
     linkedin: "https://www.linkedin.com/in/sugeethjsa",
-    pic: "/img/logo.png"
+    pic: "/img/logo.webp"
   }
 ];
 
@@ -27,7 +27,7 @@ const Legacy = () => {
           setMembersList(arr.map(u => ({
             name: u.name,
             post: `Legacy Member (Est. ${new Date(u.legacy_date).getFullYear()})`,
-            pic: "/img/logo.png"
+            pic: "/img/logo.webp"
           })));
         }
       } catch (err) {

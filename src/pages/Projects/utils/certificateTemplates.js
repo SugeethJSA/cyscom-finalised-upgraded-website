@@ -10,8 +10,8 @@ const DEFAULT_TEMPLATES = {
       { name: "Joyeeta Dey", title: "Cabinet Coordinator" }
     ],
     sponsorLogos: [
-      "/img/logo.png", // Stand-in logo
-      "/img/logo.png"
+      "/img/logo.webp", // Stand-in logo
+      "/img/logo.webp"
     ]
   },
   "HACKATHON": {
@@ -25,7 +25,7 @@ const DEFAULT_TEMPLATES = {
       { name: "Sugeeth JSA", title: "Cabinet Head" }
     ],
     sponsorLogos: [
-      "/img/logo.png"
+      "/img/logo.webp"
     ]
   },
   "MERIT": {
@@ -39,7 +39,7 @@ const DEFAULT_TEMPLATES = {
       { name: "Joyeeta Dey", title: "Cabinet Coordinator" }
     ],
     sponsorLogos: [
-      "/img/logo.png"
+      "/img/logo.webp"
     ]
   }
 };

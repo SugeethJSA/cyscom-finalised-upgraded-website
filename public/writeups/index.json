@@ -1,0 +1,1314 @@
+[
+  {
+    "id": "FinalTrace_2025",
+    "title": "FinalTrace 2025",
+    "date": "2025-10-31",
+    "cover": "2.png",
+    "description": "TechnoVIT's Flagship CTF event",
+    "challenges": [
+      {
+        "id": "01-doors-mechanism",
+        "title": "Door's Mechanism",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Pwn"
+        ],
+        "tags": [],
+        "flag": "CYS{7h3_l45t_1nv0ca710n_ha5_b33n_5p0k3n_@789#!}",
+        "filePath": "/writeups/FinalTrace_2025/01-doors-mechanism.md"
+      },
+      {
+        "id": "02-echo-in-black-white",
+        "title": "Echo in Black & White",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{7H3_H1DD3N_L4Y3R}",
+        "filePath": "/writeups/FinalTrace_2025/02-echo-in-black-white.md"
+      },
+      {
+        "id": "03-do-you-know-xor-well-enough",
+        "title": "Do you know XOR well enough?",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "Dynamic Flag",
+        "filePath": "/writeups/FinalTrace_2025/03-do-you-know-xor-well-enough.md"
+      },
+      {
+        "id": "04-alpha-parallel",
+        "title": "Alpha Parallel",
+        "difficulty": "easy",
+        "points": 500,
+        "categories": [
+          "Forensics",
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "CYS{SHADOW_ALPHA_QR_LAYER_42X}",
+        "filePath": "/writeups/FinalTrace_2025/04-alpha-parallel.md"
+      },
+      {
+        "id": "05-the-doors-mechanism",
+        "title": "The Door's Mechanism",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Pwn"
+        ],
+        "tags": [],
+        "flag": "Dynamic Flag",
+        "filePath": "/writeups/FinalTrace_2025/05-the-doors-mechanism.md"
+      },
+      {
+        "id": "06-aes-again",
+        "title": "AES again??",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{tiny_change_huge_difference}",
+        "filePath": "/writeups/FinalTrace_2025/06-aes-again.md"
+      },
+      {
+        "id": "07-output-temporal",
+        "title": "VAULT_7A",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "FLAG{ECHO_VAULT_MEMORY_FRAGMENT_7A_RESTORED}",
+        "filePath": "/writeups/FinalTrace_2025/07-output-temporal.md"
+      },
+      {
+        "id": "08-forged-memory-log",
+        "title": "Forged Memory Log",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{brute_forcing_is_the_way}",
+        "filePath": "/writeups/FinalTrace_2025/08-forged-memory-log.md"
+      },
+      {
+        "id": "09-reflection-restored",
+        "title": "Reflection Restored",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{r3fl3ct10n_r3st0r3d_B2A}",
+        "filePath": "/writeups/FinalTrace_2025/09-reflection-restored.md"
+      },
+      {
+        "id": "10-temporal-core-console",
+        "title": "Temporal Core Console",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{E0N_SYNCHRONIZED_2F3C}",
+        "filePath": "/writeups/FinalTrace_2025/10-temporal-core-console.md"
+      },
+      {
+        "id": "11-the-watchers-gaze",
+        "title": "The Watcher's Gaze",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "OSINT"
+        ],
+        "tags": [],
+        "flag": "CYS{341184_125001_6B011D}",
+        "filePath": "/writeups/FinalTrace_2025/11-the-watchers-gaze.md"
+      },
+      {
+        "id": "12-challenge-name-exif-echoes",
+        "title": "Challenge Name - EXIF ECHOES",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics",
+          "OSINT"
+        ],
+        "tags": [],
+        "flag": "CYS{T1m3_Fr4gm3nt5_R3v34l_Th3_P4th}",
+        "filePath": "/writeups/FinalTrace_2025/12-challenge-name-exif-echoes.md"
+      },
+      {
+        "id": "13-sneaky-notes",
+        "title": "Sneaky Notes",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CYS{sneaky_notes_xss}",
+        "filePath": "/writeups/FinalTrace_2025/13-sneaky-notes.md"
+      },
+      {
+        "id": "14-sneaky-notes",
+        "title": "EON GATE",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CYS{EON_REALIGNED}",
+        "filePath": "/writeups/FinalTrace_2025/14-sneaky-notes.md"
+      },
+      {
+        "id": "15-challenge-name",
+        "title": "Mirror Shatter",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CYS{B43aking_th3_m1rr0r_1$_c00l}",
+        "filePath": "/writeups/FinalTrace_2025/15-challenge-name.md"
+      },
+      {
+        "id": "16-unknown-challenge",
+        "title": "Echoes in the Hourglass",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "FLAG{HOURGLASS_RECOVERED}",
+        "filePath": "/writeups/FinalTrace_2025/16-unknown-challenge.md"
+      },
+      {
+        "id": "17-ctf-27-temporal-freeze-upgrade-walkthrough",
+        "title": "Temporal Freeze Upgrade",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "cys{T1M3_SYNC}",
+        "filePath": "/writeups/FinalTrace_2025/17-ctf-27-temporal-freeze-upgrade-walkthrough.md"
+      },
+      {
+        "id": "18-lyras-photos",
+        "title": "Lyra's Photos",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{f1v3_53n535_s1x_3m0t10n5}",
+        "filePath": "/writeups/FinalTrace_2025/18-lyras-photos.md"
+      },
+      {
+        "id": "19-paradox-gate-gaurdian",
+        "title": "PARADOX GATE GAURDIAN",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "CYS{4CC355_6RAN73D}",
+        "filePath": "/writeups/FinalTrace_2025/19-paradox-gate-gaurdian.md"
+      },
+      {
+        "id": "20-where-do-u-came-from",
+        "title": "Where do u came from",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Pwn"
+        ],
+        "tags": [],
+        "flag": "Dynamic Flag",
+        "filePath": "/writeups/FinalTrace_2025/20-where-do-u-came-from.md"
+      },
+      {
+        "id": "21-symphony-of-loops",
+        "title": "Symphony of Loops",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Musical Cipher"
+        ],
+        "tags": [],
+        "flag": "CYS{K3V1N_DUR4NT_M1DD13_G4M3}",
+        "filePath": "/writeups/FinalTrace_2025/21-symphony-of-loops.md"
+      },
+      {
+        "id": "22-ashes-of-memory",
+        "title": "Ashes of Memory",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{7h3RE_15_N0_E4D}",
+        "filePath": "/writeups/FinalTrace_2025/22-ashes-of-memory.md"
+      },
+      {
+        "id": "23-lost-core-pulse",
+        "title": "Lost Core Pulse",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{3bb12d_lostpulse_91be2d}",
+        "filePath": "/writeups/FinalTrace_2025/23-lost-core-pulse.md"
+      },
+      {
+        "id": "24-spectogram-shadows",
+        "title": "Spectogram Shadows",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "cys{N9OO22_ESOO7S}",
+        "filePath": "/writeups/FinalTrace_2025/24-spectogram-shadows.md"
+      },
+      {
+        "id": "25-poem-of-hidden-lies",
+        "title": "POEM OF HIDDEN LIES",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "OSINT",
+          "Forensics",
+          "Text"
+        ],
+        "tags": [],
+        "flag": "CYS{january_2019}",
+        "filePath": "/writeups/FinalTrace_2025/25-poem-of-hidden-lies.md"
+      },
+      {
+        "id": "26-act-iii-mirror-of-minutes-xss-ctf-walkthrough",
+        "title": "Mirror of Minutes",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "cys{m1rr0r_p4ss}",
+        "filePath": "/writeups/FinalTrace_2025/26-act-iii-mirror-of-minutes-xss-ctf-walkthrough.md"
+      },
+      {
+        "id": "27-challenge-name",
+        "title": "Feed It the Fracture",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{INH4RM0N1C_DO0R_UNL0CK3D}",
+        "filePath": "/writeups/FinalTrace_2025/27-challenge-name.md"
+      },
+      {
+        "id": "28--category-forensics",
+        "title": "Phantom Fingerprints",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{ph4n7om_v3n0m}",
+        "filePath": "/writeups/FinalTrace_2025/28--category-forensics.md"
+      },
+      {
+        "id": "29-ToHehewithLyrasEchoes",
+        "title": "To Hehe with Lyra's Echoes",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{HERACTUALECHOES}",
+        "filePath": "/writeups/FinalTrace_2025/29-ToHehewithLyrasEchoes.md"
+      },
+      {
+        "id": "30-shattered-glass-logs",
+        "title": "Shattered Glass Logs",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{gl4ss_un5h4tt3rd}",
+        "filePath": "/writeups/FinalTrace_2025/30-shattered-glass-logs.md"
+      },
+      {
+        "id": "31-the-infinite-gate",
+        "title": "The Infinite Gate",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CYS{c00k1eS_ar3_m34nt_t0_b3_br0k3n}",
+        "filePath": "/writeups/FinalTrace_2025/31-the-infinite-gate.md"
+      },
+      {
+        "id": "32-auditors-diary",
+        "title": "Auditor's Diary",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "OSINT",
+          "Text"
+        ],
+        "tags": [],
+        "flag": "CYS{olofkgustafsson}",
+        "filePath": "/writeups/FinalTrace_2025/32-auditors-diary.md"
+      },
+      {
+        "id": "33-reconfiguration-terminal",
+        "title": "Reconfiguration Terminal",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{7h3_h0ur6l455_5h4773r3d_bu7_m3m0ry_r3m41n5_1n_fr46m3n75_pl3453_l1573n_cl053r_65537_2025}",
+        "filePath": "/writeups/FinalTrace_2025/33-reconfiguration-terminal.md"
+      },
+      {
+        "id": "34-unknown-challenge",
+        "title": "Paradox Parable",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{early_belief}",
+        "filePath": "/writeups/FinalTrace_2025/34-unknown-challenge.md"
+      },
+      {
+        "id": "35-unknown-challenge",
+        "title": "Temporal Mergepoint",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{temporal_merge_success}",
+        "filePath": "/writeups/FinalTrace_2025/35-unknown-challenge.md"
+      },
+      {
+        "id": "36-maelle-confrontation",
+        "title": "Maelle Confrontation",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "OSINT"
+        ],
+        "tags": [],
+        "flag": "CYS{d3nyy}",
+        "filePath": "/writeups/FinalTrace_2025/36-maelle-confrontation.md"
+      },
+      {
+        "id": "37-challenge-name",
+        "title": "Auditor Encounter",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Web",
+          "ARG"
+        ],
+        "tags": [],
+        "flag": "CYS{aud1t_regr3t_pass}",
+        "filePath": "/writeups/FinalTrace_2025/37-challenge-name.md"
+      },
+      {
+        "id": "38-citadel-entry-lock",
+        "title": "Citadel Entry Lock",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{SEAL_RAID_CROSS_MAAT_MAZE_HODOS}",
+        "filePath": "/writeups/FinalTrace_2025/38-citadel-entry-lock.md"
+      },
+      {
+        "id": "39-choir-echoes",
+        "title": "Choir Echoes",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{1tal1an0}",
+        "filePath": "/writeups/FinalTrace_2025/39-choir-echoes.md"
+      },
+      {
+        "id": "40-reflection-logs",
+        "title": "Reflection Logs",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{lyra_was_here}",
+        "filePath": "/writeups/FinalTrace_2025/40-reflection-logs.md"
+      },
+      {
+        "id": "41-challenge-name",
+        "title": "Auditor Encounter",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Web",
+          "ARG"
+        ],
+        "tags": [],
+        "flag": "CYS{audit_recovered_1A3F_07XZ}",
+        "filePath": "/writeups/FinalTrace_2025/41-challenge-name.md"
+      },
+      {
+        "id": "42-cryptoez",
+        "title": "CryptoEZ",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "CYS{y0u_kn0w_cryp70}",
+        "filePath": "/writeups/FinalTrace_2025/42-cryptoez.md"
+      },
+      {
+        "id": "43-challenge-description",
+        "title": "Lyra's Journal",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "CYS{THE_CLOCKS_WERE_LYING}",
+        "filePath": "/writeups/FinalTrace_2025/43-challenge-description.md"
+      },
+      {
+        "id": "44-echo-double-combat",
+        "title": "Echo-Double Combat",
+        "difficulty": "medium",
+        "points": 500,
+        "categories": [
+          "Reverse Engineering"
+        ],
+        "tags": [],
+        "flag": "cys{s3cr3t_1s_un10cked}",
+        "filePath": "/writeups/FinalTrace_2025/44-echo-double-combat.md"
+      }
+    ]
+  },
+  {
+    "id": "CyberConverge_2025",
+    "title": "CyberConverge 2025",
+    "date": "2025-08-28",
+    "cover": "logo.png",
+    "description": "The Premier Cybersecurity Event Where Innovation meets security",
+    "challenges": [
+      {
+        "id": "01-around-the-world",
+        "title": "Around The World",
+        "difficulty": "medium",
+        "points": 400,
+        "categories": [
+          "OSINT"
+        ],
+        "tags": [],
+        "flag": "CBCV{trnava_slovakia}",
+        "filePath": "/writeups/CyberConverge_2025/01-around-the-world.md"
+      },
+      {
+        "id": "02-Big-machine",
+        "title": "Big Machine",
+        "difficulty": "hard",
+        "points": 500,
+        "categories": [
+          "Pwn"
+        ],
+        "tags": [],
+        "flag": "CBCV{3nv1r0nm3nt_v4r14bl3s_c4n_b3_s3cr3t_2352}",
+        "filePath": "/writeups/CyberConverge_2025/02-Big-machine.md"
+      },
+      {
+        "id": "03-breach",
+        "title": "Breach",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "Misc"
+        ],
+        "tags": [],
+        "flag": "CBCV{F14GIsHere}",
+        "filePath": "/writeups/CyberConverge_2025/03-breach.md"
+      },
+      {
+        "id": "04-Cathedral",
+        "title": "Cathedral",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "OSINT"
+        ],
+        "tags": [],
+        "flag": "CBCV{-8.9103\\_-140.1026}  OR  CBCV{-8.9103\\_-140.1030}",
+        "filePath": "/writeups/CyberConverge_2025/04-Cathedral.md"
+      },
+      {
+        "id": "05-easy-file",
+        "title": "Easy Flag",
+        "difficulty": "easy",
+        "points": 300,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CBCV{p4tH_tr4v3rs4L_v8lN_939851}",
+        "filePath": "/writeups/CyberConverge_2025/05-easy-file.md"
+      },
+      {
+        "id": "06-Hidden-Layers",
+        "title": "Hidden Layers",
+        "difficulty": "easy",
+        "points": 200,
+        "categories": [
+          "Steganography"
+        ],
+        "tags": [],
+        "flag": "CBCV{CRYPT_C4N_B3_L4Y3R5}",
+        "filePath": "/writeups/CyberConverge_2025/06-Hidden-Layers.md"
+      },
+      {
+        "id": "07-whoamii",
+        "title": "Who am I?",
+        "difficulty": "easy",
+        "points": 350,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CBCV{jWt_t0k3ns_us3d_34}",
+        "filePath": "/writeups/CyberConverge_2025/07-whoamii.md"
+      },
+      {
+        "id": "08-i_am_who",
+        "title": "I am Who?",
+        "difficulty": "hard",
+        "points": 450,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CBCV{w34K_S3Cr3T_K3y_Cr4CK3d_835}",
+        "filePath": "/writeups/CyberConverge_2025/08-i_am_who.md"
+      },
+      {
+        "id": "09-inti-conv",
+        "title": "Intellectual Conversation",
+        "difficulty": "easy",
+        "points": 200,
+        "categories": [
+          "Misc"
+        ],
+        "tags": [],
+        "flag": "CBCV{1nv151b1l1ty_0r_t1m3_c0ntr0l?}",
+        "filePath": "/writeups/CyberConverge_2025/09-inti-conv.md"
+      },
+      {
+        "id": "10-itainthere",
+        "title": "It ain't here",
+        "difficulty": "hard",
+        "points": 500,
+        "categories": [
+          "Reverse Engineering"
+        ],
+        "tags": [],
+        "flag": "CBCV{b07faa19997299630d615b1a9579d64f}",
+        "filePath": "/writeups/CyberConverge_2025/10-itainthere.md"
+      },
+      {
+        "id": "11-layers",
+        "title": "Layers",
+        "difficulty": "easy",
+        "points": 150,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "CBCV{cRy9T0_L4y3r5_4RE_FuN_3135}",
+        "filePath": "/writeups/CyberConverge_2025/11-layers.md"
+      },
+      {
+        "id": "12-locked",
+        "title": "Locked",
+        "difficulty": "hard",
+        "points": 450,
+        "categories": [
+          "Reverse Engineering"
+        ],
+        "tags": [],
+        "flag": "CBCV{h3x_3dIt0r5_t0_Th3_r3scU3_9364}",
+        "filePath": "/writeups/CyberConverge_2025/12-locked.md"
+      },
+      {
+        "id": "13-lbys",
+        "title": "Look beyond what you see",
+        "difficulty": "medium",
+        "points": 300,
+        "categories": [
+          "Misc"
+        ],
+        "tags": [],
+        "flag": "CBCV{MORSE_OR_REMORSE}",
+        "filePath": "/writeups/CyberConverge_2025/13-lbys.md"
+      },
+      {
+        "id": "14-monoal2",
+        "title": "Monoalphabetic Shenanigans",
+        "difficulty": "hard",
+        "points": 450,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "CBCV{FREQUENCY_ANALYSIS_FTW}",
+        "filePath": "/writeups/CyberConverge_2025/14-monoal2.md"
+      },
+      {
+        "id": "15-mousetrap",
+        "title": "Mouse Trap",
+        "difficulty": "medium",
+        "points": 350,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "CBCV{M0u23_7Ra95_DAng3r_5342}",
+        "filePath": "/writeups/CyberConverge_2025/15-mousetrap.md"
+      },
+      {
+        "id": "16-mrrobot",
+        "title": "Mr. Robot",
+        "difficulty": "hard",
+        "points": 500,
+        "categories": [
+          "Pwn"
+        ],
+        "tags": [],
+        "flag": "CBCV{BuFf3r_0v3rF10W_1s_s1mpL3_9713}",
+        "filePath": "/writeups/CyberConverge_2025/16-mrrobot.md"
+      },
+      {
+        "id": "17-mhrk",
+        "title": "My hostel room key",
+        "difficulty": "easy",
+        "points": 150,
+        "categories": [
+          "Misc"
+        ],
+        "tags": [],
+        "flag": "CBCV{FINAL_FLAG}",
+        "filePath": "/writeups/CyberConverge_2025/17-mhrk.md"
+      },
+      {
+        "id": "18-passcheckz",
+        "title": "Passz CheckS",
+        "difficulty": "hard",
+        "points": 500,
+        "categories": [
+          "Reverse Engineering"
+        ],
+        "tags": [],
+        "flag": "CBCV{CiCaDAzznotz141}",
+        "filePath": "/writeups/CyberConverge_2025/18-passcheckz.md"
+      },
+      {
+        "id": "19-polyglot",
+        "title": "Polyglot",
+        "difficulty": "hard",
+        "points": 400,
+        "categories": [
+          "Web"
+        ],
+        "tags": [],
+        "flag": "CBCV{0n3_p4Yl0AD_2_w0rLd5_4545}",
+        "filePath": "/writeups/CyberConverge_2025/19-polyglot.md"
+      },
+      {
+        "id": "20-rsa_hard",
+        "title": "RSA Hard",
+        "difficulty": "hard",
+        "points": 400,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "CBCV{cryptanalysis}",
+        "filePath": "/writeups/CyberConverge_2025/20-rsa_hard.md"
+      },
+      {
+        "id": "21-snarkygpt",
+        "title": "SnarkyGPT",
+        "difficulty": "hard",
+        "points": 450,
+        "categories": [
+          "Misc"
+        ],
+        "tags": [],
+        "flag": "CBCV{snarky_gpt_owns_you_ez}",
+        "filePath": "/writeups/CyberConverge_2025/21-snarkygpt.md"
+      },
+      {
+        "id": "22-vibechecker",
+        "title": "Vibe Checker",
+        "difficulty": "hard",
+        "points": 400,
+        "categories": [
+          "Reverse Engineering"
+        ],
+        "tags": [],
+        "flag": "CCBCV{R3v3rs1ng_fl0471ng_p01NtS_15_e4zY_r1ght_36}",
+        "filePath": "/writeups/CyberConverge_2025/22-vibechecker.md"
+      },
+      {
+        "id": "23-wherestheflag",
+        "title": "Where's The Flag?",
+        "difficulty": "hard",
+        "points": 400,
+        "categories": [
+          "Steganography"
+        ],
+        "tags": [],
+        "flag": "CBCV{1t5_n01_4_5p4c3_bUt_4_mY573Ry_009315}",
+        "filePath": "/writeups/CyberConverge_2025/23-wherestheflag.md"
+      },
+      {
+        "id": "24-your-eyes",
+        "title": "Your Eyes",
+        "difficulty": "easy",
+        "points": 150,
+        "categories": [
+          "Steganography"
+        ],
+        "tags": [],
+        "flag": "CBCV{such_4N_3s4y_1_r34lLy?}",
+        "filePath": "/writeups/CyberConverge_2025/24-your-eyes.md"
+      }
+    ]
+  },
+  {
+    "id": "Cyscom Juice Shop 2025",
+    "title": "Cyscom Juice Shop 2025",
+    "date": "2025-01-01",
+    "cover": "juiceshop.png",
+    "description": "A comprehensive walkthrough of vulnerabilities in the CYSCOM JUICE SHOP, featuring challenges from simple input-based flaws to complex logic and design-level vulnerabilities.",
+    "challenges": [
+      {
+        "id": "01-initial-login-page-sql-injection",
+        "title": "Initial Login Page & SQL Injection",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "sql-injection",
+          "authentication"
+        ],
+        "flag": "CYSM{sql_injection_bypass}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/01-initial-login-page-sql-injection.md"
+      },
+      {
+        "id": "02-admin-panel-disclosure",
+        "title": "Admin Panel Disclosure",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "data-exposure"
+        ],
+        "flag": "CYSM{admin_panel_disclosure}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/02-admin-panel-disclosure.md"
+      },
+      {
+        "id": "03-documentation-panel-token-access",
+        "title": "Documentation Panel - Token Access",
+        "difficulty": "medium",
+        "points": 200,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "broken-access-control",
+          "base64"
+        ],
+        "flag": "CYSM{documentation_token_access}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/03-documentation-panel-token-access.md"
+      },
+      {
+        "id": "04-idor",
+        "title": "IDOR (Insecure Direct Object Reference)",
+        "difficulty": "easy",
+        "points": 150,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "idor",
+          "access-control"
+        ],
+        "flag": "CYSM{idor_unauthorized_access}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/04-idor.md"
+      },
+      {
+        "id": "05-cross-site-scripting-xss",
+        "title": "Cross Site Scripting (XSS)",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "xss",
+          "html-injection"
+        ],
+        "flag": "CYSM{xss_stored_alert}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/05-cross-site-scripting-xss.md"
+      },
+      {
+        "id": "06-encoded-cross-site-scripting",
+        "title": "Encoded Cross Site Scripting",
+        "difficulty": "medium",
+        "points": 200,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "xss",
+          "evasion"
+        ],
+        "flag": "CYSM{encoded_xss_bypass}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/06-encoded-cross-site-scripting.md"
+      },
+      {
+        "id": "07-server-side-template-injection-ssti",
+        "title": "Server-Side Template Injection (SSTI)",
+        "difficulty": "medium",
+        "points": 250,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "ssti",
+          "jinja2"
+        ],
+        "flag": "CYSM{ssti_jinja2_exploit}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/07-server-side-template-injection-ssti.md"
+      },
+      {
+        "id": "08-advanced-ssti",
+        "title": "Advanced SSTI",
+        "difficulty": "hard",
+        "points": 300,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "ssti",
+          "rce"
+        ],
+        "flag": "CYSM{advanced_ssti_rce}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/08-advanced-ssti.md"
+      },
+      {
+        "id": "09-event-based-cross-site-scripting",
+        "title": "Event-Based Cross Site Scripting",
+        "difficulty": "medium",
+        "points": 200,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "xss",
+          "onerror"
+        ],
+        "flag": "CYSM{event_based_xss_onerror}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/09-event-based-cross-site-scripting.md"
+      },
+      {
+        "id": "10-broken-authentication-token-forgery",
+        "title": "Broken Authentication - Token Forgery",
+        "difficulty": "medium",
+        "points": 250,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "broken-authentication",
+          "base64"
+        ],
+        "flag": "CYSM{broken_auth_token_forgery}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/10-broken-authentication-token-forgery.md"
+      },
+      {
+        "id": "11-lost-user-osint",
+        "title": "Lost User (OSINT Challenge)",
+        "difficulty": "medium",
+        "points": 200,
+        "categories": [
+          "OSINT"
+        ],
+        "tags": [
+          "password-cracking"
+        ],
+        "flag": "CYSM{lost_user_osint_date}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/11-lost-user-osint.md"
+      },
+      {
+        "id": "12-type-juggling-php",
+        "title": "Type Juggling (PHP)",
+        "difficulty": "medium",
+        "points": 250,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "php",
+          "type-juggling"
+        ],
+        "flag": "CYSM{type_juggling_php_hash}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/12-type-juggling-php.md"
+      },
+      {
+        "id": "13-prototype-pollution-javascript",
+        "title": "Prototype Pollution (JavaScript)",
+        "difficulty": "hard",
+        "points": 300,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "prototype-pollution",
+          "javascript"
+        ],
+        "flag": "CYSM{prototype_pollution_javascript}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/13-prototype-pollution-javascript.md"
+      },
+      {
+        "id": "14-image-steganography",
+        "title": "Image Steganography",
+        "difficulty": "easy",
+        "points": 150,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [
+          "steganography",
+          "zsteg"
+        ],
+        "flag": "CYSM{image_stego_extracted}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/14-image-steganography.md"
+      },
+      {
+        "id": "15-audio-steganography",
+        "title": "Audio Steganography",
+        "difficulty": "medium",
+        "points": 200,
+        "categories": [
+          "Forensics"
+        ],
+        "tags": [
+          "steganography",
+          "spectrogram"
+        ],
+        "flag": "CYSM{audio_stego_spectrogram}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/15-audio-steganography.md"
+      },
+      {
+        "id": "16-hidden-in-plain-sight",
+        "title": "Hidden in Plain Sight",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "information-disclosure"
+        ],
+        "flag": "CYSM{debug_key_hidden_in_plain_sight}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/16-hidden-in-plain-sight.md"
+      },
+      {
+        "id": "17-discussions-tab",
+        "title": "Discussions Tab",
+        "difficulty": "easy",
+        "points": 100,
+        "categories": [
+          "Web"
+        ],
+        "tags": [
+          "reconnaissance"
+        ],
+        "flag": "CYSM{dafweyif29ybvf23d}",
+        "filePath": "/writeups/Cyscom Juice Shop 2025/17-discussions-tab.md"
+      }
+    ]
+  },
+  {
+    "id": "Zypher_2023",
+    "title": "Zypher 2023",
+    "date": "2023-11-06",
+    "cover": "zypher-logo.png",
+    "description": "Gripping CTFs with a thrilling plot",
+    "challenges": [
+      {
+        "id": "level-01-discord-server",
+        "title": "Level 1 - Discord Server",
+        "difficulty": "easy",
+        "points": 5,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "zyp{g0od_lV6k_f0x3r}",
+        "filePath": "/writeups/Zypher_2023/level-01-discord-server.md"
+      },
+      {
+        "id": "level-02-email-header",
+        "title": "Level 2 - Email Header",
+        "difficulty": "easy",
+        "points": 10,
+        "categories": [
+          "Cryptography",
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "zyp{Welcometozyphequest_0012}",
+        "filePath": "/writeups/Zypher_2023/level-02-email-header.md"
+      },
+      {
+        "id": "level-03-pdf",
+        "title": "Level 3 - Password Protected PDF",
+        "difficulty": "easy",
+        "points": 10,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "zyp{string_1408}",
+        "filePath": "/writeups/Zypher_2023/level-03-pdf.md"
+      },
+      {
+        "id": "level-04-leo-sinister",
+        "title": "Level 4 - Leo's Sinister Bellow",
+        "difficulty": "easy",
+        "points": 20,
+        "categories": [
+          "Steganography",
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "zyp{P@y_@t73nt!0n_7o_L30}",
+        "filePath": "/writeups/Zypher_2023/level-04-leo-sinister.md"
+      },
+      {
+        "id": "level-05-youtube-video",
+        "title": "Level 5 - YouTube Video",
+        "difficulty": "easy",
+        "points": 20,
+        "categories": [
+          "General"
+        ],
+        "tags": [],
+        "flag": "zyp{hiddenmessage.mp3}",
+        "filePath": "/writeups/Zypher_2023/level-05-youtube-video.md"
+      },
+      {
+        "id": "level-06-der-anfang",
+        "title": "Level 6 - Der Anfang",
+        "difficulty": "easy",
+        "points": 30,
+        "categories": [
+          "OSINT",
+          "Steganography"
+        ],
+        "tags": [],
+        "flag": "zyp{VG3wf$xxRM1mCq$CMyBJjO0zflAV$q}",
+        "filePath": "/writeups/Zypher_2023/level-06-der-anfang.md"
+      },
+      {
+        "id": "level-07-audio",
+        "title": "Level 7 - Audio",
+        "difficulty": "medium",
+        "points": 30,
+        "categories": [
+          "Spectography",
+          "Forensics"
+        ],
+        "tags": [],
+        "flag": "zyp{ADIO}",
+        "filePath": "/writeups/Zypher_2023/level-07-audio.md"
+      },
+      {
+        "id": "level-08-zodiac",
+        "title": "Level 8 - Z0D1AC",
+        "difficulty": "easy",
+        "points": 40,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "zyp{51.025N,1.1592E}",
+        "filePath": "/writeups/Zypher_2023/level-08-zodiac.md"
+      },
+      {
+        "id": "level-09-f0x3rr",
+        "title": "Level 9 - f0x3rr",
+        "difficulty": "medium",
+        "points": 40,
+        "categories": [
+          "Web",
+          "OSINT"
+        ],
+        "tags": [],
+        "flag": "zyp{language_en}",
+        "filePath": "/writeups/Zypher_2023/level-09-f0x3rr.md"
+      },
+      {
+        "id": "level-10-zypher-quest-1",
+        "title": "Level 10 - Zypher Quest 1",
+        "difficulty": "easy/medium",
+        "points": 50,
+        "categories": [
+          "General",
+          "Linux"
+        ],
+        "tags": [],
+        "flag": "zyp{L0S7}",
+        "filePath": "/writeups/Zypher_2023/level-10-zypher-quest-1.md"
+      },
+      {
+        "id": "level-11-zypher-re",
+        "title": "Level 11 - Zypher RE",
+        "difficulty": "medium",
+        "points": 50,
+        "categories": [
+          "Reverse_engineering"
+        ],
+        "tags": [],
+        "flag": "zyp{S4NI5Y_17T6CT_}",
+        "filePath": "/writeups/Zypher_2023/level-11-zypher-re.md"
+      },
+      {
+        "id": "level-12-pcap",
+        "title": "Level 12 - PCAP",
+        "difficulty": "medium",
+        "points": 60,
+        "categories": [
+          "Forensics",
+          "Network"
+        ],
+        "tags": [],
+        "flag": "zyp{We1Com_R3Dact3d_4130}",
+        "filePath": "/writeups/Zypher_2023/level-12-pcap.md"
+      },
+      {
+        "id": "level-13-nft",
+        "title": "Level 13 - NFT",
+        "difficulty": "medium",
+        "points": 60,
+        "categories": [
+          "Misc"
+        ],
+        "tags": [],
+        "flag": "zyp{reward_6228}",
+        "filePath": "/writeups/Zypher_2023/level-13-nft.md"
+      },
+      {
+        "id": "level-14-zypher-quest-2",
+        "title": "Level 14 - Zypher Quest 2",
+        "difficulty": "medium",
+        "points": 70,
+        "categories": [
+          "Cryptography"
+        ],
+        "tags": [],
+        "flag": "zyp{seal_is_undone}",
+        "filePath": "/writeups/Zypher_2023/level-14-zypher-quest-2.md"
+      },
+      {
+        "id": "level-15-zypher-quest-3",
+        "title": "Level 15 - Zypher Quest 3",
+        "difficulty": "medium",
+        "points": 70,
+        "categories": [
+          "Forensics",
+          "Linux"
+        ],
+        "tags": [],
+        "flag": "zyp{bruteforce}",
+        "filePath": "/writeups/Zypher_2023/level-15-zypher-quest-3.md"
+      },
+      {
+        "id": "level-16-level8z2",
+        "title": "Level 16 - level8z2",
+        "difficulty": "hard",
+        "points": 400,
+        "categories": [
+          "Boot2root",
+          "Cryptography",
+          "Steganography"
+        ],
+        "tags": [],
+        "flag": "zyp{Congrats_ERD3NC0RP}",
+        "filePath": "/writeups/Zypher_2023/level-16-level8z2.md"
+      }
+    ]
+  }
+]

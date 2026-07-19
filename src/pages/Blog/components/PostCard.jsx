@@ -21,7 +21,7 @@ const PostCard = ({ post }) => {
   const readingTime = calculateReadingTime(content);
 
   // Fallback image if thumbnail is missing
-  const fallbackImage = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdVW3RAmEz5mbBdQfUbYzTBfI4775Jcm9gVRFs0VkLV-s7E6pekpoEaJHNfJwjrLP_a2PzcoiH2QDOE3XnMiOzUrM99muxZ2wL06UdARc1pFxVImaA_GhmYRMCfGoaucMFxxDnRXtc0NItEpRh56XqVY4XgHA4PfX8Sbz20FRa2hLGQZRywin8uVvx08M9/w1200-h630-p-k-no-nu/image.png";
+  const fallbackImage = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdVW3RAmEz5mbBdQfUbYzTBfI4775Jcm9gVRFs0VkLV-s7E6pekpoEaJHNfJwjrLP_a2PzcoiH2QDOE3XnMiOzUrM99muxZ2wL06UdARc1pFxVImaA_GhmYRMCfGoaucMFxxDnRXtc0NItEpRh56XqVY4XgHA4PfX8Sbz20FRa2hLGQZRywin8uVvx08M9/w1200-h630-p-k-no-nu/image.webp";
 
   return (
     <Link to={`/blog/post/${id}`} className="group block h-full">

@@ -177,7 +177,7 @@ function App() {
         <>
           <TargetCursor targetSelector=".cursor-target, a, button, .nav-hover-btn" />
           <NavBar 
-            logoSrc="/img/logo.png"
+            logoSrc="/img/logo.webp"
             navItems={navItems}
             actionButtons={actionButtons}
             audioSrc="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"

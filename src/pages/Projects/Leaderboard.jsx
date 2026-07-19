@@ -18,7 +18,7 @@ const POINT_CATEGORIES = [
 
 // Helper to render beautiful glowing SVG badges for ranks
 const RankBadge = ({ rank = "unranked" }) => {
-  const normalizedRank = rank.toLowerCase().replace(".png", "");
+  const normalizedRank = rank.toLowerCase().replace(".webp", "");
   
   if (normalizedRank.includes("radiant")) {
     return (

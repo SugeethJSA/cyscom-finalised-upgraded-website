@@ -1,4 +1,4 @@
-const CertificateHtml = ({ template, user, certId, signature, qrUrl, logoUrl = "/img/logo.png" }) => {
+const CertificateHtml = ({ template, user, certId, signature, qrUrl, logoUrl = "/img/logo.webp" }) => {
   // Theme styling configurations matching Locker.jsx canvas logic
   let themeStyles = {
     bg: "bg-[#050508]",
