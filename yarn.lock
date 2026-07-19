@@ -811,9 +811,10 @@
     "@babel/helper-string-parser" "^7.29.7"
     "@babel/helper-validator-identifier" "^7.29.7"
 
-"@cyscomvit/cyscomui@^1.1.0":
-  version "1.1.0"
-  resolved "file:../cyscomui"
+"@cyscomvit/cyscomui@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@cyscomvit/cyscomui/-/cyscomui-1.1.1.tgz"
+  integrity sha512-esZ1I6k+l7PQHoDkFsMVROZETQD6rY+1PeHunaW75lP/dDPJvykqPHifXqWA+oRsxSIgsZiuKlpi/pjf/LZOnA==
   dependencies:
     "@gsap/react" "^2.1.2"
     clsx "^2.1.1"

@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cyscomvit/cyscomui": "^1.1.0",
+    "@cyscomvit/cyscomui": "^1.1.1",
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
