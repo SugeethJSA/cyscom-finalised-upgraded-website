@@ -15,11 +15,10 @@ import { Navbar as NavBar, Preloader } from "@cyscomvit/cyscomui";
 import TargetCursor from "./components/TargetCursor";
 
 const OurTeam = lazy(() => import("./components/OurTeam"));
-const Login = lazy(() => import("./pages/Auth/Login").then(module => ({ default: module.Login })));
-const Signup = lazy(() => import("./pages/Auth/Signup").then(module => ({ default: module.Signup })));
-const Profile = lazy(() => import("./pages/Auth/Profile").then(module => ({ default: module.Profile })));
+// Auth routes removed for future rewrite
 
 // Flat Pages
+const NotFound = lazy(() => import("./pages/NotFound"));
 const EventsHub = lazy(() => import("./pages/Events/EventsHub"));
 const PublicRegister = lazy(() => import("./pages/Events/PublicRegister"));
 const PublicTransfer = lazy(() => import("./pages/Events/PublicTransfer"));
@@ -105,7 +104,7 @@ function App() {
     }
   };
 
-  const navItems = ["Home", "About", "Events", "Projects", "Our Team", "Blogs", "Writeups"].map(label => ({
+  const navItems = ["Home", "About", "Projects", "Our Team", "Blogs", "Writeups"].map(label => ({
     label,
     url: `#${label === "Home" ? "hero" : label.toLowerCase().replace(" ", "-")}`,
     onClick: () => handleNavigate(label)
@@ -187,15 +186,10 @@ function App() {
             <Routes>
               <Route path="/" element={<MainSite />} />
               <Route path="/our-team" element={<OurTeam />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<Profile />} />
+              {/* Auth routes temporarily disabled */}
               
               {/* Flat Page Routes */}
-              {/* Events */}
-              <Route path="/events" element={<EventsHub />} />
-              <Route path="/events/:slug/register" element={<PublicRegister />} />
-              <Route path="/events/:slug/transfer" element={<PublicTransfer />} />
+              {/* Events routes removed temporarily */}
               
               {/* Projects */}
               <Route path="/projects" element={<ProjectsHome />} />
@@ -208,6 +202,9 @@ function App() {
               
               <Route path="/blog" element={<BlogHome />} />
               <Route path="/blog/post/:id" element={<BlogPostDetail />} />
+              
+              {/* 404 Error Page */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
           <ScrollToTop />

@@ -7,6 +7,7 @@ import {
   FaCalendarAlt, FaChevronRight, FaFolder, FaFolderOpen,
   FaArrowLeft, FaArrowRight, FaBookOpen, FaUsers, FaExternalLinkAlt
 } from 'react-icons/fa';
+import { ParticleBackground } from "@cyscomvit/cyscomui";
 
 // ΓöÇΓöÇ PrismJS Syntax Highlighting ΓöÇΓöÇ
 import Prism from 'prismjs';
@@ -769,24 +770,19 @@ const Writeups = () => {
 
   return (
     <div 
-      className="h-[calc(100vh-96px)] mt-24 w-full overflow-hidden bg-black text-white flex flex-col lg:flex-row relative"
+      className="min-h-screen pt-24 w-full bg-black text-white relative flex flex-col"
       style={{ fontFamily: 'Inter, "General Sans", sans-serif' }}
     >
-      <div className="fixed inset-0 cyber-grid pointer-events-none opacity-40 z-0" />
+      {/* Particle Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <ParticleBackground />
+      </div>
 
-      {/* Mobile toggle */}
-      <button onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="lg:hidden fixed top-24 left-4 z-30 w-10 h-10 rounded-xl bg-black/80 border border-white/8 flex items-center justify-center text-white/50 hover:text-white transition-all"
-        style={{ backdropFilter: 'blur(12px)' }}>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-          <path d={sidebarOpen ? "M1 1L15 11M1 11L15 1" : "M0 1H16M0 6H16M0 11H16"} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        </svg>
-      </button>
+      <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-8 relative z-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      {/* SIDEBAR                                             */}
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      <aside className={`fixed lg:relative z-20 w-[272px] lg:w-[264px] h-[calc(100vh-112px)] lg:h-[calc(100vh-128px)] top-24 lg:top-0 left-4 lg:left-0 lg:ml-4 lg:my-4 rounded-2xl glass-sidebar-float p-5 flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${sidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-[120%] lg:translate-x-0 opacity-0 lg:opacity-100'}`}>
+      {/* SIDEBAR */}
+      <div className="lg:col-span-1 space-y-6">
+        <aside className="sticky top-24 w-full rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 p-5 flex flex-col">
 
 
 
@@ -866,16 +862,12 @@ const Writeups = () => {
           </div>
         )}
         <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
-      </aside>
-
-      {sidebarOpen && <div className="fixed inset-0 bg-black/70 z-10 lg:hidden" onClick={() => setSidebarOpen(false)} />}
-
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      {/* MAIN CONTENT                                        */}
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      <div className="flex-grow h-full flex flex-col lg:flex-row min-w-0 relative z-10 lg:ml-4 lg:mr-4 lg:my-4">
+        </aside>
+      </div>
+      {/* MAIN CONTENT */}
+      <div className="lg:col-span-3 flex flex-col lg:flex-row min-w-0 relative z-10">
         <main ref={contentContainerRef}
-          className="flex-grow h-full overflow-y-auto p-6 md:p-10 lg:px-16 lg:py-10 min-w-0 flex flex-col lg:rounded-2xl lg:border lg:border-white/[0.03] lg:bg-white/[0.008]">
+          className="w-full flex-grow py-4 lg:py-0 flex flex-col min-h-[calc(100vh-160px)] lg:pr-8">
           {loadingContent ? (
             <div className="flex-grow flex items-center justify-center">
               <div className="text-center">
@@ -1247,6 +1239,7 @@ const Writeups = () => {
           </aside>
         )}
       </div>
+    </div>
     </div>
   );
 };
