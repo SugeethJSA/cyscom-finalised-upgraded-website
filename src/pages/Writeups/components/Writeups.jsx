@@ -9,10 +9,13 @@ import {
 } from 'react-icons/fa';
 import { ParticleBackground } from "@cyscomvit/cyscomui";
 
-// ΓöÇΓöÇ PrismJS Syntax Highlighting ΓöÇΓöÇ
+// ── PrismJS Syntax Highlighting ──
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import imageMap from '../image_map.json';
+
+import parse, { domToReact } from 'html-react-parser';
+import LinkPreview from '../../../components/LinkPreview';
 
 const DIFFICULTY_COLORS = {
   easy: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20',
@@ -1189,7 +1192,31 @@ const Writeups = () => {
                     )}
 
                     {/* Rendered markdown */}
-                    <div className="markdown-content flex-grow" dangerouslySetInnerHTML={{ __html: renderedHtml }} />
+                    <div className="markdown-content flex-grow">
+                      {parse(renderedHtml, {
+                        replace: (domNode) => {
+                          if (domNode.type === 'tag' && domNode.name === 'a') {
+                            const href = domNode.attribs?.href;
+                            if (!href) return;
+                            
+                            // Check if it's a bare link (text equals href)
+                            let isBareLink = false;
+                            let originalText = href;
+                            
+                            if (domNode.children && domNode.children.length === 1 && domNode.children[0].type === 'text') {
+                              originalText = domNode.children[0].data;
+                              if (originalText.trim() === href.trim()) {
+                                isBareLink = true;
+                              }
+                            }
+
+                            if (isBareLink && href.startsWith('http')) {
+                              return <LinkPreview url={href} originalText={originalText} />;
+                            }
+                          }
+                        }
+                      })}
+                    </div>
 
                     {/* Prev / Next */}
                     {selectedChallenge && (pagination.prev || pagination.next) && (
