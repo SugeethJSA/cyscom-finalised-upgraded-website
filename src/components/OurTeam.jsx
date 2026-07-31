@@ -177,13 +177,13 @@ const OurTeam = () => {
           <span className="w-8 h-[2px] bg-gradient-to-r from-purple-500 to-cyan-500 inline-block"></span>
         </h2>
         
-        <div className="relative">
+        <div className="relative isolate">
           {/* Background glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-purple-500/5 rounded-3xl blur-3xl -z-10"></div>
           
           <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-start">
             {/* Group Photo / Active Member Preview */}
-            <div className="lg:sticky lg:top-24 relative w-full lg:w-[350px] xl:w-[450px] flex-shrink-0 aspect-[4/5] lg:aspect-[3/4] lg:max-h-[calc(100vh-120px)] rounded-2xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(6,182,212,0.3)] border border-white/10 group">
+            <div className="lg:sticky lg:top-24 relative z-0 w-full lg:w-[350px] xl:w-[450px] flex-shrink-0 aspect-[4/5] lg:aspect-[3/4] lg:max-h-[calc(100vh-120px)] rounded-2xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(6,182,212,0.3)] border border-white/10 group">
               {/* Group Photo Layer */}
               <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 z-10 mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-0"></div>
@@ -201,7 +201,7 @@ const OurTeam = () => {
 
               {/* Active Member Overlay Layer (expands like a card on hover) */}
               <div 
-                className={`absolute inset-0 bg-[#0a0a0a] transition-all duration-500 ease-out z-30 ${
+                className={`absolute inset-0 bg-[#0a0a0a] transition-all duration-500 ease-out z-10 ${
                   hoveredCabinetMember ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                 }`}
               >
@@ -234,7 +234,7 @@ const OurTeam = () => {
             </div>
             
             {/* Members List */}
-            <div className="flex-1 space-y-6 md:space-y-8 pt-4 lg:pt-0 w-full">
+            <div className="flex-1 relative z-20 space-y-6 md:space-y-8 pt-4 lg:pt-0 w-full">
               {(() => {
                 const grouped = cabinetMembers.reduce((acc, member) => {
                   if (!acc[member.department]) acc[member.department] = [];
