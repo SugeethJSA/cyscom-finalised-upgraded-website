@@ -194,7 +194,7 @@ const OurTeam = () => {
               </div>
             </div>
             
-            {/* Members List – cards expand in place like board cards */}
+            {/* Members List – cards now same grid as Board */}
             <div className="flex-1 relative z-20 space-y-6 md:space-y-8 pt-4 lg:pt-0 w-full">
               {(() => {
                 const grouped = cabinetMembers.reduce((acc, member) => {
@@ -211,7 +211,8 @@ const OurTeam = () => {
                       </h3>
                       <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-transparent"></div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ml-1 md:ml-2">
+                    {/* UPDATED GRID HERE */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                       {members.map((member, idx) => (
                         <TeamCard
                           key={`${dept}-${idx}`}
