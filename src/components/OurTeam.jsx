@@ -157,7 +157,7 @@ const OurTeam = () => {
           <span className="w-8 h-[2px] bg-cyan-500 inline-block"></span>
           Board
         </h2>
-        <div className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
           {boardMembers.map((member, index) => (
             <TeamCard key={index} member={member} />
           ))}
@@ -194,7 +194,7 @@ const OurTeam = () => {
               </div>
             </div>
             
-            {/* Members List – cards now same grid as Board */}
+            {/* Members List – cards now match Board grid */}
             <div className="flex-1 relative z-20 space-y-6 md:space-y-8 pt-4 lg:pt-0 w-full">
               {(() => {
                 const grouped = cabinetMembers.reduce((acc, member) => {
@@ -211,8 +211,7 @@ const OurTeam = () => {
                       </h3>
                       <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-transparent"></div>
                     </div>
-                    {/* UPDATED GRID HERE */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
                       {members.map((member, idx) => (
                         <TeamCard
                           key={`${dept}-${idx}`}
