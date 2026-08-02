@@ -47,11 +47,9 @@ const Avatar = ({ name, size = "w-20 h-20 text-xl" }) => (
 
 const OurTeam = () => {
   const containerRef = useRef(null);
-  const [hoveredCabinetMember, setHoveredCabinetMember] = useState(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title Animation - use containerRef instead of .hero-section
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -68,7 +66,6 @@ const OurTeam = () => {
         "-=0.8"
       );
 
-      // Hero Image Reveal
       gsap.fromTo(
         ".team-hero-image",
         { clipPath: "inset(0 100% 0 0)", scale: 1.1 },
@@ -84,7 +81,6 @@ const OurTeam = () => {
         }
       );
       
-      // Section Titles
       gsap.utils.toArray(".section-title").forEach(title => {
         gsap.fromTo(title,
           { opacity: 0, x: -30 },
@@ -98,7 +94,6 @@ const OurTeam = () => {
         );
       });
 
-      // Team Cards stagger
       gsap.utils.toArray(".team-grid").forEach(grid => {
         const cards = grid.querySelectorAll(".team-card");
         gsap.fromTo(cards,
@@ -125,13 +120,11 @@ const OurTeam = () => {
 
   return (
     <div ref={containerRef} className="relative bg-[#050505] min-h-screen text-blue-50 pt-24 md:pt-32 px-4 md:px-8 lg:px-24 font-general">
-      {/* Background glow effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-cyan-600/20 blur-[120px]"></div>
         <div className="absolute bottom-[20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/20 blur-[150px]"></div>
       </div>
 
-      {/* Hero Section */}
       <div className="hero-section flex flex-col md:flex-row gap-8 md:gap-16 mb-16 md:mb-32 items-center">
         <div className="title-wrapper md:w-1/2 flex flex-col justify-center order-2 md:order-1 relative z-10">
           <p className="subtitle text-cyan-400 font-mono tracking-[0.2em] text-sm md:text-base mb-4 uppercase">Meet the Minds Behind</p>
@@ -153,10 +146,8 @@ const OurTeam = () => {
         </div>
       </div>
 
-      {/* Decorative Divider */}
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent mb-16 md:mb-24"></div>
 
-      {/* Board Section */}
       <div className="mb-20 md:mb-32 relative z-10">
         <h2 className="section-title font-zentry text-4xl md:text-6xl mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 uppercase tracking-wide flex items-center gap-4">
           <span className="w-8 h-[2px] bg-cyan-500 inline-block"></span>
@@ -169,7 +160,6 @@ const OurTeam = () => {
         </div>
       </div>
 
-      {/* Cabinet Section */}
       <div className="mb-20 md:mb-32 relative z-10">
         <h2 className="section-title font-zentry text-4xl md:text-6xl mb-12 md:mb-16 text-center text-white uppercase tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] flex items-center justify-center gap-4">
           <span className="w-8 h-[2px] bg-gradient-to-r from-cyan-500 to-purple-500 inline-block"></span>
@@ -178,13 +168,10 @@ const OurTeam = () => {
         </h2>
         
         <div className="relative isolate">
-          {/* Background glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-purple-500/5 rounded-3xl blur-3xl -z-10"></div>
           
           <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-start">
-            {/* Group Photo / Active Member Preview */}
             <div className="lg:sticky lg:top-24 relative z-0 w-full lg:w-[350px] xl:w-[450px] flex-shrink-0 aspect-[4/5] lg:aspect-[3/4] lg:max-h-[calc(100vh-120px)] rounded-2xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(6,182,212,0.3)] border border-white/10 group">
-              {/* Group Photo Layer */}
               <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 z-10 mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-0"></div>
                 <img
@@ -198,42 +185,8 @@ const OurTeam = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Active Member Overlay Layer (expands like a card on hover) */}
-              <div 
-                className={`absolute inset-0 bg-[#0a0a0a] transition-all duration-500 ease-out z-10 ${
-                  hoveredCabinetMember ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-                }`}
-              >
-                {hoveredCabinetMember && (
-                  <>
-                    <div className="absolute inset-0 bg-cyan-500/20 mix-blend-overlay z-10 pointer-events-none"></div>
-                    <img
-                      src={hoveredCabinetMember.img}
-                      alt={hoveredCabinetMember.name}
-                      className="w-full h-full object-cover filter grayscale-[15%] transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent z-20">
-                      <div className="transform translate-y-0 transition-transform duration-500">
-                        <h3 className="font-zentry text-3xl md:text-4xl uppercase text-white mb-1 drop-shadow-md">
-                          {hoveredCabinetMember.name}
-                        </h3>
-                        <p className="font-mono text-xs md:text-sm text-cyan-400 tracking-[0.15em] uppercase">
-                          {hoveredCabinetMember.department}
-                        </p>
-                        {hoveredCabinetMember.quote && (
-                          <p className="text-xs text-gray-300 italic mt-2 line-clamp-2">
-                            "{hoveredCabinetMember.quote}"
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
             </div>
             
-            {/* Members List */}
             <div className="flex-1 relative z-20 space-y-6 md:space-y-8 pt-4 lg:pt-0 w-full">
               {(() => {
                 const grouped = cabinetMembers.reduce((acc, member) => {
@@ -254,9 +207,7 @@ const OurTeam = () => {
                       {members.map((member, idx) => (
                         <div
                           key={`${dept}-${idx}`}
-                          onMouseEnter={() => setHoveredCabinetMember(member)}
-                          onMouseLeave={() => setHoveredCabinetMember(null)}
-                          className="group flex items-center gap-4 p-3 md:p-4 rounded-xl bg-[#0a0a0a]/50 border border-white/5 hover:border-cyan-500/20 hover:bg-[#0a0a0a]/80 transition-all duration-300 cursor-pointer"
+                          className="team-card group flex items-center gap-4 p-3 md:p-4 rounded-xl bg-[#0a0a0a]/50 border border-white/5 hover:border-cyan-500/20 hover:bg-[#0a0a0a]/80 transition-all duration-300 cursor-pointer"
                         >
                           {member.img ? (
                             <img
@@ -298,12 +249,10 @@ const OurTeam = () => {
   );
 };
 
-// Reusable Team Card Component
 const TeamCard = ({ member, department }) => {
   return (
     <div className="team-card group relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-white/5 transition-all duration-500 hover:border-cyan-500/30 hover:shadow-[0_10px_40px_-10px_rgba(34,211,238,0.2)] hover:-translate-y-2 cursor-pointer">
       <div className="aspect-[3/4] overflow-hidden relative">
-        {/* Glow effect that follows hover */}
         <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10 pointer-events-none"></div>
         <img 
           src={member.img} 
