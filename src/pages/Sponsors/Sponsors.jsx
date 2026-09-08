@@ -9,6 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const sponsors = [
   {
+    name: "Trainsec",
+    description: "TrainSec Academy is a cybersecurity learning platform that provides hands-on training in areas such as ethical hacking, digital forensics, malware analysis, and cybersecurity research.",
+    image: "/img/sponsors/trainsec_logo.webp",
+    website: null
+  },
+  {
     name: "AECC",
     description: "A global education consultancy helping students pursue higher education abroad through university admissions, visa assistance, and career guidance.",
     image: "/img/sponsors/aecc.webp",
